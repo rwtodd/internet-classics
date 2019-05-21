@@ -1,0 +1,126 @@
+% palatino set
+\font\twelverm=pplr at 12pt
+\font\twelvesl=pplro at 12pt
+\font\twelvett=cmtt12
+%\font\twelvebf=pplb at 12pt
+\font\biggertxt=pplr at 16pt
+\font\biggerbold=pplb at 14pt
+
+% adjust the page numbers and typical font commands
+\footline={\hss\rm\folio\hss}
+\def\rm{\twelverm}
+\def\sl{\twelvesl}
+\def\tt{\twelvett}
+%\def\bf{\twelvebf}
+
+\def\title#1{\centerline{\biggertxt #1}\par}
+\def\subtitle#1{\medskip\centerline{\sl #1}}
+\def\startlist{\smallskip\begingroup\narrower\parskip=6pt plus 1pt minus 1pt}%
+\def\endlist{\smallskip\endgroup\noindent\ignorespaces}%
+\catcode`\|=13 \def|{\begingroup\tt\def|{\endgroup}}%
+
+
+\parskip=8pt plus 1pt minus 1pt
+\baselineskip=14pt
+\rm
+
+\leavevmode\vskip 0.25in
+\title{Message to comp.lang.fortran}
+\subtitle{Glen Reesor, 1995--12--01}
+\vskip 0.5in
+\noindent In my (relatively) short time modifying and working with
+legacy Fortran codes, I have come across a number of, shall we say,
+interesting tendencies.  I attribute these tendencies to a number of
+things:
+\startlist%
+\item{1.}%
+  Historical limitations of compilers and hardware (very
+  understandable---at least for dusty-deck code, but depressing
+  for newly written code).
+\item{2.}%
+  The author being someone with zero training in how to write 
+  maintainable, readable, quality software.  (In my opinion, a very
+  significant factor in new Fortran software being written.)
+\item{}%
+  Although, I keep telling myself that item 2 is very common, I've
+  lost count of the number of times I've been trying to decipher
+  a code segment and decided there should be an item 3:
+\item{3.}%
+  The author of the code is from a different planet where their logic
+  is a complete reversal (yet twisted in some way) to ours :-)
+\endlist
+So, in order to soothe my nerves, I've created a guide for writing
+modern Fortran.  There are two especially funny things about this list
+(in my opinion, of course):
+\startlist%
+\item{--}%
+  I have encountered every single one of these (within the last 2 years)
+\item{--}%
+  Most of these practices are being continued at this very moment by
+  some unnamed people I have encountered
+\endlist
+So, without further delay, I give you...
+\bigskip\title{Fortran Coding Style for the Modern Programmer}
+\startlist%
+\item{1.} When picking variable names, pick something meaningful then remove all 
+   the vowels.  If the result is longer than 6 characters, truncate as 
+   required.
+\item{2.} When making code changes, don't delete lines---just comment them out.
+   (You might need them later.)
+\item{3.} |WRITE ALL CODE IN UPPERCASE IT LOOKS BETTER THAT WAY|.
+\item{4.} There is no need to use comments because,
+``Fortran is self-documenting.'' (Don't forget rule~1.)
+\item{5.} Another good reason to leave out comments is that they cause slower
+   execution of your program.
+\item{6.} If you must include comments, they are easiest to read if you alternate
+   comment lines and code lines (with the same level of indentation), with 
+   no blank lines or `dash' lines in between.
+\item{7.} When deciding what the condition should be in an
+``|IF|--|THEN|--|ELSE|'' statement, decide what is most logical for a
+human to understand, then reverse it.
+\item{8.} When deciding whether to put variables in common blocks or not, choose
+   one of the following:%
+      \startlist%
+      \item{a)} Pass all variables on argument lists to subroutines, and put none
+         in common blocks.  That way you know exactly where every variable
+         came from.  It has the added benefit of reminding you to add 
+         variables required in one routine to all routines called before it.
+      \item{b)} Put all variables in common blocks, and put none in the
+      subroutine argument list.
+      \item{c)} There is no (c)---you must use either (a) or (b).
+      \endlist
+\item{9.} Write your code using implicit typing---that way you don't have to type
+   as much.
+\item{10.} To make yourself feel at home, always refer to `cards', `fields',
+`decks' and `core memory.'
+\item{11.} When using variables, pick one name when you calculate it, assign
+    it to another one for use in an argument list to another subroutine,
+    and call it something else inside the called routine.
+    (This also has the added benefit of increasing your job security.)
+\item{12.} When designing the format of your |ASCII| inputfile, base it on
+a rigid column structure so you don't have to parse any keywords in 
+the inputfile.
+\item{13.} To make your program footprint smaller, use the same arrays for
+different things, depending on which part of the program you're in.
+\item{14.} When you realize that the same code segment is being written many
+    times, it is best to cut-and-paste multiple times rather than risk a 
+    mistake creating a subroutine.
+\item{15.} To make code more readable, write it like this:
+{\smallskip\narrower\parskip=2pt\obeylines\tt%
+    if (a .eq.\ 1) then
+    \quad result = result + 1
+    else if (a .eq.\ 2) then
+    \quad result = result + 2
+    else if (a .eq.\ 3) then
+    \quad result = result + 3
+    else
+    \quad result = result + a
+    endif\smallskip}%    
+\item{16.} A blank lines must start with a `|C|.'
+\item{17.} The Golden Rule: 
+\item{} Regardless of the capacity of the machine your code is to run on,
+      it is more important to make it small and run blindingly fast,
+      than to maximize program readability and maintainability.
+\endlist
+
+\bye
