@@ -2,7 +2,7 @@
 % indent everything a little, except headings... margskip = "margin skip"
 \newskip\margskip \margskip=25pt
 \advance\leftskip by \margskip 
-\def\unindent{{\parindent=-\margskip\leavevmode}}
+\def\unindent{{\parindent=-\leftskip\leavevmode}}
 
 % set up 12-point fonts for everything
 \font\twelverm=cmr12
@@ -16,14 +16,20 @@
 
 \def\title#1{\leavevmode\vskip 0.5in\centerline{\biggertxt #1}\par}                    
 \def\subtitle#1{\medskip\centerline{\sl #1}}
-\def\book#1#2{\bigbreak\unindent{\biggerbold Book #1 --- #2}\par\unindent\ignorespaces}
-\def\sect#1{\medskip\unindent\hbox to \margskip{\bf #1\hfil}\ignorespaces}
-\def\poetry#1{{\par \advance\leftskip by \margskip \rightskip=\leftskip\smallskip#1\smallskip}}
+\def\book#1#2{\null\bigbreak{\unindent\biggerbold Book #1 --- #2}\par\unindent\ignorespaces}
+\def\sect#1{\null\medbreak\leavevmode\llap{\hbox to \leftskip{\bf #1\hfil}}\ignorespaces}
+
+\def\versebase{\begingroup\advance\leftskip by \margskip \rightskip=\leftskip \obeylines \parskip=2pt}
+\def\startverse{\smallskip\leavevmode\versebase}
+\def\vsect#1{\null\medbreak\versebase\leavevmode\llap{\hbox to \leftskip{\bf #1\hfil}}\ignorespaces}
+\def\endverse{\endgroup\smallskip}
+
 \def\quotation#1{{
     \medskip \advance\leftskip by \margskip \rightskip=\leftskip
     \leavevmode\llap{``}{\sl #1}''\medskip}}
 \parindent=0pt
 \parskip=8pt plus 1pt minus 1pt
+\baselineskip=14pt
 \rm
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -37,11 +43,12 @@ Thus spake the Master Programmer:
 
 \sect{1.1}
 Something mysterious is formed, born in the silent void. waiting alone and unmoving, it is at once still and yet in constant motion. It is the source of all programs. I do not know its name, so I will call it the Tao of Programming.
-
-\poetry{If the Tao is great, then the operating system is great.\hfil\break
-If the operating system is great, then the compiler is great.\hfil\break
-If the compiler is great, then the application is great.\hfil\break
-The user is pleased, and there is harmony in the world.}
+\startverse%
+If the Tao is great, then the operating system is great.
+If the operating system is great, then the compiler is great.
+If the compiler is great, then the application is great.
+The user is pleased, and there is harmony in the world.
+\endverse
 
 The Tao of Programming flows far away and returns on the wind of morning.
 
@@ -76,12 +83,13 @@ Thus spake the Master Programmer:
 
 \sect{2.1}
 The programmers of old were mysterious and profound. We cannot fathom their thoughts, so all we do is describe their appearance.
-
-\poetry{Aware, like a fox crossing the water.\hfil\break
-Alert, like a general on the battlefield.\hfil\break
-Kind, like a hostess greeting her guests.\hfil\break
-Simple, like uncarved blocks of wood.\hfil\break
-Opaque, like black pools in darkened caves.}
+\startverse%
+Aware, like a fox crossing the water.
+Alert, like a general on the battlefield.
+Kind, like a hostess greeting her guests.
+Simple, like uncarved blocks of wood.
+Opaque, like black pools in darkened caves.
+\endverse
 
 Who can tell the secrets of their hearts and minds?
 
@@ -206,11 +214,11 @@ Prince Wang said, ``Would that all of my programmers were as wise!''
 Thus spake the Master Programmer:
 \quotation{Though a program be but three lines long, someday it will have to be maintained.}
 
-\sect{5.1}
-\poetry{A well-used door needs no oil on its hinges.\hfil\break
-A swift-flowing stream does not grow stagnant.\hfil\break
-A deer blends perfectly into the forest colors.\hfil\break
-Software rots if not used.}
+\vsect{5.1} A well-used door needs no oil on its hinges.
+A swift-flowing stream does not grow stagnant.
+A deer blends perfectly into the forest colors.
+Software rots if not used.
+\endverse
 
 These are great mysteries.
 
@@ -234,44 +242,48 @@ The novice worked furiously for many days, but when his Master reviewed his prog
 
 When the Master asked about this, the novice became indignant. ``Don't be so impatient,'' he said, ``I'll put in the financial stuff eventually.''
 
-\sect{5.4}
-\poetry{Does a good farmer neglect a crop he has planted?\hfil\break
-Does a good teacher overlook even the most humble student?\hfil\break
-Does a good father allow a single child to starve?\hfil\break 
-Does a good programmer refuse to maintain his code?}
+\vsect{5.4}%
+Does a good farmer neglect a crop he has planted?
+Does a good teacher overlook even the most humble student?
+Does a good father allow a single child to starve?
+Does a good programmer refuse to maintain his code?
+\endverse
 
 \book{6}{Management}
 Thus spake the Master Programmer:
 \quotation{Let the programmers be many and the managers few---then all will be productive.}
 
-\sect{6.1}
-\poetry{When managers hold endless meetings,\hfil\break
-  \null\quad the programmers write games.\hfil\break
-  When accountants speak of quarterly profits,\hfil\break
-  \null\quad the development budget is about to be cut.\hfil\break
-  When senior scientists talk blue sky,\hfil\break
-  \null\quad the clouds are about to roll in.}
+\vsect{6.1}%
+When managers hold endless meetings,
+\quad the programmers write games.
+When accountants speak of quarterly profits,
+\quad the development budget is about to be cut.
+When senior scientists talk blue sky,
+\quad the clouds are about to roll in.
+\endverse
 
 Truly, this is not the Tao of Programming.
-
-\poetry{When managers make commitments,\hfil\break
-  \null\quad game programs are ignored.\hfil\break
-  When accountants make long-range plans,\hfil\break
-  \null\quad harmony and order are about to be restored.\hfil\break
-  When senior scientists address the problems at hand,\hfil\break
-  \null\quad the problems will soon be solved.}
+\startverse%
+When managers make commitments,
+\quad game programs are ignored.
+When accountants make long-range plans,
+\quad harmony and order are about to be restored.
+When senior scientists address the problems at hand,
+\quad the problems will soon be solved.
+\endverse
 
 Truly, this is the Tao of Programming.
 
-\sect{6.2}
-\poetry{Why are programmers non-productive?\hfil\break
-  \null\quad Because their time is wasted in meetings.\hfil\break
-  Why are programmers rebellious?\hfil\break
-  \null\quad Because the management interferes too much.\hfil\break
-  Why are the programmers resigning one by one?\hfil\break
-  \null\quad Because they are burnt out.\hfil\break
-  Having worked for poor management,\hfil\break
-  \null\quad they no longer value their jobs.}
+\vsect{6.2}%
+Why are programmers non-productive?
+\quad Because their time is wasted in meetings.
+Why are programmers rebellious?
+\quad Because the management interferes too much.
+Why are the programmers resigning one by one?
+\quad Because they are burnt out.
+Having worked for poor management,
+\quad they no longer value their jobs.
+\endverse
 
 \sect{6.3}
 A manager was about to be fired, but a programmer who worked for him wrote a new program that became popular and sold well. As a result, the manager retained his job.
