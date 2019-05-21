@@ -2,23 +2,32 @@
 % indent everything a little, except headings... margskip = "margin skip"
 \newskip\margskip \margskip=25pt
 \advance\leftskip by \margskip 
+
+% make skips a little more stretchable to help find page breaks
+\bigskipamount=12pt plus6pt minus4pt
+\medskipamount=6pt plus3pt minus2pt
+
 \def\unindent{{\parindent=-\leftskip\leavevmode}}
 
-% set up 12-point fonts for everything
-\font\twelverm=cmr12
-\font\twelvesl=cmsl12
-\font\twelvebf=cmbx12
-\font\biggertxt=cmr12 scaled\magstep2
-\font\biggerbold=cmbx12 scaled\magstep1
+% palatino set
+\font\twelverm=pplr at 12pt
+\font\twelvesl=pplro at 12pt
+\font\twelvebf=pplb at 12pt
+\font\biggertxt=pplr at 16pt
+\font\biggerbold=pplb at 14pt
+
+% adjust the page numbers and typical font commands
+\footline={\hss\rm\folio\hss}
 \def\rm{\twelverm}
 \def\sl{\twelvesl}
 \def\bf{\twelvebf}
 
 \def\title#1{\leavevmode\vskip 0.5in\centerline{\biggertxt #1}\par}                    
 \def\subtitle#1{\medskip\centerline{\sl #1}}
-\def\book#1#2{\null\bigbreak{\unindent\biggerbold Book #1 --- #2}\par\unindent\ignorespaces}
+\def\book#1#2{\null\bigbreak\goodbreak{\unindent\biggerbold Book #1 --- #2}\par\unindent\ignorespaces}
 \def\sect#1{\null\medbreak\leavevmode\llap{\hbox to \leftskip{\bf #1\hfil}}\ignorespaces}
 
+% startverse and vsect help format verses (poetry)
 \def\versebase{\begingroup\advance\leftskip by \margskip \rightskip=\leftskip \obeylines \parskip=2pt}
 \def\startverse{\smallskip\leavevmode\versebase}
 \def\vsect#1{\null\medbreak\versebase\leavevmode\llap{\hbox to \leftskip{\bf #1\hfil}}\ignorespaces}
