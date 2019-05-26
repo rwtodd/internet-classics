@@ -8,6 +8,7 @@ Where possible, I will try to link to the original sources in the list below:
 
 ## Contents
 
+ - __bug-count-rises__: An internal 1996 Microsoft Hemingway parody contest yielded this gem of a short story. It is several places on the net, but my source was [this one](http://workpump.com/bugcount/bugcount.html).
  - __letwin-on-os2__: Early MS employee Gordon Letwin comments on the status of OS/2 in a frank and insightful way. As seen on [comp.os.ms-windows.misc](https://groups.google.com/forum/?hl=en#!msg/comp.os.ms-windows.misc/-iNeep60eVE/Xl5ddAtJENcJ) in August of 1995.
  - __modern-fortran-style__: As seen on [comp.lang.fortran](https://groups.google.com/forum/#!topic/comp.lang.fortran/TIYj2uhhXbU).
  - __real-programmers__: I used the copies at [http://fortranwiki.org/fortran/show/Real+Programmers+Don%27t+Use+Pascal](http://fortranwiki.org/fortran/show/Real+Programmers+Don%27t+Use+Pascal).
