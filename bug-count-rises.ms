@@ -86,5 +86,13 @@ will do it for all the pizza we ate and the bottles of Coke we drank.\*U
 Together they walked slowly back, knowing it would be good. As they
 walked the rain dripped softly from the leaves, and the shuttles
 carried the bodies back from the meetings.
+.SP 4
+.SH
+Historical Glossary
+.IP Chicago 10
+This was the code-name for Windows 95.
+.IP RAID 10
+This was a bug database used at Microsoft during the Windows 95 era.
+https://devblogs.microsoft.com/oldnewthing/20200317-00/?p=103566
 \."
 \." vim: ft=nroff : tw=77 :
