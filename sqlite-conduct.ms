@@ -8,7 +8,7 @@ SQLite Core Developers
 Overview
 .LP
 The code of conduct for developers of the SQLite project is the 72
-\*Qinstruments of good works\*U from the 6th century Rule of
+\*Qinstruments of good works\*U from the 6\*{th\*} century Rule of
 St. Benedict, shown below. This code of conduct has proven its mettle
 in use by many thousands of communities for 1,500 years, and has
 served as a baseline for many civil law codes since the time of
