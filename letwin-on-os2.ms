@@ -1,3 +1,4 @@
+.nr PS 12
 .TL
 What's Happening to OS/2
 .AU
@@ -273,12 +274,15 @@ returning to their past glories blinded them to the fact that it wouldn't
 work.
 .PP
 So that's where Microsoft has been sitting for the past two or three
-years.  Every few months I read some c.o.o.a and I marvel at all of
-the folks there that just don't get it.  They argue about how OS/2 now has
-a 3% market share, or is it 5%, and they think that that means anything.
-It's like two race cars\(emone with hundreds of gallons of gas\(emand
-a 20 lap lead\(emand the other way behind with only a cup of gas.  And
-its proponents are crowing that it's slowly gaining!
+years.  Every few months I read some
+.ft CR
+c.o.o.a
+.ft P
+and I marvel at all of the folks there that just don't get it.  They argue
+about how OS/2 now has a 3% market share, or is it 5%, and they think that
+that means anything.  It's like two race cars\(emone with hundreds of gallons
+of gas\(emand a 20 lap lead\(emand the other way behind with only a cup of
+gas.  And its proponents are crowing that it's slowly gaining!
 .PP
 Also, I see folks argue about the sales figures
 that show that OS/2 apps don't sell worth a darn, try to deny the fact that
