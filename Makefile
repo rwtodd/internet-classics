@@ -1,12 +1,15 @@
 .POSIX:
+.SUFFIXES: .pdf .ms
 
 PDFS = \
    bug-count-rises.pdf \
    sqlite-conduct.pdf \
-   letwin-on-os2.pdf
+   letwin-on-os2.pdf \
+   modern-fortran-style.pdf \
+   real-programmers.pdf \
+   tao-of-programming.pdf
 
 all: $(PDFS)
-.SUFFIXES: .pdf .ms
 
 clean:
 	rm -f $(PDFS)

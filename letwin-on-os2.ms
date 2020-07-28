@@ -4,10 +4,9 @@ What's Happening to OS/2
 .AU
 Gordon Letwin
 .LP
-.ad c
+.ce
 (a message to comp.os.ms-windows.misc, 1995\(en08\(en17)
 .sp 2
-.ad b
 .LP
 In an earlier posting to
 .ft CR
@@ -395,4 +394,4 @@ So I have a good track record at being able to see the obvious.  Even
 when the obvious was
 .B not
 obvious to the rest of the industry, like IBM, DEC, et. al.
-\." vim: filetype=nroff:tw=77:noet:
+.\" vim: filetype=nroff:tw=77:noet:
