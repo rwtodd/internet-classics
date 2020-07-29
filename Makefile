@@ -15,5 +15,5 @@ clean:
 	rm -f $(PDFS)
 
 .ms.pdf:
-	groff -Tpdf -ms $< > $@
+	groff -Tps -ms $< | ps2pdf -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.6 - $@
 
