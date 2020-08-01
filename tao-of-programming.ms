@@ -40,6 +40,7 @@ Book \\n+(bK
 Thus spake the Master Programmer:
 .QP
 .ps +1
+.ti -\w'\*Q'u
 \*Q\c
 .ft I
 ..
@@ -55,7 +56,9 @@ Thus spake the Master Programmer:
 .BK "The Silent Void"
 .MP
 When you have learned to snatch the error code from the trap
-frame, it will be time for you to leave.\c
+frame,
+.br
+it will be time for you to leave.\c
 .ME
 .\"
 .SC
@@ -116,7 +119,9 @@ program still has bugs.
 .\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .BK "The Ancient Masters"
 .MP
-After three days without programming, life becomes meaningless.\c
+After three days without programming,
+.br
+life becomes meaningless.\c
 .ME
 .\"
 .SC
@@ -178,7 +183,9 @@ purpose self-evident. Truly, he has entered the mystery of Tao.\*U
 .\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .BK  "Design"
 .MP
-When a program is being tested, it is too late to make design changes.\c
+When a program is being tested,
+.br
+it is too late to make design changes.\c
 .ME
 .SC
 There once was a man who went to a computer trade show. Each day as he
@@ -348,8 +355,8 @@ Prince Wang said, \*QWould that all of my programmers were as wise!\*U
 .\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .BK  "Maintenance"
 .MP
-Though a program be but three lines long, someday it will
-have to be maintained.\c
+Though a program be but three lines long,
+someday it will have to be maintained.\c
 .ME
 .SC verse
 A well-used door needs no oil on its hinges.
@@ -492,6 +499,7 @@ wee hours of the morning.
 .BK  "Corporate Wisdom"
 .MP
 You can demonstrate a program for a corporate executive,
+.br
 but you can't make him computer literate.\c
 .ME
 .SC

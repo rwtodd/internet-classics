@@ -29,7 +29,7 @@ doing so you will live a happier, healthier, and more productive
 life. Nevertheless, this is a choice that you must make for yourself,
 and is not a precondition for using SQLite.
 .SH
-The Code.
+The Code
 .nr PD 1v
 .IP 1.
 First of all, love the Lord God with your whole heart, your whole soul, and your whole strength.

@@ -1,4 +1,6 @@
 *.log
 *.pdf
+*.ps.gz
+*.ps
 *.aux
 *~

@@ -1,5 +1,14 @@
 .POSIX:
-.SUFFIXES: .pdf .ms
+.SUFFIXES:
+.SUFFIXES: .pdf .ms .ps.gz
+
+PS =  \
+   bug-count-rises.ps.gz \
+   sqlite-conduct.ps.gz \
+   letwin-on-os2.ps.gz \
+   modern-fortran-style.ps.gz \
+   real-programmers.ps.gz \
+   tao-of-programming.ps.gz
 
 PDFS = \
    bug-count-rises.pdf \
@@ -9,11 +18,15 @@ PDFS = \
    real-programmers.pdf \
    tao-of-programming.pdf
 
-all: $(PDFS)
+all: ps 
+ps: $(PS)
+pdf: $(PDFS)
 
 clean:
-	rm -f $(PDFS)
+	rm -f *.pdf *.ps.gz
 
-.ms.pdf:
-	groff -Tps -ms $< | ps2pdf -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.6 - $@
+.ms.ps.gz:
+	groff -Tps -ms $< | gzip -9 > $@
+.ps.gz.pdf:
+	gzip -dc $< | ps2pdf -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.6 - $@
 
