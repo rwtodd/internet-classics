@@ -3,6 +3,7 @@
 .SUFFIXES: .pdf .ms .ps.gz
 
 PS =  \
+   degradation-flame.ps.gz \
    bug-count-rises.ps.gz \
    sqlite-conduct.ps.gz \
    letwin-on-os2.ps.gz \
@@ -11,6 +12,7 @@ PS =  \
    tao-of-programming.ps.gz
 
 PDFS = \
+   degradation-flame.pdf \
    bug-count-rises.pdf \
    sqlite-conduct.pdf \
    letwin-on-os2.pdf \
@@ -30,3 +32,5 @@ clean:
 .ps.gz.pdf:
 	gzip -dc $< | ps2pdf -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.6 - $@
 
+degradation-flame.ps.gz: degradation-flame.ms
+	tbl $< | groff -Tps -ms | gzip -9 > $@
