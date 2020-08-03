@@ -3,6 +3,7 @@
 .SUFFIXES: .pdf .ms .ps.gz
 
 PS =  \
+   perl-postmodern.ps.gz \
    degradation-flame.ps.gz \
    bug-count-rises.ps.gz \
    sqlite-conduct.ps.gz \
@@ -12,6 +13,7 @@ PS =  \
    tao-of-programming.ps.gz
 
 PDFS = \
+   perl-postmodern.pdf \
    degradation-flame.pdf \
    bug-count-rises.pdf \
    sqlite-conduct.pdf \
