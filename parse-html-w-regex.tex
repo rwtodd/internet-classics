@@ -8,9 +8,14 @@
 \font\bfit=cmbxti10%
 \def\rayz#1#2{\llap{\raise #1\hbox{#2}}}%
 \def\rayzl#1#2{\llap{\raise #1\hbox{\lil #2}}}%
+\def\rayzb#1#2{\llap{\raise #1\hbox{\pmb{#2}}}}%
 \def\strike#1{\rlap{\raise 0.7ex\hbox{\vrule height 0.5pt width #1}}}%
 \def\graybox#1{\rlap{\special{color push rgb 0.8 0.8 0.8}%
 \lower 2pt\hbox{\vrule height 2ex width #1}\special{color pop}}}
+\def\pmb#1{\setbox0=\hbox{#1}%
+\kern-.01em\copy0\kern-\wd0%
+\kern.05em\copy0\kern-\wd0%
+\kern-.01em\raise.0333em\box0}%
 %\newbox\crazybox % ... maybe don't need crazybox after all
 %\def\mkcrazy#1{\setbox\crazybox=\hbox{#1}\dp\crazybox=0pt\ht\crazybox=0pt\leavevmode\copy\crazybox}%
 \centerline{\bf You Can't Parse HTML with Regex}
@@ -63,7 +68,6 @@ $\dot{\rm c}$\rayz{1pt}{$\hat{\phantom{c}}$}\rayzl{8pt}{h}%
 o\rayz{-1pt}{$^{{}^\varsigma}$}\rayzl{8pt}{m}%
 rrupt
 entities (like SGML entities, but
-%{\parskip=0pt\par\leavevmode\ignorespaces}
 
 \raggedright{}{\it more corrupt) a mere glimp}se
 of the world of reg{\bf ex parsers for HTML will ins}tantly transport a
@@ -74,8 +78,6 @@ parser, application and existence for all time like Visual Basic only
 worse {\it he comes he comes do not fi}ght
 h{\bf e co\rlap{\lower 1pt\hbox{\ \ \thinspace,}}mes, hi}s
 un\rayz{-1.35ex}{`}h$\overline{\rm ol}$y radia\'nc\'e
-%de{\it stroyi\rayz{-1pt}{`\thinspace$\check{}$'}%
-%\rayz{-1.5ex}{'\thinspace\thinspace$\hat{}$`}%
 de{\it stroyi\rayz{-1.5ex}{$\hat{}$\ }%
 \rayz{0pt}{`\thinspace$\check{}$\ }%
 \rayzl{0pt}{>\ \thinspace}%
@@ -113,14 +115,14 @@ lie{\bfit s of Man ALL IS LO%
 \'S\rayz{4.5pt}{$\skew6\grave{}\skew6\grave{\thinspace}$}%
 \rayz{6pt}{$\ddot{}$}%
 \rayz{8pt}{$\acute{}$}%
-\rayz{-1.6ex}{$^7\hat{\ }$}%
-\rayz{-1.5ex}{$=$}%
+\rayzb{-1.6ex}{$^7\hat{\ }$}%
+\rayzb{-1.5ex}{$=$}%
 T A}}{\bf LL IS L}OST
 the {\it po\rlap{\ \lil /}ny he come}s 
 he c\rayz{-1.9ex}{$\breve{\ }$}o\rayz{1pt}{$\underline{\phantom{co}}$}%
 m\strike{5.1em}es he co{\bf mes t\kern-1pt{\bfit he} ich}or
 permeat{\it es al}l MY
-FAC{\it E MY FACE $^o$\kern-1pt h god n{\bfit o NO NOO\rayz{1.2pt}{$_{_{\bowtie}}$}%
+FAC{\it E MY FACE $^o$\kern-1pt h god n{\bfit o NO NOO\rayzb{1.2pt}{$_{_{\bowtie}}$}%
 }}{\bf OO N}$\Theta$ 
 stop t{\sl he an\raise 2pt\hbox{$\ast$}%
 \rayz{1pt}{`}\rayz{1ex}{$\wr$}\rayzl{1ex}{$\bar{\thinspace}$}\rayzl{2.2ex}{m}%
@@ -136,13 +138,64 @@ s}\graybox{2.5em}
 r\rayz{-2pt}{$^{^{\times}}$}\rayz{0pt}{$^{^{\wr}}$}\rayz{1.0ex}{$\ddot{\thinspace}$}%
 \rayz{1.3ex}{$\acute{\thinspace}^{\hat{}}$}%
 e} n{\bf ot
-re\rayz{0pt}{$\grave{\phantom{e}}$}\rayzl{1.5ex}{u}\rayz{1ex}{$\hat{\thinspace}$}%
-a\rayzl{1.2ex}{c\thinspace}%
-\~l\rayzl{2.3ex}{e}\rayz{2.2ex}{$^{^{\wr}}$}%
-\rayz{0ex}{$\skew9_{_{\vdash}}$}\rayz{-0.4ex}{$\skew9_{_{\perp}}$}\rayz{-1ex}{$\skew9_{_{\dashv}}$}
-ZALGO IS T}ONy
-TH{\bf E PONY HE COME}S
+re\rayzb{0pt}{$\grave{\phantom{e}}$}\rayzl{1.5ex}{\pmb{u}}\rayzb{1ex}{$\hat{\thinspace}$}%
+a\rayzl{1.2ex}{\pmb{c\thinspace}}%
+\~l\rayzl{2.3ex}{\pmb{e}}\rayzb{2.2ex}{$^{^{\wr}}$}%
+\rayzb{0ex}{$\skew9_{_{\vdash}}$}\rayzb{-0.4ex}{$\skew9_{_{\perp}}$}\rayzb{-1ex}{$\skew9_{_{\dashv}}$}
+Z\~A\rayz{1.5ex}{/\thinspace}\rlap{\kern-2pt,}L\rayzb{0pt}{$\widetilde{\phantom{AL}}$}%
+G\rlap{\kern-1.8pt'}O
+IS\rayzb{-1pt}{$\check{\phantom{S}}$}\rayzb{1pt}{$\hat{\phantom{S}}$}%
+\ \rayzb{-1ex}{$\frown$}\rayzb{-2ex}{''}\rayzb{-2ex}{$<$}\rayzb{-3ex}{$\dashv$}%
+T\rayz{-1.5ex}{$\hat{}$\ }%
+\rayz{0pt}{`\thinspace$\check{}$\ }%
+\rayzl{0pt}{>\ \thinspace}%
+\rayzl{3pt}{<}%
+}O\rayz{-1ex}{=\thinspace}\rayz{-3pt}{,\hskip 1.5pt}\rayzb{-1ex}{$_{_{\sqcup}}$}%
+\rayzb{-3.5ex}{$\grave{\thinspace}$\thinspace}%
+\c{N}\rlap{\kern-2pt $^{_{\backslash}}$}\=y\rayzb{-1.5ex}{=}
+TH\rayzb{-2pt}{$_{_{\dashv}}$}{\bf
+\"E\rayzb{2pt}{$\acute{\phantom{E}}$}\rayzb{3pt}{$^{^{^\supset}}$}%
+\rayzb{-1.6ex}{$^>\hat{\thinspace}$}
+P\rayzb{0pt}{$\widetilde{\phantom{EP}}$}\rayzb{-1ex}{$\frown$}\rayzb{-1.5ex}{$\leftrightarrow$}%
+\rayzb{-2.7ex}{$\hat{\hskip 0.8em}$}%
+O\rayzb{1.5ex}{$\neg$}%
+N\rayzb{1pt}{$\dot{\phantom{N}}$}\rayzb{0.5pt}{$^{^\smile}$}%
+Y \rayzb{-1.5ex}{$\acute{\ }$\thinspace}%
+H\rlap{\kern -3pt\rm /}\rayzb{-1.5ex}{$\acute{\ }$}%
+\rayzb{1.7ex}{\lil c\hskip2pt}\rayzb{1.8ex}{$\sim$}\rayz{1.5ex}{$^{^{\bar{x}}}$}%
+\rayzb{-1.5ex}{$\sqcap$\thinspace}\rayzb{-2.8ex}{$\hat{\phantom{H}}$}%
+\c{E}\rayzb{-2.7ex}{$\check{\phantom{E}}$}\rayzb{-2.1ex}{$\imath$\thinspace}%
+\rayzb{1.6ex}{\lil \"s\hskip 2pt}\rayzb{3pt}{$\acute{\phantom{E}}$}\rayzb{5pt}{$\grave{\phantom{E}}$}
+\rayz{-1ex}{\bf \c{x}}\rayzb{-3.3ex}{$\hat{\ }$\hskip 2pt}\rayzb{-3.7ex}{$\hat{\ }$\hskip 2pt}%
+\rayzb{1.3ex}{\lil u}\rayzb{2.0ex}{\lil s}\rayzb{2.7ex}{\lil r}%
+C\rayz{0pt}{\bf -\hskip 6.5pt}\rlap{\raise 1.3pt\hbox{\kern -2pt\lil /}}%
+\rayzb{1.7ex}{\lil \"t\hskip2pt}\rayzb{2.5ex}{\lil i\hskip2pt}\rayzb{3.0ex}{\lil v\hskip2pt}%
+\rayzb{-2pt}{$_\vdash$}\rayzb{-1.3ex}{\lil =}\rayzb{-1.8ex}{$_\perp$}%
+\rayzb{-3.9ex}{$^>\hat{\thinspace}$}%
+O\rayzb{-2ex}{---\thinspace}%
+\rayzb{0pt}{$\check{\phantom{O}}$}% frown sqcap perp leftrightarrow
+\rayzb{-2pt}{$_\frown$}\rayzb{-5pt}{$_\sqcap$}\rayzb{-9pt}{$_\perp$}\rayzb{-12pt}{$_\leftrightarrow$}%
+M\rayz{-1.1ex}{\tt -\ }%
+\rayz{-1pt}{`\ }%
+\rayzb{1.3ex}{\lil h\ }\rayzb{2.0ex}{\lil d\ }\rayzb{2.7ex}{\lil r\ }%
+\rayzb{1.4ex}{$^{^{\neg}}$\thinspace}%
+E\rayzb{-1ex}{$\smile$\thinspace}%
+\rayzb{-2pt}{$_\div$}%
+\rayzb{-6pt}{$_+$}%
+\rayzb{-10pt}{$_\star$\hskip 1pt}%
+\rayzb{-13pt}{$_{_\top}$}%
+\rayzb{-1pt}{$^{^{\frown}}$}%
+\rayzb{1.8ex}{\lil d\thinspace}%
+\rayzb{4pt}{$^{^{\approx}}$}%
+}\c{S}\rayzb{1.6ex}{$\smile$\thinspace}%
+\rayzl{1.8ex}{x}\rayzl{2.2ex}{=}\rayz{5pt}{$^{^\zeta}$}%
+\rayz{-1pt}{$_{_{\circ}}$}%
+\rayz{-4pt}{$_{_{\varpi}}$}%
+\rayz{-7pt}{$_{_{\tau}}$}%
+\rayz{-11pt}{$_{_{\hat{\hskip 2pt}}}$}%
+\rayz{-11pt}{$_{_{\imath}}$}%
 
+\medskip
 \parskip 10pt plus 4pt minus 4pt\parindent=0pt%
 Have you tried using an XML parser instead?
 
