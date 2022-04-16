@@ -1,0 +1,263 @@
+% An early Java(TM) whitepaper
+\newcount\chapcnt \chapcnt=0\newcount\seccnt \seccnt=0%
+\newcount\subseccnt \subseccnt=0%
+\def\tmk{$^{\rm TM}$}%
+\def\Java{Java\tmk}\def\HotJava{HotJava\tmk}%
+\def\chapter#1.{\seccnt=0\subseccnt=0\advance\chapcnt by1%
+\bigbreak\centerline{\bf Chapter \the\chapcnt: #1}}%
+\def\section#1.{\subseccnt=0\advance\seccnt by1%
+\medbreak\noindent{\bf \the\chapcnt.\the\seccnt: #1}\par\noindent\ignorespaces}%
+\def\subsection#1.{\advance\subseccnt by1%
+\medbreak\noindent{\bf \the\chapcnt.\the\seccnt.\the\subseccnt: #1}\par\noindent\ignorespaces}%
+\def\heading#1.{\medbreak\noindent{\bf #1}\par\noindent\ignorespaces}%
+\def\bitem{\item{$\bullet$}}%
+%
+\centerline{\bf The Java Language Environment White Paper}
+\centerline{May 1996}
+\centerline{James Gosling}
+\centerline{Henry McGilton}
+\chapter Introduction to \Java~Technology.
+{\medbreak\narrower\obeylines
+The Next Stage of the Known,
+Or a Completely New Paradigm?
+\hskip 1in Taiichi Sakaiya --- {\sl The Knowledge-Value Revolution}\medbreak}
+
+\heading The Software Developer's Burden. Imagine you're a software application
+developer. Your programming language of choice (or the language that's been
+foisted on you) is C or C++. You've been at this for quite a while and your job
+doesn't seem to be getting any easier. These past few years you've seen the
+growth of multiple incompatible hardware architectures, each supporting
+multiple incompatible operating systems, with each platform operating with one
+or more incompatible graphical user interfaces. Now you're supposed to cope
+with all this and make your applications work in a distributed client-server
+environment. The growth of the Internet, the World-Wide Web, and ``electronic
+commerce'' have introduced new dimensions of complexity into the development
+process.
+
+The tools you use to develop applications don't seem to help you much. You're
+still coping with the same old problems; the fashionable new object-oriented
+techniques seem to have added new problems without solving the old ones. You
+say to yourself and your friends, ``There has to be a better way!''
+
+\heading The Better Way is Here Now. Now there is a better way --- the \Java{}
+programming language platform from Sun Microsystems. Imagine, if you will, this
+development world $\ldots$
+{\medbreak\narrower
+\bitem Your programming language is object oriented, yet it's still dead simple.
+\bitem Your development cycle is much faster because Java technology is
+interpreted. The compile-link-load-test-crash-debug cycle is obsolete---now you
+just compile and run.
+\bitem Your applications are portable across multiple platforms. Write your
+applications once, and you never need to port them---they
+will run without modification on multiple operating systems and hardware
+architectures.
+\bitem Your applications are robust because the Java runtime environment
+manages memory for you.
+\bitem Your interactive graphical applications have high performance because
+multiple concurrent threads of activity in your application are supported by
+the multithreading built into the Java programming language and runtime
+platform.
+\bitem Your applications are adaptable to changing environments because you can
+dynamically download code modules from anywhere on the network.
+\bitem Your end users can trust that your applications are secure, even though
+they're downloading code from all over the Internet; the Java runtime
+environment has built-in protection against viruses and tampering.
+\medbreak}
+\noindent You don't need to dream about these features. They're here now. The
+Java programming language platform provides a portable, interpreted,
+high-performance, simple, object-oriented programming language and supporting
+run-time environment. This introductory chapter provides you with a brief look
+at the main design goals of the Java system; the remainder of this paper
+examines the features of Java in more detail.
+
+The last chapter of this paper describes the \HotJava~Browser. The HotJava
+Browser is an innovative World-Wide Web browser, and the first major
+applications written using the Java platform. It is the first browser to
+dynamically download and execute Java code fragments from anywhere on the
+Internet, and can do so in a secure manner.
+
+\section Beginnings of the \Java~Programming Language Project.
+The \Java~programming language is designed to meet the challenges of
+application development in the context of heterogeneous, network-wide
+distributed environments. Paramount among these challenges is secure delivery
+of applications that consume the minimum of system resources, can run on any
+hardware and software platform, and can be extended dynamically.
+
+The Java programming language originated as part of a research project to
+develop advanced software for a wide variety of network devices and embedded
+systems. The goal was to develop a small, reliable, portable, distributed,
+real-time operating platform. When the project started, C++ was the language of
+choice. But over time the difficulties encountered with C++ grew to the point
+where the problems could best be addressed by creating an entirely new language
+platform. Design and architecture decisions drew from a variety of languages
+such as Eiffel, SmallTalk, Objective C, and Cedar/Mesa. The result is a
+language platform that has proven ideal for developing secure, distributed,
+network-based end-user applications in environments ranging from
+network-embedded devices to the World-Wide Web and the desktop.
+
+\section Design Goals of the \Java~Programming Language.
+The design requirements of the JavaTM programming language are driven by the
+nature of the computing environments in which software must be deployed. The
+massive growth of the Internet and the World-Wide Web leads us to a completely
+new way of looking at development and distribution of software. To live in the
+world of electronic commerce and distribution, Java technology must enable the
+development of secure, high performance, and highly robust applications on
+multiple platforms in heterogeneous, distributed networks.
+
+Operating on multiple platforms in heterogeneous networks invalidates the
+traditional schemes of binary distribution, release, upgrade, patch, and so on.
+To survive in this jungle, the Java programming language must be architecture
+neutral, portable, and dynamically adaptable.
+
+The system that emerged to meet these needs is simple, so it can be easily
+programmed by most developers; familiar, so that current developers can easily
+learn the Java programming language; object oriented, to take advantage of
+modern software development methodologies and to fit into distributed
+client-server applications; multithreaded, for high performance in applications
+that need to perform multiple concurrent activities, such as multimedia; and
+interpreted, for maximum portability and dynamic capabilities.
+
+Together, the above requirements comprise quite a collection of buzzwords, so
+let's examine some of them and their respective benefits before going on.
+
+\subsection Simple, Object Oriented, and Familiar. Primary characteristics of
+the Java programming language include a simple language that can be programmed
+without extensive programmer training while being attuned to current software
+practices. The fundamental concepts of Java technology are grasped quickly;
+programmers can be productive from the very beginning.
+
+The Java programming language is designed to be object oriented from the ground
+up. Object technology has finally found its way into the programming mainstream
+after a gestation period of thirty years. The needs of distributed,
+client-server based systems coincide with the encapsulated, message-passing
+paradigms of object-based software. To function within increasingly complex,
+network-based environments, programming systems must adopt object-oriented
+concepts. Java technology provides a clean and efficient object-based
+development platform.
+
+Programmers using the Java programming language can access existing libraries
+of tested objects that provide functionality ranging from basic data types
+through I/O and network interfaces to graphical user interface toolkits. These
+libraries can be extended to provide new behavior.
+
+Even though C++ was rejected as an implementation language, keeping the Java
+programming language looking like C++ as far as possible results in it being a
+familiar language, while removing the unnecessary complexities of C++. Having
+the Java programming language retain many of the object-oriented features and
+the "look and feel" of C++ means that programmers can migrate easily to the
+Java platform and be productive quickly.
+
+
+\subsection Robust and Secure. The Java programming language is designed for
+creating highly reliable software. It provides extensive compile-time checking,
+followed by a second level of run-time checking. Language features guide
+programmers towards reliable programming habits.
+
+The memory management model is extremely simple: objects are created with a {\tt new}
+operator. There are no explicit programmer-defined pointer data types, no
+pointer arithmetic, and automatic garbage collection. This simple memory
+management model eliminates entire classes of programming errors that bedevil C
+and C++ programmers. You can develop Java code with confidence that the system
+will find many errors quickly and that major problems won't lay dormant until
+after your production code has shipped.
+
+Java technology is designed to operate in distributed environments, which means
+that security is of paramount importance. With security features designed into
+the language and run-time system, Java technology lets you construct
+applications that can't be invaded from outside. In the network environment,
+applications written in the Java programming language are secure from intrusion
+by unauthorized code attempting to get behind the scenes and create viruses or
+invade file systems.
+
+\subsection Architecture Neutral and Portable.
+Java technology is designed to support applications that will be deployed into
+heterogeneous network environments. In such environments, applications must be
+capable of executing on a variety of hardware architectures. Within this
+variety of hardware platforms, applications must execute atop a variety of
+operating systems and interoperate with multiple programming language
+interfaces. To accommodate the diversity of operating environments, the Java
+Compiler\tmk~product generates bytecodes---an architecture neutral intermediate
+format designed to transport code efficiently to multiple hardware and software
+platforms. The interpreted nature of Java technology solves both the binary
+distribution problem and the version problem; the same Java programming
+language byte codes will run on any platform.
+
+Architecture neutrality is just one part of a truly portable system. Java
+technology takes portability a stage further by being strict in its definition
+of the basic language. Java technology puts a stake in the ground and specifies
+the sizes of its basic data types and the behavior of its arithmetic operators.
+Your programs are the same on every platform---there are no data type
+incompatibilities across hardware and software architectures.
+
+The architecture-neutral and portable language platform of Java technology is
+known as the Java virtual machine. It's the specification of an abstract
+machine for which Java programming language compilers can generate code.
+Specific implementations of the Java virtual machine for specific hardware and
+software platforms then provide the concrete realization of the virtual
+machine. The Java virtual machine is based primarily on the POSIX interface
+specification---an industry-standard definition of a portable system interface.
+Implementing the Java virtual machine on new architectures is a relatively
+straightforward task as long as the target platform meets basic requirements
+such as support for multithreading.
+
+\subsection High Performance.
+Performance is always a consideration. The Java platform achieves superior
+performance by adopting a scheme by which the interpreter can run at full speed
+without needing to check the run-time environment. The automatic garbage
+collector runs as a low-priority background thread, ensuring a high probability
+that memory is available when required, leading to better performance.
+Applications requiring large amounts of compute power can be designed such that
+compute-intensive sections can be rewritten in native machine code as required
+and interfaced with the Java platform. In general, users perceive that
+interactive applications respond quickly even though they're interpreted.
+
+\subsection Interpreted, Threaded, and Dynamic.
+The Java interpreter can execute Java bytecodes directly on any machine to
+which the interpreter and run-time system have been ported. In an interpreted
+platform such as Java technology-based system, the link phase of a program is
+simple, incremental, and lightweight. You benefit from much faster development
+cycles---prototyping, experimentation, and rapid development are the normal
+case, versus the traditional heavyweight compile, link, and test cycles.
+
+Modern network-based applications, such as the \HotJava~Browser for the World
+Wide Web, typically need to do several things at the same time. A user working
+with HotJava Browser can run several animations concurrently while downloading
+an image and scrolling the page. Java technology's multithreading capability
+provides the means to build applications with many concurrent threads of
+activity. Multithreading thus results in a high degree of interactivity for the
+end user.
+
+The Java platform supports multithreading at the language level with the
+addition of sophisticated synchronization primitives: the language library
+provides the Thread class, and the run-time system provides monitor and
+condition lock primitives. At the library level, moreover, Java technology's
+high-level system libraries have been written to be thread safe: the
+functionality provided by the libraries is available without conflict to
+multiple concurrent threads of execution.
+
+While the Java Compiler is strict in its compile-time static checking, the
+language and run-time system are dynamic in their linking stages. Classes are
+linked only as needed. New code modules can be linked in on demand from a
+variety of sources, even from sources across a network. In the case of the
+HotJava Browser and similar applications, interactive executable code can be
+loaded from anywhere, which enables transparent updating of applications. The
+result is on-line services that constantly evolve; they can remain innovative
+and fresh, draw more customers, and spur the growth of electronic commerce on
+the Internet.
+
+\section The Java Platform---a New Approach to Distributed Computing.
+Taken individually, the characteristics discussed above can be found in a
+variety of software development platforms. What's completely new is the manner
+in which Java technology and its runtime environment have combined them to
+produce a flexible and powerful programming system.
+
+Developing your applications using the Java programming language results in
+software that is portable across multiple machine architectures, operating
+systems, and graphical user interfaces, secure, and high performance. With Java
+technology, your job as a software developer is much easier---you focus your
+full attention on the end goal of shipping innovative products on time, based
+on the solid foundation of the Java platform. The better way to develop
+software is here, now, brought to you by the Java platform.
+
+\bye
+
