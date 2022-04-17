@@ -5,22 +5,24 @@
 \def\Java{Java\tmk}\def\HotJava{HotJava\tmk}%
 \def\chapter#1.{\seccnt=0\subseccnt=0\advance\chapcnt by1%
 \bigbreak\centerline{\bf Chapter \the\chapcnt: #1}}%
+\def\\{\hfil\break}%
+\def\chapquote#1#2{{\medbreak\narrower\noindent#1\smallskip\hskip 0.5in--- #2\medbreak}}%
 \def\section#1.{\subseccnt=0\advance\seccnt by1%
 \medbreak\noindent{\bf \the\chapcnt.\the\seccnt: #1}\par\noindent\ignorespaces}%
 \def\subsection#1.{\advance\subseccnt by1%
 \medbreak\noindent{\bf \the\chapcnt.\the\seccnt.\the\subseccnt: #1}\par\noindent\ignorespaces}%
 \def\heading#1.{\medbreak\noindent{\bf #1}\par\noindent\ignorespaces}%
 \def\bitem{\item{$\bullet$}}%
+\def\oneliner#1{\begingroup\medbreak\narrower\tt #1\medbreak\endgroup}%
+\catcode`\|=13 \def|{\begingroup\tt\def|{\endgroup}}%
 %
 \centerline{\bf The Java Language Environment White Paper}
 \centerline{May 1996}
 \centerline{James Gosling}
 \centerline{Henry McGilton}
 \chapter Introduction to \Java~Technology.
-{\medbreak\narrower\obeylines
-The Next Stage of the Known,
-Or a Completely New Paradigm?
-\hskip 1in Taiichi Sakaiya --- {\sl The Knowledge-Value Revolution}\medbreak}
+\chapquote{The Next Stage of the Known,\\
+Or a Completely New Paradigm?}{Taiichi Sakaiya, {\sl The Knowledge-Value Revolution}}
 
 \heading The Software Developer's Burden. Imagine you're a software application
 developer. Your programming language of choice (or the language that's been
@@ -258,6 +260,291 @@ technology, your job as a software developer is much easier---you focus your
 full attention on the end goal of shipping innovative products on time, based
 on the solid foundation of the Java platform. The better way to develop
 software is here, now, brought to you by the Java platform.
+
+\chapter Java---Simple and Familiar.
+\chapquote{You know you've achieved perfection in design,\\
+Not when you have nothing more to add,\\
+But when you have nothing more to take away.}{Antoine de Saint Exupery}
+
+\noindent In his science-fiction novel, {\sl The Rolling Stones}, Robert~A.~Heinlein comments:
+
+Every technology goes through three stages: first a crudely simple and quite
+unsatisfactory gadget; second, an enormously complicated group of gadgets
+designed to overcome the shortcomings of the original and achieving thereby
+somewhat satisfactory performance through extremely complex compromise; third,
+a final proper design therefrom.
+
+Heinlein's comment could well describe the evolution of many programming
+languages. Java presents a new viewpoint in the evolution of programming
+languages---creation of a small and simple language that's still sufficiently
+comprehensive to address a wide variety of software application development.
+Although Java is superficially similar to C and C++, Java gained its simplicity
+from the systematic removal of features from its predecessors. This chapter
+discusses two of the primary design features of Java, namely, it's simple (from
+removing features) and familiar (because it looks like C and C++). The next
+chapter discusses Java's object-oriented features in more detail. At the end of
+this chapter you'll find a discussion on features eliminated from C and C++ in
+the evolution of Java.
+
+\heading Design Goals.
+Simplicity is one of Java's overriding design goals. Simplicity and removal of
+many ``features'' of dubious worth from its C and C++ ancestors keep Java
+relatively small and reduce the programmer's burden in producing reliable
+applications. To this end, Java design team examined many aspects of the
+``modern'' C and C++ languages1 to determine features that could be eliminated in
+the context of modern object-oriented programming.
+
+Another major design goal is that Java look familiar to a majority of
+programmers in the personal computer and workstation arenas, where a large
+fraction of system programmers and application programmers are familiar with C
+and C++. Thus, Java ``looks like'' C++. Programmers familiar with C, Objective C,
+C++, Eiffel, Ada, and related languages should find their Java language
+learning curve quite short---on the order of a couple of weeks.
+
+To illustrate the simple and familiar aspects of Java, we follow the tradition
+of a long line of illustrious programming books by showing you the |HelloWorld|
+program. It's about the simplest program you can write that actually does
+something. Here's |HelloWorld| implemented in Java.
+{\medbreak\narrower\obeylines\obeyspaces\tt
+class HelloWorld $\{$
+\hskip 0.3in static public void main(String args[]) $\{$
+\hskip 0.6in    System.out.println("Hello world!");
+\hskip 0.3in $\}$
+$\}$\medbreak}
+\noindent This example declares a class named |HelloWorld|. Classes are discussed
+in the next chapter on object-oriented programming, but in general we assume
+the reader is familiar with object technology and understands the basics of
+classes, objects, instance variables, and methods.
+
+Within the |HelloWorld| class, we declare a single method called |main()| which in
+turn contains a single method invocation to display the string ``Hello world!''
+on the standard output. The statement that prints ``Hello world!'' does so by
+invoking the |println| method of the |out|~object. The |out|~object is a class
+variable in the |System| class that performs output operations on files. That's
+all there is to |HelloWorld|.
+
+\section Main Features of the \Java~Programming Language.
+The JavaTM programming language follows C++ to some degree, which carries the
+benefit of it being familiar to many programmers. This section describes the
+essential features of the Java programming language and points out where the
+language diverges from its ancestors C and C++.
+
+\subsection Primitive Data Types.
+Other than the primitive data types discussed here, everything in the Java
+programming language is an object. Even the primitive data types can be
+encapsulated inside library-supplied objects if required. The Java programming
+language follows C and C++ fairly closely in its set of basic data types, with
+a couple of minor exceptions. There are only three groups of primitive data
+types, namely, numeric types, character types, and Boolean types.
+
+{\bf Numeric Data Types.} Integer numeric types are 8-bit byte, 16-bit short,
+32-bit int, and 64-bit long. The 8-bit byte data type in Java has replaced the
+old C and C++ char data type. Java places a different interpretation on the
+char data type, as discussed below.
+
+There is no unsigned type specifier for integer data types in Java.
+
+Real numeric types are 32-bit float and 64-bit double. Real numeric types and
+their arithmetic operations are as defined by the IEEE 754 specification. A
+floating point literal value, like 23.79, is considered double by default; you
+must explicitly cast it to float if you wish to assign it to a float variable.
+
+{\bf Character Data Types.} Java language character data is a departure from
+traditional C. Java's char data type defines a sixteen-bit Unicode character.
+Unicode characters are unsigned 16-bit values that define character codes in
+the range 0 through 65,535. If you write a declaration such as
+\oneliner{char  myChar = 'Q';}
+\noindent you get a Unicode (16-bit unsigned value) type initialized to the
+Unicode value of the character Q. By adopting the Unicode character set
+standard for its character data type, Java language applications are amenable
+to internationalization and localization, greatly expanding the market for
+world-wide applications.
+
+{\bf Boolean Data Types.} Java added a Boolean data type as a primitive type,
+tacitly ratifying existing C and C++ programming practice, where developers
+define keywords for TRUE and FALSE or YES and NO or similar constructs. A Java
+boolean variable assumes the value true or false. A Java programming language
+boolean is a distinct data type; unlike common C practice, a Java programming
+language boolean type can't be converted to any numeric type.
+
+\subsection Arithmetic and Relational Operators.
+All the familiar C and C++ operators apply. The Java programming language has
+no unsigned data types, so the >>> operator has been added to the language to
+indicate an unsigned (logical) right shift. Java also uses the + operator for
+string concatenation; concatenation is covered below in the discussion on
+strings.
+
+\subsection Arrays.
+In contrast to C and C++, the Java programming language arrays are first-class
+language objects. An array in the Java programming language is a real object
+with a run-time representation. You can declare and allocate arrays of any
+type, and you can allocate arrays of arrays to obtain multi-dimensional arrays.
+
+You declare an array of, say, Points (a class you've declared elsewhere) with a
+declaration like this:
+\oneliner{Point  myPoints[];}
+\noindent This code states that myPoints is an uninitialized array of Points.
+At this time, the only storage allocated for myPoints is a reference handle. At
+some future time you must allocate the amount of storage you need, as in:
+\oneliner{myPoints = new Point[10];}
+\noindent to allocate an array of ten references to Points that are initialized
+to the null reference. Notice that this allocation of an array doesn't actually
+allocate any objects of the Point class for you; you will have to also allocate
+the Point objects, something like this:
+{\medbreak\narrower\obeylines\obeyspaces\tt
+int  i;
+    
+for (i = 0;  i < 10;  i++) $\{$
+\hskip 0.3in myPoints[i] = new Point();
+$\}$\medbreak}
+\noindent Access to elements of myPoints can be performed via normal C-style
+indexing, but all array accesses are checked to ensure that their indices are
+within the range of the array. An exception is generated if the index is
+outside the bounds of the array.
+
+The length of an array is stored in the length instance variable of the
+specific array: myPoints.length contains the number of elements in myPoints.
+For instance, the code fragment:
+\oneliner{howMany = myPoints.length;}
+\noindent would assign the value 10 to the howMany variable.
+
+The C notion of a pointer to an array of memory elements is gone, and with it,
+the arbitrary pointer arithmetic that leads to unreliable code in C. No longer
+can you walk off the end of an array, possibly trashing memory and leading to
+the famous "delayed-crash" syndrome, where a memory-access violation today
+manifests itself hours or days later. Programmers can be confident that array
+checking in Java will lead to more robust and reliable code.
+
+\subsection Strings.
+Strings are Java programming language objects, not pseudo-arrays of characters
+as in C. There are actually two kinds of string objects: the String class is
+for read-only (immutable) objects. The StringBuffer class is for string objects
+you wish to modify (mutable string objects).
+
+Although strings are Java programming language objects, Java compiler follows
+the C tradition of providing a syntactic convenience that C programmers have
+enjoyed with C-style strings, namely, the Java compiler understands that a
+string of characters enclosed in double quote signs is to be instantiated as a
+String object. Thus, the declaration:
+\oneliner{String hello = "Hello world!";}
+\noindent instantiates an object of the String class behind the scenes and
+initializes it with a character string containing the Unicode character
+representation of "Hello world!".
+
+Java technology has extended the meaning of the + operator to indicate string
+concatenation. Thus you can write statements like:
+\oneliner{System.out.println("There are " + num + " characters in the file.");}
+\noindent This code fragment concatenates the string "There are " with the
+result of converting the numeric value num to a string, and concatenates that
+with the string " characters in the file.". Then it prints the result of those
+concatenations on the standard output.
+
+String objects provide a length() accessor method to obtain the number of
+characters in the string.
+
+\subsection Multi-Level Break.
+The Java programming language has no goto statement. To break or continue
+multiple-nested loop or switch constructs, you can place labels on loop and
+switch constructs, and then break out of or continue to the block named by the
+label. Here's a small fragment of code from the Java programming language
+built-in String class:
+{\medbreak\narrower\obeylines\tt
+test:  for (int i = fromIndex; i + max1 <= max2; i++) $\{$
+\hskip 0.6in if (charAt(i) == c0) $\{$
+\hskip 0.9in for (int k = 1; k<max1; k++) $\{$
+\hskip 1.2in if (charAt(i+k) != str.charAt(k)) $\{$
+\hskip 1.5in continue test;
+\hskip 1.2in $\}$
+\hskip 0.9in $\}$  /*  end of inner for loop  */
+\hskip 0.6in $\}$
+\hskip 0.3in $\}$ /*  end of outer for loop  */
+\medbreak}
+\noindent The continue test statement is inside a for loop nested inside
+another for loop. By referencing the label test, the continue statement passes
+control to the outer for statement. In traditional C, continue statements can
+only continue the immediately enclosing block; to continue or exit outer
+blocks, programmers have traditionally either used auxiliary Boolean variables
+whose only purpose is to determine if the outer block is to be continued or
+exited; alternatively, programmers have (mis)used the goto statement to exit
+out of nested blocks. Use of labelled blocks in the Java programming language
+leads to considerable simplification in programming effort and a major
+reduction in maintenance.
+
+The notion of labelled blocks dates back to the mid-1970s, but it hasn't caught
+on to any large extent in modern programming languages. Perl is another modern
+programming language that implements the concept of labelled blocks. Perl's
+next label and last label are equivalent to continue label and break label
+statements in Java.
+
+\subsection Memory Management and Garbage Collection.
+C and C++ programmers are by now accustomed to the problems of explicitly
+managing memory: allocating memory, freeing memory, and keeping track of what
+memory can be freed when. Explicit memory management has proved to be a
+fruitful source of bugs, crashes, memory leaks, and poor performance.
+
+Java technology completely removes the memory management load from the
+programmer. C-style pointers, pointer arithmetic, malloc, and free do not
+exist. Automatic garbage collection is an integral part of Java and its
+run-time system. While Java technology has a new operator to allocate memory
+for objects, there is no explicit free function. Once you have allocated an
+object, the run-time system keeps track of the object's status and
+automatically reclaims memory when objects are no longer in use, freeing memory
+for future use.
+
+Java technology's memory management model is based on objects and references to
+objects. Java technology has no pointers. Instead, all references to allocated
+storage, which in practice means all references to an object, are through
+symbolic "handles". The Java technology memory manager keeps track of
+references to objects. When an object has no more references, the object is a
+candidate for garbage collection.
+
+Java technology's memory allocation model and automatic garbage collection make
+your programming task easier, eliminate entire classes of bugs, and in general
+provide better performance than you'd obtain through explicit memory
+management. Here's a code fragment that illustrates when garbage collection
+happens:
+{\medbreak\narrower\obeylines\tt
+class ReverseString $\{$
+\hskip 0.3in public static String reverseIt(String source) $\{$
+\hskip 0.6in int i, len = source.length();
+\hskip 0.6in StringBuffer dest = new StringBuffer(len);
+
+\hskip 0.6in for (i = (len - 1); i >= 0; i--) $\{$
+\hskip 0.9in dest.appendChar(source.charAt(i));
+\hskip 0.6in $\}$
+\hskip 0.6in return dest.toString();
+\hskip 0.3in $\}$
+$\}$\medbreak}
+\noindent The variable dest is used as a temporary object reference during
+execution of the reverseIt method. When dest goes out of scope (the reverseIt
+method returns), the reference to that object has gone away and it's then a
+candidate for garbage collection.
+
+\subsection The Background Garbage Collector.
+The Java technology garbage collector achieves high performance by taking
+advantage of the nature of a user's behavior when interacting with software
+applications such as the HotJavaTM browser. The typical user of the typical
+interactive application has many natural pauses where they're contemplating the
+scene in front of them or thinking of what to do next. The Java run-time system
+takes advantage of these idle periods and runs the garbage collector in a low
+priority thread when no other threads are competing for CPU cycles. The garbage
+collector gathers and compacts unused memory, increasing the probability that
+adequate memory resources are available when needed during periods of heavy
+interactive use.
+
+This use of a thread to run the garbage collector is just one of many examples
+of the synergy one obtains from Java technology's integrated multithreading
+capabilities--an otherwise intractable problem is solved in a simple and
+elegant fashion.
+
+\subsection Integrated Thread Synchronization.
+Java technology supports multithreading, both at the language (syntactic) level
+and via support from its run-time system and thread objects. While other
+systems have provided facilities for multithreading (usually via "lightweight
+process" libraries), building multithreading support into the language itself
+provides the programmer with a much easier and more powerful tool for easily
+creating thread-safe multithreaded classes. Multithreading is discussed in more
+detail in Chapter 7.
 
 \bye
 
