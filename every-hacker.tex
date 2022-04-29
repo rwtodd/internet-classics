@@ -9,9 +9,9 @@
 \def\RSTTT/{\acro{RS-232}}%
 \def\title#1{\leavevmode\vskip 0.5in\centerline{\biggertxt #1}\par}%
 \def\subtitle#1{\medskip\centerline{\sl #1}}%
-\def\sect#1.{\bigbreak\noindent{\biggerbold #1}\par\noindent\ignorespaces}%
+\def\sect#1.{\vskip 0.5in plus 0.1in minus 0.1in\goodbreak\noindent{\biggerbold #1}\par\noindent\ignorespaces}%
 %\catcode`\|=13 \def|{\begingroup\tt\def|{\endgroup}}%
-\def\dlist#1.{\par\noindent\hangindent=3em\hangafter=1\line{#1\hfil}}%
+\def\dlist#1.{\vskip0.7ex plus 0.05ex minus 0.05ex\goodbreak\noindent\hangindent=2em\hangafter=1\line{#1\hfil}}%
 %
 %
 %
@@ -31,7 +31,7 @@ quietly evaporates. It can be difficult to notice that this has happened.
 This document began as a collection of facts about \ASCII/ and related
 technologies, notably hardware serial terminals and \RSTTT/ and modems. This is
 lore that was at one time near-universal and is no longer. It's not likely to
-be directly useful today---until you trip over some piece of still-functioning
+be directly useful today  ---  until you trip over some piece of still-functioning
 technology where it's relevant (like a \acro{GPS} puck), or it makes sense of some
 old-fart war story. Even so, it's good to know anyway, for cultural-literacy
 reasons.
@@ -60,16 +60,16 @@ For most hackers that transition took place within a few years of 1992 -
 perhaps somewhat earlier if you had access to then-expensive workstation
 hardware.
 
-Before then there were video display terminals---\acro{VDT}s for short. In the
+Before then there were video display terminals --- \acro{VDT}s for short. In the
 mid-1970s these had displaced an earlier generation of printing terminals
-derived from really old technology called a ``teletype,'' which had evolved
+derived from {\bf really} old technology called a ``teletype,'' which had evolved
 around 1900 from Victorian telegraph networks. The very earliest versions of
 \UNIX/ in the late 1960s were written for these printing terminals, in particular
 for the Teletype Model 33 (aka \acro{ASR-33}); the ``tty'' that shows up in \UNIX/ device
 names was a then-common abbreviation for ``teletype.''
 
 (This is not the only \UNIX/ device name that is a fossil from a bygone age.
-There's also /dev/lp for the system default printer; every hacker once knew
+There's also {\tt /dev/lp} for the system default printer; every hacker once knew
 that the ``lp'' stood for ``line printer,'' a type of line-at-a-time
 electromechanical printer associated with mainframe computers of roughly the
 same vintage as the \acro{ASR-33}.)
@@ -100,7 +100,7 @@ fewer traces in current technology and its folklore. This is because the
 lineage of modern \UNIX/ passes back through a now-forgotten hardware category
 called a ``minicomputer,'' especially minicomputers made by the Digital Equipment
 Corporation. \ASCII/, \RSTTT/ and serial terminals were part of the technology
-cluster around minicomputers---as was, for that matter, \UNIX/ itself.
+cluster around minicomputers --- as was, for that matter, \UNIX/ itself.
 
 Minicomputers were wiped out by workstations and workstations by descendants of
 the \acro{IBM PC}, but many hackers old enough to remember the minicomputer era
@@ -114,17 +114,17 @@ timesharing and often supporting a dozen simultaneous users, had less than
 available as a low-end smartphone does in 2017.
 
 In fact, until well into the 1980s microcomputers ran slowly enough (and had
-poor enough \acro{RF} shielding) that this was common knowledge: you could put an \acro{AM}
-radio next to one and get a clue when it was doing something unusual, because
-either fundamentals or major subharmonics of the clock frequencies were in the
-20Hz to 20KHz range of human audibility. Nothing has run that slowly since the
-turn of the 21st century.
+poor enough \acro{RF} shielding) that {\bf this} was common knowledge: you
+could put an \acro{AM} radio next to one and get a clue when it was doing
+something unusual, because either fundamentals or major subharmonics of the
+clock frequencies were in the 20Hz to 20KHz range of human audibility. Nothing
+has run {\bf that} slowly since the turn of the 21st century.
 
 \sect The Strange Afterlife of the Hayes Smartmodem.
 About those modems: the word is a portmanteau for ``modulator/demodulator.''
-Modems allowed digital signals to pass over copper phone wires---ridiculously
+Modems allowed digital signals to pass over copper phone wires --- ridiculously
 slowly by today's standards, but that's how we did our primitive wide-area
-networking in pre-Internet times. It was not generally known back then that
+networking in pre-Internet times. It was {\bf not} generally known back then that
 modems had first been invented in the late 1950s for use in military
 communications, notably the \acro{SAGE} air-defense network; we just took them for
 granted.
@@ -140,7 +140,7 @@ widespread on consumer-grade computers towards the end of the modem era), but
 hackers avoided them because being located inside the case made them vulnerable
 to \acro{RF} noise, and the blinkenlights on an outboard were useful for diagnosing
 problems. Also, most hackers learned to interpret (at least to some extent)
-modem song---the outboards made while attempting to establish a connection. The
+modem song --- the outboards made while attempting to establish a connection. The
 happy song of a successful connect was identifiably different from various sad
 songs of synchronization failure.
 
@@ -165,7 +165,7 @@ the modem over its serial link from the machine. Every hacker used to know the
 number would dial the number. Other modem manufacturers copied the Hayes
 command set and variants of it became near universal after 1981.
 
-What was not commonly known then is that the ``{\tt AT}'' prefix had a helpful special
+What was {\bf not} commonly known then is that the ``{\tt AT}'' prefix had a helpful special
 property. That bit sequence ({\tt 1+0 1000 0010 1+0 0010 1010 1+}, where the plus
 suffix indicates one or more repetitions of the preceding bit) has a shape that
 makes it as easy as possible for a receiver to recognize it even if the
@@ -180,7 +180,7 @@ instance of Linux running in firmware on the chip itself (separately from
 whatever \acro{OS} might be running visibly on the phone).
 
 \sect Preserving Core Values.
-From about 1955 to 1975---before semiconductor memory---the dominant technology
+From about 1955 to 1975 --- before semiconductor memory --- the dominant technology
 in computer memory used tiny magnetic doughnuts strung on copper wires. The
 doughnuts were known as ``ferrite cores'' and main memory thus known as ``core
 memory'' or ``core.''
@@ -199,7 +199,7 @@ may be fading.
 
 \sect 36-bit Machines and the Persistence of Octal.
 There's a power-of-two size hierarchy in memory units that we now think of as
-normal---8 bit bytes, 16 or 32 or 64-bit words. But this did not become
+normal --- 8 bit bytes, 16 or 32 or 64-bit words. But this did not become
 effectively universal until after 1983. There was an earlier tradition of
 designing computer architectures with 36-bit words.
 
@@ -236,33 +236,33 @@ non-\ASCII/ characters including Greek letters and mathematical symbols.
 There were many different 6-bit character encodings; not only did they differ
 across a single manufacturer's machines, but some individual machines used
 multiple incompatible encodings. This is why older non-\UNIX/ minicomputers like
-the \acro{PDP-10} had a six-character limit on filenames---this allowed an entire
+the \acro{PDP-10} had a six-character limit on filenames --- this allowed an entire
 filename to be packed in a single 36-bit word. If you ever see the following
 acronyms it is a clue that you may have wandered into this swamp: \acro{SIXBIT},
 \acro{FIELDATA}, \acro{RADIX-50}, \acro{BCDIC}.\medbreak}
 \noindent It used also to be generally known that 36-bit architectures
-explained some unfortunate features of the C language. The original \UNIX/
+explained some unfortunate features of the \CEE/~language. The original \UNIX/
 machine, the \acro{PDP-7}, featured 18-bit words corresponding to half-words on larger
 36-bit computers. These were more naturally represented as six octal (3-bit)
 digits.
 
-The immediate ancestor of C was an interpreted language written on the \acro{PDP-7}
-and named B. In it, a numeric literal beginning with 0 was interpreted as
+The immediate ancestor of \CEE/ was an interpreted language written on the \acro{PDP-7}
+and named \acro{B}. In it, a numeric literal beginning with 0 was interpreted as
 octal.
 
 The \acro{PDP-7}'s successor, and the first workhorse \UNIX/ machine was the \acro{PDP-11}
-(first shipped in 1970). It had 16-bit words---but, due to some unusual
+(first shipped in 1970). It had 16-bit words --- but, due to some unusual
 peculiarities of the instruction set, octal made more sense for its machine
-code as well. C, first implemented on the \acro{PDP-11}, thus inherited the B octal
+code as well. \CEE/, first implemented on the \acro{PDP-11}, thus inherited the B octal
 syntax. And extended it: when an in-string backslash has a following digit,
 that was expected to lead an octal literal.
 
 The Interdata 32, \acro{VAX}, and other later \UNIX/ platforms didn't have those
-peculiarities; their opcodes expressed more naturally in hex. But C was never
+peculiarities; their opcodes expressed more naturally in hex. But \CEE/ was never
 adjusted to prefer hex, and the surprising interpretation of leading 0 wasn't
 removed.
 
-Because many later languages (Java, Python, etc) copied C's low-level lexical
+Because many later languages (Java, Python, etc) copied \CEE/'s low-level lexical
 rules for compatibility reasons, the relatively useless and sometimes dangerous
 octal syntax besets computing platforms for which three-bit opcode fields are
 wildly inappropriate, and may never be entirely eradicated.
@@ -277,7 +277,7 @@ octets). You get your data as fast as the network can run, and error
 detection/correction is done somewhere down below the layer you can see.
 
 \RSTTT/ was not like that. Two devices speaking it had to agree on a common line
-speed---also on how the byte framing works (the latter is why you'll see
+speed --- also on how the byte framing works (the latter is why you'll see
 references to ``stop bits'' in related documentation). Finally, error detection
 and correction was done in-stream, sort of. \RSTTT/ devices almost always spoke
 \ASCII/, and used the fact that \ASCII/ only filled 7 bits. The top bit might be,
@@ -285,11 +285,11 @@ but was not always, used as a parity bit for error detection. If not used, the
 top bit could carry data.
 
 You had to set your equipment at both ends for a specific combination of all of
-these. After about 1984 anything other than ``8N1''---eight bits, no parity, one
-stop bit---became increasingly rare. Before that, all kinds of weird
+these. After about 1984 anything other than ``8N1'' --- eight bits, no parity, one
+stop bit --- became increasingly rare. Before that, all kinds of weird
 combinations were in use. Even parity (``E'') was more common than odd (``O'') and
 1 stop bit more common than 2, but you could see anything come down a wire.
-And if you weren't properly set up for it, all you got was ``baud barf''---random
+And if you weren't properly set up for it, all you got was ``baud barf'' --- random
 8-bit garbage rather than the character data you were expecting.
 
 This, in particular, is one reason the \acro{API} for the \acro{POSIX}/\UNIX/ terminal
@@ -298,13 +298,13 @@ modern-day function. It had to be able to manipulate all these settings, and
 more.
 
 Another consequence was that passing binary data over an \RSTTT/ link wouldn't
-work if parity was enabled---the high bits would get clobbered. Other
+work if parity was enabled --- the high bits would get clobbered. Other
 now-forgotten wide-area network protocols reacted even worse, treating in-band
-characters with 0x80 on as control codes with results ranging from amusing to
+characters with {\tt 0x80} on as control codes with results ranging from amusing to
 dire. We had a term, ``8-bit clean,'' for networks and software that didn't
-clobber the 0x80 bit. And we needed that term…
+clobber the {\tt 0x80}~bit. And we {\bf needed} that term $\ldots$
 
-The fragility of the 0x80 bit back in those old days is the now largely
+The fragility of the {\tt 0x80}~bit back in those old days is the now largely
 forgotten reason that the \acro{MIME} encoding for email was invented (and within it
 the well-known \acro{MIME64} encoding). Even the version of \acro{SMTP} current as I write
 (RFC 5321) is still essentially a 7-bit protocol, though modern end points can
@@ -327,7 +327,7 @@ had a very different connector) before those too were obsolesced by \acro{USB} a
 Ethernet.
 
 Anybody who worked with this stuff had to keep around a bunch of specialized
-hardware---gender changers, \acro{DB-25}-to-\acro{DB-9} adapters (and the reverse), breakout
+hardware --- gender changers, \acro{DB-25}-to-\acro{DB-9} adapters (and the reverse), breakout
 boxes, null modems, and other gear I won't describe in detail because it's left
 almost no traces in today's tech. Hackers of a certain age still tend to have
 these things cluttering their toolboxes or gathering dust in a closet
@@ -376,7 +376,7 @@ peripheral connectors labeled \RSTTT/ could have one of two different sets of
 voltage levels. If they're pins or sockets in a \acro{DB9} or \acro{DB25} shell, the voltage
 swing between 1 and 0 bits can be as much as 50 volts, and is usually about 26.
 Bare connectors on a circuit board, or chip pins, increasingly came to use
-what's called ``\acro{TTL} serial''---same signalling with a swing of 3.3 or (less
+what's called ``\acro{TTL} serial'' --- same signalling with a swing of 3.3 or (less
 often) 5 volts. You can't wire standard \RSTTT/ to \acro{TTL} serial directly; the link
 needs a device called a ``level shifter.'' If you connect without one, components
 on the \acro{TTL} side will get fried.
@@ -391,8 +391,8 @@ devices.
 
 \sect WAN Time Gone: The Forgotten Pre-Internets.
 Today, the \acro{TCP/IP} Internet is very nearly the only \acro{WAN} (Wide-Area-Network) left
-standing. It was not always so. From the late '70s to the mid-1990s---but
-especially between 1981 and 1991---there were a profusion of \acro{WAN}s of widely
+standing. It was not always so. From the late '70s to the mid-1990s --- but
+especially between 1981 and 1991 --- there were a profusion of \acro{WAN}s of widely
 varying capability. You are most likely to trip over references to these in
 email archives from that time; one characteristic of it is that people
 sometimes advertised multiple different network addresses in their signatures.
@@ -424,7 +424,7 @@ A direct descendant of \acro{USENET} still exists, as Google Groups, but was muc
 more central to the hacker culture before cheap Internet. Open source as we now
 know it germinated in \acro{USENET} groups dedicated to sharing source code. Several
 conventions still in use today, like having project metadata files named \acro{README}
-and \acro{NEWS} and \acro{INSTALL}, became established there in the early 1980s---though at
+and \acro{NEWS} and \acro{INSTALL}, became established there in the early 1980s --- though at
 least \acro{README} was older, having been seen in the wild back on the \acro{PDP-10}.
 
 Two key dates in \acro{USENET} history were universally known. One was the Great
@@ -436,11 +436,11 @@ resulting vast flood of newbies proved difficult to acculturate.
 \acro{UUCP} explains a quirk you may run across in old mailing-list archives: the
 bang-path address. \acro{UUCP} links were point-to-point and you had to actually
 specify the route of your mail through the \acro{UUCP} network; this led to people
-publishing addresses of the form ``…!bigsite!foovax!barbox!user'', presuming that
+publishing addresses of the form ``$\ldots${\tt !bigsite!foovax!barbox!user},'' presuming that
 people who wanted to reach them would know how to reach bigsite. As Internet
 access became more common in the early 1990s, addresses of the form
-user@hostname displaced bang paths. During this transition period there were
-some odd hybrid mail addresses that used a ``%'' to weld bang-path routing to
+{\tt user@hostname} displaced bang paths. During this transition period there were
+some odd hybrid mail addresses that used a ``{\tt \%}'' to weld bang-path routing to
 Internet routing.
 
 \acro{UUCP} was notoriously difficult to configure, enough so that people who knew how
@@ -448,7 +448,7 @@ often put that skill on their CVs in the justified expectation that it could
 land them a job.
 
 Meanwhile, in the microcomputer world, a different kind of store-and-forward
-evolved---the \acro{BBS} (Bulletin-Board System). This was software running on a
+evolved --- the \acro{BBS} (Bulletin-Board System). This was software running on a
 computer (after 1991 usually an \acro{MS-DOS} machine) with one (or, rarely, more)
 attached modems that could accept incoming phone calls. Users (typically, just
 one user at a time!) would access the \acro{BBS} using a their own modem and a
@@ -477,7 +477,7 @@ culture are still preserved. But, like the \acro{UUCP} network, the \acro{BBS} c
 whole collapsed when inexpensive Internet became widely available.
 
 Almost the only cultural memory of \acro{BBS}es left is around a family of
-file-transfer protocols---\acro{XMODEM}, \acro{YMODEM}, and \acro{ZMODEM}---developed shortly before
+file-transfer protocols --- \acro{XMODEM}, \acro{YMODEM}, and \acro{ZMODEM} --- developed shortly before
 \acro{BBS}es and primarily used on them. For hackers of that day who did not cut their
 teeth on minicomputers with native \acro{TCP/IP}, these were a first introduction to
 concepts like packetization, error detection, and retransmission. To this day
@@ -522,10 +522,10 @@ was effectively dead, although a few Gopher servers are still operated in a
 spirit of nostalgia and irony.
 
 \sect Terminal confusion.
-The software terminal emulators on modern \UNIX/ systems are the near-end---and
-probably final---manifestations of a long and rather confused history. It began
+The software terminal emulators on modern \UNIX/ systems are the near-end --- and
+probably final --- manifestations of a long and rather confused history. It began
 with early displays sometimes called ``glass \acro{TTY}s'' because they emulated
-teletypes---but less expensively, because they didn't require consumables like
+teletypes --- but less expensively, because they didn't require consumables like
 paper. The phrase ``dumb terminal'' is equivalent. The first of these was shipped
 in 1969. The best-remembered of them is probably still the \acro{ADM-3} from 1975.
 
@@ -558,7 +558,7 @@ Early \acro{VDT}s used a crazy variety of control codes. One of the principal re
 of this era is the \UNIX/ terminfo database, which tracked these codes so
 terminal-using applications could do abstracted operations like ``move the
 cursor'' without being restricted to working with just one terminal type. The
-curses(3) library still used with software terminal emulators was originally
+{\tt curses(3)} library still used with software terminal emulators was originally
 intended to make this sort of thing easier.
 
 After 1979 there was an \acro{ANSI} standard for terminal control codes, based on the
@@ -574,14 +574,14 @@ lingered longest in dedicated point-of-sale systems, remaining not uncommon
 until as late as 2010 or so.
 
 It's not true, as is sometimes suggested, that heritage from the \acro{VDT} era
-explains the \UNIX/ command line---that actually predated \acro{VDT}s, going back to the
+explains the \UNIX/ command line --- that actually predated \acro{VDT}s, going back to the
 last generation of printing terminals in the late 1960s and early 1970s. Every
 hacker once knew that this is why we often speak of ``printing'' output when we
 mean sending it to standard output that is normally connected to a terminal
 emulator.
 
-What the \acro{VDT} era does explain is some of our heritage games (see next section)
-and a few surviving utility programs like vi(1), top(1) and mutt(1). These are
+What the \acro{VDT} era {\bf does} explain is some of our heritage games (see next section)
+and a few surviving utility programs like {\tt vi(1)}, {\tt top(1)} and {\tt mutt(1)}. These are
 what advanced visual interfaces looked like in the \acro{VDT} era, before bitmapped
 displays and \acro{GUI}s. This is why program interfaces that are two-dimensional but
 use characters only are now called \acro{TUI} (``terminal user interface''), but the
@@ -596,20 +596,20 @@ secondary purpose of doing something visually interesting with that blank space
 took over.
 
 \sect The Early, Awful Days of Bitmapped Displays.
-Terminals---which could usually only display a fixed alphabet of formed
-characters---were eventually replaced by the ``bitmapped'' style of display we're
+Terminals --- which could usually only display a fixed alphabet of formed
+characters --- were eventually replaced by the ``bitmapped'' style of display we're
 used to today, with individual screen pixels manipulable. Every hacker once
 knew that though there were earlier precedents done as research, the first
 production system with a bitmapped display was the Alto, built at the Xerox
 Palo Alto Research Center in 1973. (The laser printer and Ethernet were also
 invented there.)
 
-It was not generally known that the Alto had a display only 608 pixels wide and
-808 high---folk memory confused it with later displays in the 1024$\times$1024 range.
+It was {\bf not} generally known that the Alto had a display only 608 pixels wide and
+808 high --- folk memory confused it with later displays in the 1024$\times$1024 range.
 Its 1981 successor the Dandelion achieved 1024$\times$809; an attempt to commercialize
 it as the ``Xerox Star'' failed. But in 1982 the newly-born Sun Microsystems
 shipped the Sun-1 with 1024$\times$800 pixels; descendants of this machine (and very
-similar designs by other vendors) became enormously successful---until they
+similar designs by other vendors) became enormously successful --- until they
 were wiped out by descendants of the \acro{IBM PC} in the late 1990s. Before that,
 most hackers dreamed of owning a Sun-class workstation, and the bitmapped
 display was a significant part of that allure.
@@ -617,7 +617,7 @@ display was a significant part of that allure.
 Alas, these machines were too expensive for individuals. But from 1975 onwards
 primitive bitmapped-display began to appear on personal color computers such as
 the Apple II, often through consumer-grade television sets. These had one
-feature the workstation displays of the time lacked---color---but their pixel
+feature the workstation displays of the time lacked --- color --- but their pixel
 resolutions were laughable by comparison. The Apple II in ``Hi-res'' mode could
 only manage 280$\times$192, an area you could easily cover with the palm of your hand
 on the displays of 2017.
@@ -631,25 +631,25 @@ consumer-grade TV also meant coping with eyestrain-inducing artifacts around
 the limited amount of text it could display, due to \acro{NTSC} chroma-luminance
 crossover.
 
-Because hackers needed good text display for programming---and because many
-knew what workstation graphics in the 1024$\times$1024 range looked like---many of us
+Because hackers {\bf needed} good text display for programming --- and because many
+knew what workstation graphics in the 1024$\times$1024 range looked like --- many of us
 dismissed these displays (and the computers they were attached to) as
 near-useless toys. We sought workstation graphics when we could get it and used
 \acro{VDT}s when we couldn't.
 
 In 1984, the original Macintosh was the first consumer-grade machine with a
 dedicated bit-mapped display that come within even distant hail of
-workstation-class graphics---512$\times$342 black and white. It was shortly followed
+workstation-class graphics --- 512$\times$342 black and white. It was shortly followed
 by the \acro{IBM EGA} adapter and its numerous cheap clones with 640$\times$350 at a whopping
 16 colors, accompanied by flicker and other artifacts. In the following years,
-256 colors gradually crept in, starting with a resolution of---wait for it---
+256 colors gradually crept in, starting with a resolution of --- wait for it --- 
 320$\times$200.
 
 For another five years or so consumer hardware was still split between
 low-resolution b\&w displays and abysmally low-resolution, hard-to-use color
 displays. If we had to use a consumer-grade computer at all, most of us tended
 to prefer the many b\&w displays that were relatively inexpensive, surprisingly
-nice on the eyes and better for our life's work---code.
+nice on the eyes and better for our life's work --- code.
 
 There was, however, a cohort of hackers (especially among the younger and newer
 ones of the mid-1980s) who worked hard to get as much performance as they could
@@ -700,7 +700,7 @@ Every hacker once knew what the phrase ``You are in a maze of twisty little
 passages, all alike'' meant, and often used variants about confusing situations
 in real life (For example, ``You are in a maze of twisty little technical
 standards, all different''). It was from the very first dungeon-crawling
-adventure game, Colossal Cave Adventure (1976-77). People who knew this game
+adventure game, Colossal Cave Adventure (1976--77). People who knew this game
 from its beginnings often thought of it as \acro{ADVENT}, after its 6-character
 filename on the \acro{PDP-10} where it first ran.
 
@@ -713,7 +713,7 @@ programming was. ``Game designer'' was not yet a separate thing, then.
 You might occasionally encounter ``xyzzy'' as a nonce variable name. Every hacker
 used to know that xyzzy was a magic word in \acro{ADVENT}.
 
-\acro{ADVENT} had a direct successor that was even more popular---Zork, first released
+\acro{ADVENT} had a direct successor that was even more popular --- Zork, first released
 in 1979 by hackers at \acro{MIT} on a \acro{PDP-10} (initially under the name ``Dungeon'') and
 later successfully commercialized. This game is why every hacker once knew that
 a zorkmid was the currency of the Great Underground Empire, and that if you
@@ -743,7 +743,7 @@ plot and story values, leading to a surprisingly rich imaginative experience.
 early 1960s out of a family of character codes used on teletypes.
 
 \ASCII/, unlike a lot of other early character encodings, is likely to live
-forever---because by design the low 127 code points of Unicode are \ASCII/. If
+forever --- because by design the low 127 code points of Unicode {\bf are} \ASCII/. If
 you know what \acro{UTF-8} is (and you should) every \ASCII/ file is correct \acro{UTF-8} as
 well.
 
@@ -751,23 +751,22 @@ The following table describes \ASCII/-1967, the version in use today. This is th
 16$\times$8 format given in most references.
 {\medbreak\tt\offinterlineskip
 \halign{%
-\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.55em\vrule height1.5ex depth1ex \hskip0.55em%
-\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.55em\vrule\hskip0.55em%
-\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.55em\vrule\hskip0.55em%
-\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.55em\vrule\hskip0.55em%
-
-\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.55em\vrule\hskip0.55em%
-\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.55em\vrule\hskip0.55em%
-\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.55em\vrule\hskip0.55em%
+\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.38em\vrule height1.5ex depth1ex \hskip0.38em%
+\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.38em\vrule\hskip0.38em%
+\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.38em\vrule\hskip0.38em%
+\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.38em\vrule\hskip0.38em%
+\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.38em\vrule\hskip0.38em%
+\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.38em\vrule\hskip0.38em%
+\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.38em\vrule\hskip0.38em%
 \hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil\cr
 \omit\hfil Dec&\omit\ Hex&&%
-\omit\hskip 0.55em\vrule height1.5ex depth1ex\hfil Dec&\omit\ Hex&&%
-\omit\hskip 0.55em\vrule \hfil Dec&\omit\ Hex&&%
-\omit\hskip 0.55em\vrule \hfil Dec&\omit\ Hex&&%
-\omit\hskip 0.55em\vrule \hfil Dec&\omit\ Hex&&%
-\omit\hskip 0.55em\vrule \hfil Dec&\omit\ Hex&&%
-\omit\hskip 0.55em\vrule \hfil Dec&\omit\ Hex&&%
-\omit\hskip 0.55em\vrule \hfil Dec&\omit\ Hex&\cr
+\omit\hskip 0.38em\vrule height1.5ex depth1ex\hskip 0.38em\hfil Dec&\omit\ Hex&&%
+\omit\hskip 0.38em\vrule\hskip 0.38em\hfil Dec&\omit\ Hex&&%
+\omit\hskip 0.38em\vrule\hskip 0.38em\hfil Dec&\omit\ Hex&&%
+\omit\hskip 0.38em\vrule\hskip 0.38em\hfil Dec&\omit\ Hex&&%
+\omit\hskip 0.38em\vrule\hskip 0.38em\hfil Dec&\omit\ Hex&&%
+\omit\hskip 0.38em\vrule\hskip 0.38em\hfil Dec&\omit\ Hex&&%
+\omit\hskip 0.38em\vrule\hskip 0.38em\hfil Dec&\omit\ Hex&\cr
 0&00&NUL&16&10&DLE&32&20& &48&30&0&64&40&@&80&50&P&96&60&`&112&70&p\cr
 1&01&SOH&17&11&DC1&33&21&!&49&31&1&65&41&A&81&51&Q&97&61&a&113&71&q\cr
 2&02&STX&18&12&DC2&34&22&"&50&32&2&66&42&B&82&52&R&98&62&b&114&72&r\cr
@@ -782,12 +781,13 @@ The following table describes \ASCII/-1967, the version in use today. This is th
 11&0B&VT&27&1B&ESC&43&2B&+&59&3B&;&75&4B&K&91&5B&[&107&6B&k&123&7B&\char`\{\cr
 12&0C&FF&28&1C&FS&44&2C&,&60&3C&<&76&4C&L&92&5C&\char`\\&108&6C&l&124&7C&|\cr
 13&0D&CR&29&1D&GS&45&2D&-&61&3D&=&77&4D&M&93&5D&]&109&6D&m&125&7D&\char`\}\cr
-14&0E&SO&30&1E&RS&46&2E&.&62&3E&>&78&4E&N&94&5E&\char`^&110&6E&n&126&7E&~\cr
+14&0E&SO&30&1E&RS&46&2E&.&62&3E&>&78&4E&N&94&5E&\char`^&110&6E&n&126&7E&\char`\~\cr
 15&0F&SI&31&1F&US&47&2F&/&63&3F&?&79&4F&O&95&5F&\char`_&111&6F&o&127&7F&DEL\cr
 }\medbreak}
-\noindent However, this format---less used because the shape is inconvenient---probably
+\noindent However, this format --- less used because the shape is inconvenient --- probably
 does more to explain the encoding:
-{\medbreak\tt\offinterlineskip
+
+$$\vbox{\tt\offinterlineskip
 \halign{%
 #\hfil&\quad#\hfil&\hskip1.5em\vrule height 1.5ex depth1ex\hskip1.5em#\hfil&\quad#\hfil%
 &\hskip1.5em\vrule\hskip1.5em#\hfil&\quad#\hfil%
@@ -822,9 +822,10 @@ does more to explain the encoding:
 0011011&ESC&0111011&;&1011011&[&1111011&\char`\{\cr
 0011100&FS&0111100&<&1011100&\char`\\&1111100&|\cr
 0011101&GS&0111101&=&1011101&]&1111101&\char`\}\cr
-0011110&RS&0111110&>&1011110&\char`^&1111110&~\cr
+0011110&RS&0111110&>&1011110&\char`^&1111110&\char`\~\cr
 0011111&US&0111111&?&1011111&\char`_&1111111&DEL\cr
-}\medbreak}
+}}$$
+
 \noindent Using the second table, it's easier to understand a couple of things:
 {\medbreak\narrower
 \item{$\bullet$} The Control modifier on your keyboard basically clears the top
@@ -838,7 +839,7 @@ capital letters in \ASCII/ is so regular, and the relationship between numbers
 and symbols, and some pairs of symbols, is sort of regular if you squint at it.
 The \acro{ASR-33}, which was an all-uppercase terminal, even let you generate some
 punctuation characters it didn't have keys for by shifting the 16 bit; thus,
-for example, Shift-K (0x4B) became a [ (0x5B)
+for example, Shift-K ({\tt 0x4B}) became a {\tt [} ({\tt 0x5B})
 \medbreak}
 \noindent It used to be common knowledge that the original 1963 \ASCII/ had been
 slightly different. It lacked tilde and vertical bar; 5E was an up-arrow rather
@@ -846,21 +847,21 @@ than a caret, and 5F was a left arrow rather than underscore. Some early
 adopters (notably \acro{DEC}) held to the 1963 version.
 
 If you learned your chops after 1990 or so, the mysterious part of this is
-likely the control characters, code points 0-31. You probably know that C uses
+likely the control characters, code points 0--31. You probably know that \CEE/ uses
 \acro{NUL} as a string terminator. Others, notably \acro{LF} = Line Feed and \acro{HT} = Horizontal
 Tab, show up in plain text. But what about the rest?
 
 Many of these are remnants from teletype protocols that have either been dead
 for a very long time or, if still live, are completely unknown in computing
 circles. A few had conventional meanings that were half-forgotten even before
-Internet times. A very few are still used in binary data protocols today.
+Internet times. A {\bf very} few are still used in binary data protocols today.
 
 Here's a tour of the meanings these had in older computing, or retain today. If
 you feel an urge to send me more, remember that the emphasis here is on what
 was common knowledge back in the day. If I don't know it now, we probably
 didn't generally know it then.
 \medbreak
-\dlist \acro{NUL} (Null) = Ctrl-@. Survives as the string terminator in C.
+\dlist \acro{NUL} (Null) = Ctrl-@. Survives as the string terminator in \CEE/.
 \dlist \acro{SOH} (Start of Heading) = Ctrl-A. Rarely used (as Ctrl-A) as a section
 divider in otherwise textual formats. Some versions of \UNIX/ mailbox format used
 it as a message divider. One very old version-control system (\acro{SCCS}) did
@@ -888,7 +889,7 @@ protocol did this). Hackers used to use \acro{ACK} in speech as ``I hear you'' a
 were a bit put out when this convention was disrupted in the 1980s by Bill The
 Cat's ``Ack! Thppt!''
 \dlist \acro{BEL} (Bell) = Ctrl-G.
-Make the bell ring on the teletype---an attention signal. This often worked on
+Make the bell ring on the teletype --- an attention signal. This often worked on
 \acro{VDT}s as well, but is no longer reliably the default on software terminal
 emulators. Some map it to a visual indication like flashing the title bar.
 \dlist \acro{BS} (Backspace) = Ctrl-H.
@@ -906,7 +907,7 @@ output (or in early versions, right after).
 \dlist \acro{VT} (Vertical Tab) = Ctrl-K.
 In the days of printing terminals this often caused them to scroll down a
 configurable number of lines. \acro{VDT}s had any number of possible behaviors; at
-least some pre-\acro{ANSI} ones interpreted \acro{VT} as ``scroll up one line.'' The only
+least some pre-\acro{ANSI} ones interpreted \acro{VT} as ``scroll {\bf up} one line.'' The only
 reason anybody remembers this one at all is that it persisted in \UNIX/
 definitions of what a whitespace character is, even though it's now extinct in
 the wild.
@@ -986,15 +987,15 @@ map from mnemonic to binary, or vice-versa. The well-known set was roughly \acro
 There are a few other bits of \ASCII/ lore worth keeping in mind $\ldots$
 {\medbreak\narrower
 \item{$\bullet$} A Meta or Alt key on a \acro{VDT} added 128 to the \ASCII/ keycode for
-whatever it's modifying (probably---on a few machines with peculiar word
+whatever it's modifying (probably --- on a few machines with peculiar word
 lengths they did different things). Software terminal emulators have more
 variable behavior; many of them now simply insert an \acro{ESC} before the modified
 key, which Emacs treats as equivalent to adding 128.
 
 \item{$\bullet$} An item of once-common knowledge that was half-forgotten fairly early (like,
-soon after \acro{VDT}s replaced teletypes) is that the binary value of \acro{DEL} (0x7F,
-0b01111111) descends from its use on paper tape. Seven punches could overwrite
-any character in \ASCII/, and tape readers skipped \acro{DEL} (and \acro{NUL}---no punches).
+soon after \acro{VDT}s replaced teletypes) is that the binary value of \acro{DEL} ({\tt 0x7F},
+{\tt 0b01111111}) descends from its use on paper tape. Seven punches could overwrite
+any character in \ASCII/, and tape readers skipped \acro{DEL} (and \acro{NUL} --- no punches).
 This is why \acro{DEL} was anciently called the ``Rubout'' character and is an island at
 the other end of the \ASCII/ table from the other control characters.
 
@@ -1004,10 +1005,10 @@ well-formed \ASCII/ character; rather, it caused an out-of-band condition that
 would be seen as a \acro{NUL} with a framing error at the other end. This was used as
 an attention or interrupt signal.
 \medbreak}
-\noindent You can study the bit structure of \ASCII/ using ascii(1). Both of the tables
+\noindent You can study the bit structure of \ASCII/ using {\tt ascii(1)}. Both of the tables
 above were generated using it.
 
-\sect The Slow Birth of Distributed collaboration.
+\sect The Slow Birth of Distributed Collaboration.
 Nowadays we take for granted a public infrastructure of distributed version
 control and a lot of practices for distributed teamwork that go with it -
 including development teams that never physically have to meet. But these
@@ -1026,7 +1027,7 @@ entered the \UNIX/ world through \acro{USENET} in the early 1980s, it seems to h
 spread there from \acro{DECUS} tapes. The \acro{DECUS} tapes begat the \acro{USENET} source-code
 groups, which were the incubator of the practices that later became ``open
 source.'' \UNIX/ hackers used to watch for interesting new stuff on
-comp.sources.unix as automatically as they drank their morning coffee.
+{\tt comp.sources.unix} as automatically as they drank their morning coffee.
 
 The \acro{DECUS} tapes and the \acro{USENET} sources groups were more of a publishing channel
 than a collaboration medium, though. Three pieces were missing to fully support
@@ -1037,16 +1038,16 @@ didn't escape Bell Labs until 1977. The proprietary licensing of \acro{SCCS} slo
 its uptake; one response was the freely reusable \acro{RCS} (Revision Control System)
 in 1982.
 
-The first real step towards across-network collaboration was the patch(1)
+The first real step towards across-network collaboration was the {\tt patch(1)}
 utility in 1984. The concept seems so obvious now that even hackers who predate
-patch(1) have trouble remembering what it was like when we only knew how to
+{\tt patch(1)} have trouble remembering what it was like when we only knew how to
 pass around source-code changes as entire altered files. But that's how it was.
 
 Even with \acro{SCCS}/\acro{RCS}/patch the friction costs of distributed development over the
 Internet were still so high that some years passed before anyone thought to try
 it seriously. I have looked for, but not found, definite examples earlier than
 nethack. This was a roguelike game launched in 1987. Nethack developers passed
-around whole files---and later patches---by email, sometimes using \acro{SCCS} or \acro{RCS}
+around whole files --- and later patches --- by email, sometimes using \acro{SCCS} or \acro{RCS}
 to manage local copies.
 
 Distributed development could not really get going until the third major step
@@ -1057,15 +1058,15 @@ ubiquitous that every hacker once knew it. \acro{CVS}, however, had significant 
 flaws; it fell out of use rapidly when better alternatives became
 available.
 
-Between around 1989 and the breakout of mass-market Internet in 1993-1994, fast
+Between around 1989 and the breakout of mass-market Internet in 1993--1994, fast
 Internet became available enough to hackers that distributed development in the
 modern style began to become thinkable. The next major steps were not technical
 changes but cultural ones.
 
 In 1991 Linus Torvalds announced Linux as a distributed collaborative effort.
 It is now easy to forget that early Linux development used the same
-patch-by-email method as nethack---there were no public Linux repositories yet.
-The idea that there ought to be public repositories as a normal practice for
+patch-by-email method as nethack --- there were no public Linux repositories yet.
+The idea that there {\bf ought} to be public repositories as a normal practice for
 major projects (in addition to shipping source tarballs) wouldn't really take
 hold until after I published ``The Cathedral and the Bazaar'' in 1997. While CatB
 was influential in promoting distributed development via shared public
@@ -1080,12 +1081,12 @@ a group of former \acro{CVS} developers.
 
 Between 2000 and 2005 Subversion became ubiquitous common knowledge. But in
 2005 Linus Torvalds invented git, which would fairly rapidly obsolesce all
-previous version-control systems and is a thing every hacker now knows.
+previous version-control systems and is a thing every hacker {\bf now} knows.
 
 \sect Key Dates.
 These are dates that every hacker knew were important at the time, or shortly
-afterwards. I've tried to concentrate on milestones for which the date---or the
-milestone itself---seems to have later passed out of folk memory.
+afterwards. I've tried to concentrate on milestones for which the date --- or the
+milestone itself --- seems to have later passed out of folk memory.
 
 \dlist 1961.
 \acro{MIT} takes delivery of a \acro{PDP-1}. The first recognizable ancestor of the hacker
@@ -1103,7 +1104,7 @@ later Intel microprocessors, will come to dominate computing.
 \dlist 1973.
 Interdata 32 ships; the long 32-bit era begins. \UNIX/ Edition 5 (not yet on
 the Interdata) escapes Bell Labs to take root at a number of educational
-institutions. The \acro{XEROX} Alto pioneers the ``workstation''---a networked personal
+institutions. The \acro{XEROX} Alto pioneers the ``workstation'' --- a networked personal
 computer with a high-resolution display and a mouse.
 
 \dlist 1974.
@@ -1131,7 +1132,7 @@ rather than machine-dependent assembler. Second generation of home computers
 publicly released.
 
 \dlist 1978.
-First \acro{BBS} launched---\acro{CBBS}, in Chicago.
+First \acro{BBS} launched --- \acro{CBBS}, in Chicago.
 
 \dlist 1979.
 \acro{MIT} Dungeon, later known as Zork, is written; the first grues lurk in dark
@@ -1146,7 +1147,7 @@ First \acro{IBM PC} ships; end of the heroic age of micros. \acro{TCP/IP} is imp
 \acro{VAX-11/780} under 4.1\acro{BSD} \UNIX/; \acro{ARPANET} and \UNIX/ cultures begin to merge.
 
 \dlist 1982.
-After some false starts from 1980-1981 with earlier 68000-based micros of
+After some false starts from 1980--1981 with earlier 68000-based micros of
 similar design, the era of commercial \UNIX/ workstations truly begins with the
 founding and early success of Sun Microsystems. \acro{RCS}, the second version-control
 system, ships.
@@ -1159,7 +1160,7 @@ Internet.
 
 \dlist 1984.
 \acro{AT\&T} begins a largely botched attempt to commercialize \UNIX/, clamping down on
-access to source code. In the \acro{BBS} world, FidoNet is invented. The patch(1)
+access to source code. In the \acro{BBS} world, FidoNet is invented. The {\tt patch(1)}
 utility is invented.
 
 \dlist 1985.
@@ -1195,7 +1196,7 @@ Mosaic adds graphics and image capability to the World Wide Web.
 \dlist 1994.
 Mass-market Internet takes off in the U.S\hbox{}. \acro{USB} promulgated.
 
-\dlist 1995-1996.
+\dlist 1995--1996.
 Peak years of \acro{UUCP/USENET} and the \acro{BBS} culture, then collapse under pressure
 from mass-market Internet.
 
@@ -1223,9 +1224,9 @@ no longer in production still exceed the resolution of flat-panel displays and
 are still sought after. Also in 2005, \acro{AOL} drops \acro{USENET} support and Endless
 September ends. Git first ships.
 
-\dlist 2007-2008.
+\dlist 2007--2008.
 64-bit transition in mass market \acro{PC}s; the 32-bit era ends. Single-processor
-speeds plateau at $4 \pm 0.25$GHz. iPhone and Android (both with \UNIX/-based OSes)
+speeds plateau at $4\pm0.25$GHz. iPhone and Android (both with \UNIX/-based OSes)
 first ship.
 
 \bye
