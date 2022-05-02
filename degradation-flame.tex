@@ -1,18 +1,29 @@
-\parindent=0pt\parskip=10pt plus 2pt minus 2pt% block format
-\centerline{\bf Windows Usability Systematic Degradation Flame}
-\centerline{Bill Gates}
-\centerline{(a email message at Microsoft, 2003)}
+\documentclass[12pt,letterpaper]{article}
+\usepackage{array}
 
-\bigskip
-\halign{\bf#\hskip5pt&#\hfill\cr
-From:&Bill Gates\cr
-Sent:&Wednesday, February 15, 2003 10:05 AM\cr
-To:&Jim Allchin\cr
-CC:&Chris~Jones~(WINDOWS); Bharat~Shah~(NT); Joe~Peterson;\cr
-&Will~Poole; Brian~Valentine; Anoop~Gupta~(RESEARCH)\cr
-Subject:&Windows Usability Systematic degradation flame\cr
-}
-\medskip
+\renewcommand{\rmdefault}{ptm}  % times
+
+% block format...
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt plus 2pt minus 2pt}
+
+\title{Windows Usability\\
+Systematic Degradation Flame\\
+\strut \normalsize (an email message at Microsoft)}
+\author{Bill Gates}
+\date{February 15, 2003}
+
+\begin{document}
+\maketitle
+
+\begin{tabular}{@{}>{\bfseries}l@{\,}l}
+From:&Bill Gates\\
+Sent:&Wednesday, February 15, 2003 10:05 AM\\
+To:&Jim Allchin\\
+CC:&Chris~Jones~(WINDOWS); Bharat~Shah~(NT); Joe~Peterson;\\
+&Will~Poole; Brian~Valentine; Anoop~Gupta~(RESEARCH)\\
+Subject:&Windows Usability Systematic degradation flame
+\end{tabular}
 
 I am quite disappointed at how Windows Usability has been going backwards and
 the program management groups don't drive usability issues.
@@ -30,9 +41,9 @@ This site is so slow it is unusable.
 It wasn't in the top 5 so I expanded the other 45.
 
 These 45 names are totally confusing.
-These names make stuff like:
-C:$\backslash$Documents and Settings$\backslash$billg$\backslash$My
-Documents$\backslash$My Pictures seem clear.
+These names make stuff like:\\
+C:\textbackslash{}Documents and Settings\textbackslash{}billg\textbackslash{}My
+Documents\textbackslash{}My Pictures seem clear.
 
 They are not filtered by the system I can in on and so many of the things are
 strange.
@@ -42,7 +53,7 @@ Still no moviemaker.
 I typed in moviemaker. Nothing.
 I typed in movie maker. Nothing.
 
-So I gave up and sent mail to Amir saying -- where is this Moviemaker
+So I gave up and sent mail to Amir saying --- where is this Moviemaker
 download? Does it exist?
 
 So they told me that using the download page to download something was not
@@ -87,7 +98,7 @@ This is after the download was finished.
 
 Then it told me to reboot my machine.
 Why should I do that?
-I reboot every night--why should I reboot at that time?
+I reboot every night --- why should I reboot at that time?
 
 So I did the reboot because it INSISTED on it.
 Of course that meant completely getting rid of all my Outlook state.
@@ -162,5 +173,4 @@ get when I try to use 802.11. (don't you just love that root certificate message
 
 When I really get to use the stuff I am sure I will have more feedback.
 
-% vim: ft=tex:tw=77:ts=4:noet:
-\bye
+\end{document}

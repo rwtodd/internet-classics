@@ -1,222 +1,208 @@
-% palatino set
-\font\twelverm=pplr at 12pt
-\font\twelvesl=pplro at 12pt
-\font\twelvett=pcrr at 12pt %cmtt12
-\font\twelvebf=pplb at 12pt
-\font\biggertxt=pplr at 16pt
-\font\biggerbold=pplb at 14pt
+\documentclass[12pt,letterpaper]{article}
+\renewcommand{\rmdefault}{ptm}
+\newcommand{\newsgrp}{\,\texttt{c.o.o.a}\,}
+\newcommand{\acro}[1]{{\small\MakeUppercase#1\spacefactor1000}}
 
-% adjust the page numbers and typical font commands
-\footline={\hss\rm\folio\hss}
-\def\rm{\twelverm}
-\def\sl{\twelvesl}
-\def\tt{\twelvett}
-\def\bf{\twelvebf}
+% block formatting
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{12pt plus 2pt minus 2pt}
 
-\def\title#1{\centerline{\biggertxt #1}\par}
-\def\subtitle#1{\medskip\centerline{\sl #1}}
-\def\startlist{\medskip\begingroup\narrower\parskip=6pt plus 1pt minus 1pt}%
-\def\endlist{\medskip\endgroup\noindent\ignorespaces}%
-\catcode`\|=13 \def|{\begingroup\tt\def|{\endgroup}}%
-
-
-\parskip=0pt plus 1pt
-\baselineskip=14pt
-\rm
-
-\leavevmode\vskip 0.25in
 \title{Message to comp.os.ms-windows.misc}
-\subtitle{Gordon Letwin, 1995--08--17}
-\vskip 0.5in
-\noindent In an earlier posting to |c.o.o.a| I promised a posting about OS/2's
+\author{Gordon Letwin}
+\date{August 17, 1995}
+
+\begin{document}
+\maketitle
+
+In an earlier posting to \newsgrp\ I promised a posting about \acro{OS/2}'s
 recent past and future.  Originally I'd planned on posting this on Aug 24,
 but real life events are foreshadowing things so I'll post a bit early.
-IBM doomed OS/2~2.0, in terms of a successful desktop system, almost from
+\acro{IBM} doomed \acro{OS/2}~2.0, in terms of a successful desktop system, almost from
 the start.  The folks at Microsoft realized this; we were always amazed
-that so many folks at IBM didn't.  I speak here not of the faceless low
-level drones at IBM but the senior guys who are---for the most part---pretty
+that so many folks at \acro{IBM} didn't.  I speak here not of the faceless low
+level drones at \acro{IBM} but the senior guys who are---for the most part---pretty
 smart guys.
 
 By successful I mean by either of two metrics:
-\startlist%
-\item{1)} successful in market penetration.  To run on enough desktops        
+\begin{enumerate}
+\item successful in market penetration.  To run on enough desktops        
                 that developers would consider writing for it first.
                 Heck, to run on enough that developers will consider writing
-                for it {\bf at all}.
-\item{2)} successful financially.  If it turns an acceptable profit then
+                for it {\bfseries at all}.
+\item successful financially.  If it turns an acceptable profit then
                 that by itself is generally sufficient.  But note that a
-                2 or 3~billion dollar product needs to turn a {\bf big}
+                2 or 3~billion dollar product needs to turn a {\bfseries big}
                 profit---\$400~million net, maybe \$1~billion a year in
                 gross sales.
-\endlist
+\end{enumerate}
 Sure, the product can be ``successful'' as an O/S layer for machines dedicated
 to custom apps, such as airline reservation terminals.  Of course, 
-{\bf anything} that can support a custom app can be successful in this role.  
+{\bfseries anything} that can support a custom app can be successful in this role.  
 I'm sure that there are still Pick machines out there.  But this role
 is uninteresting because it fails to meet either of the two above criteria.
-IBM will never earn back even a fraction of the billions blown on OS/2
+\acro{IBM} will never earn back even a fraction of the billions blown on \acro{OS/2}
 by selling it into this niche.  I'm not even confident---although this
 is admittedly out of my area of expertise---that they can even run a 
 positive cash flow selling to such a small market.
 
-What was OS/2's problem?  Why was it doomed?  Because its main attraction
+What was \acro{OS/2}'s problem?  Why was it doomed?  Because its main attraction
 was as an engine to run MS-Windows applications.  The problem is one of
 standards, and one of critical mass.  Standards are of incredible importance
 in the computing world.  They're critical in other domains that folks
 don't often think about.  Your HiFi CD player, for example.  It plugs into
 your preamp.  And that plugs into your amp.  And that connects to speakers.
 Each of those can, and usually does, come from a different manufacturer.
-The RCA connectors, and the signal levels themselves, are standardized.
+The \acro{RCA} connectors, and the signal levels themselves, are standardized.
 Standardization is a big plus in the computer field.  You're much better off
 having thousands of products and vendors compatible with a single standard,
 even a mediocre one, than having dozens of products, one or two each for
 each of a dozen fragmented standards.
 
-For example, I bought a Tektronics~222 scope.  It has an RS232~port on
+For example, I bought a Tektronics~222 scope.  It has an \acro{RS232}~port on
 it to upload and download waveforms.  It came with a floppy disk with
 driver software on it.  For which processor and OS was the software written?
 And what was the disk format?  Guess.  The fact that it's not hard to
 guess is exactly my point.  If there were 5 standards for PCs then
 that software would cost 5 times as much and it just wouldn't exist at all.  
-Note that even the RS232~port
+Note that even the \acro{RS232}~port
 itself is a standard.  And an inferior one; sending stuff at 9600~baud
 over a 7~wire connection is a travesty by modern standards.  But it's
 a travesty that all machines can understand.
 
-So this is the classic chicken and egg problem.  Who will buy OS/2 when
-it has no apps, and who will write apps then no one has bought OS/2?
-A fundimental problem.  When Microsoft and IBM first came out with OS/2~1.1
+So this is the classic chicken and egg problem.  Who will buy \acro{OS/2} when
+it has no apps, and who will write apps then no one has bought \acro{OS/2}?
+A fundimental problem.  When Microsoft and \acro{IBM} first came out with \acro{OS/2}~1.1
 we expected the 640k limit to drive us over this barrier.  The thinking
 was that because living in 640K was so terribly painful folks would
-upgrade to OS/2~1.1 and buy all new OS/2 apps because the pain was too
+upgrade to \acro{OS/2}~1.1 and buy all new \acro{OS/2} apps because the pain was too
 great.  The knowledge of that reality would cause app writers to
 invest in writing the apps, and the feedback engine is started up, if
 a little slowly.  
 
 The miscalculation came about with the 386 coming out sooner than we
-expected.  And then various folks writing DOS extenders for the 386,
+expected.  And then various folks writing \acro{DOS} extenders for the 386,
 which took a lot of the pressure off of the 640K barrier.  When the
 386 did come out earlier than expected and we saw what was happening, 
 Microsoft wanted to abandon
-OS/2~1.0 before it was released and work on a 386-only version, one that
-would be able to emulate more than one DOS box and do a better job, at that.
-But, as you'll remember, Compaq was the first to have a 386 box; IBM
-was slow to follow suit.  IBM was strong in 286's and weak in 386's,
+\acro{OS/2}~1.0 before it was released and work on a 386-only version, one that
+would be able to emulate more than one \acro{DOS} box and do a better job, at that.
+But, as you'll remember, Compaq was the first to have a 386 box; \acro{IBM}
+was slow to follow suit.  \acro{IBM} was strong in 286's and weak in 386's,
 so they was strongly opposed to dropping the 286
 in favor of leapfrogging to the 386 and they insisted that we stay the course
 for the 286.  
 
-Another problem that came up here was that IBM didn't want us to use the
-Windows API for the graphical environment under OS/2.  Many key folks
-inside IBM had always hated Windows.  IBM had this crazy thing
+Another problem that came up here was that \acro{IBM} didn't want us to use the
+Windows \acro{API} for the graphical environment under \acro{OS/2}.  Many key folks
+inside \acro{IBM} had always hated Windows.  \acro{IBM} had this crazy thing
 called TopView,
 it was a character oriented windowing scheme and not very good.  Bill Gates,
 myself, and some other folks made several trips to Boca~Raton to try
 to explain to those guys why a character oriented windowing scheme was
-obsolete before it was even written, but to no avail.  One of IBM's most
+obsolete before it was even written, but to no avail.  One of \acro{IBM}'s most
 major problems is that although their top guys may be smart, they
 aren't techically savvy.  And their low level guys are often neither.
-IBM doesn't promote on the basis of your skills and ability; they promote
+\acro{IBM} doesn't promote on the basis of your skills and ability; they promote
 on the basis of seniority and other secondary factors.  So the guy
 who makes these decisions often doesn't know what he's doing.  And he
 doesn't know that he doesn't know, because his peers are equally
 butt-ignorant too.  So these guys can never figure out how other folks, 
 including but not limited to Microsoft, keep doing better!  Must be dumb luck, 
-they think.  I always agreed that it {\bf was} dumb luck.  If you catch my
+they think.  I always agreed that it {\bfseries was} dumb luck.  If you catch my
 drift... :-)
 
 So the technical guys to whom we made our presentation thought that
 a crude character oriented interface (and the other major problems
-that I've since forgotten) was good enough.  It said ``IBM'' so people would
+that I've since forgotten) was good enough.  It said ``\acro{IBM}'' so people would
 have to buy it.  And their very senior managers couldn't understand our
 argument, and their own folks said that we were wrong, so that was that.
 
 TopView died a very quick death and Windows, while not a red hot success
 at the time, did reasonably well.  I don't understand the internal
-personalities, etc., but the upshot was that several key people at IBM
+personalities, etc., but the upshot was that several key people at \acro{IBM}
 would turn livid at the mention of Windows.  So one of the ``costs'' of
-doing OS/2 with IBM was---as a form of punishment---that OS/2 would
-{\bf not} have a Windows API\hbox{}.  The windowing API, in fact, would be designed
-by some IBM guys.  This was their revenge.
+doing \acro{OS/2} with \acro{IBM} was---as a form of punishment---that \acro{OS/2} would
+{\bfseries not} have a Windows \acro{API}.  The windowing \acro{API}, in fact, would be designed
+by some \acro{IBM} guys.  This was their revenge.
 
 We thought that this was stupid---refusing to run
-these hard-won Windows apps, shooting ourselves in the foot before OS/2
-was even coded!  But it was the price for getting IBM on board and we
-figured that---with IBM and Microsoft together, and the 640K crunch
-looming, that the success of OS/2 would appear so inevitable to the ISVs that
+these hard-won Windows apps, shooting ourselves in the foot before \acro{OS/2}
+was even coded!  But it was the price for getting \acro{IBM} on board and we
+figured that---with \acro{IBM} and Microsoft together, and the 640K crunch
+looming, that the success of \acro{OS/2} would appear so inevitable to the \acro{ISV}s that
 they'd write for it anyhow and the success feedback would be started.
-Now you know why the OS/2 windowing API even puts the screen origin at
+Now you know why the \acro{OS/2} windowing \acro{API} even puts the screen origin at
 a different corner!  They wanted to be as different from Windows as they
 could as a matter of personal vendetta.
 
-OK, as we know, the 640K pressure was helped a lot by DOS extenders,
-386 machines quickly took over from 286 machines, and IBM and MS were
+OK, as we know, the 640K pressure was helped a lot by \acro{DOS} extenders,
+386 machines quickly took over from 286 machines, and \acro{IBM} and MS were
 left with a product that wasn't going anywhere fast.  We also didn't
-have application critical mass.  So we started on OS/2~2.0, together,
-a couple of years later than we should have.  THis would be a 386
-version, have good multiple DOS boxes, and hopefully pull the fat out of
+have application critical mass.  So we started on \acro{OS/2}~2.0, together,
+a couple of years later than we should have.  This would be a 386
+version, have good multiple \acro{DOS} boxes, and hopefully pull the fat out of
 the fire.  At roughly the same time our Windows group---which was not
 our prime focus---was working on a 386 version, as well.
 
-The Windows product---3.0---came out and did very well indeed.  IBM
+The Windows product---3.0---came out and did very well indeed.  \acro{IBM}
 was unhappy.  They were unhappy cause they thought we were being disloyal
-to OS/2 by writing a competitor.  And they were shitting bricks because it
-was their old enemy Windows---the ones that a lot of IBMers
+to \acro{OS/2} by writing a competitor.  And they were shitting bricks because it
+was their old enemy Windows---the ones that a lot of \acro{IBM}ers
 told their bosses would never be a success!  MS's reaction to the Win~3
-success was to say that OS/2 had to support the Win~3 API---that we'd
-then have a ``low end'' kernel---Windows---and a high end kernel--OS/2--to
-run the app base.  IBM said that we either had to stop development of
-Windows---not just as an OS/2~API, but completely---or
-we were fired from OS/2 the OS/2 project.
+success was to say that \acro{OS/2} had to support the Win~3 \acro{API}---that we'd
+then have a ``low end'' kernel---Windows---and a high end kernel--\acro{OS/2}--to
+run the app base.  \acro{IBM} said that we either had to stop development of
+Windows---not just as an \acro{OS/2}~\acro{API}, but completely---or
+we were fired from \acro{OS/2} the \acro{OS/2} project.
 
-We still believed OS/2~2.0 could be made a success.  But Win~3.0 was
-{\bf already} a big success.  It seemed just stupid to us to kill a healthy
+We still believed \acro{OS/2}~2.0 could be made a success.  But Win~3.0 was
+{\bfseries already} a big success.  It seemed just stupid to us to kill a healthy
 animal in the hopes of nursing a sick one into recovery!  So given that
-choice, we kept Windows and IBM kicked us out of the OS/2 team.  Also
-note that IBM insisted on no Windows~API in the product, so we'd have
+choice, we kept Windows and \acro{IBM} kicked us out of the \acro{OS/2} team.  Also
+note that \acro{IBM} insisted on no Windows~\acro{API} in the product, so we'd have
 to drop Windows and abandon the apps.  We'd seen how hard it was to
 build Windows critical mass and to just shoot all of those apps, 
-and all of those ISVs, and all of those users seemed completely out of
+and all of those \acro{ISV}s, and all of those users seemed completely out of
 the question.
 
-It's extremely ironic that within a few months, IBM was announcing that
-OS/2~2.0 would support the Windows~API!  It was for that that they
+It's extremely ironic that within a few months, \acro{IBM} was announcing that
+\acro{OS/2}~2.0 would support the Windows~\acro{API}!  It was for that that they
 kicked us out!  It was clear that there are a lot more emotions then
 intellect running things over there, when they'd make a decision, let
 it drive a terrible divorce, and then un-make the decision a little while
 later!  
 
-Why was IBM doing these random things?  I dunno; they never invited me to
+Why was \acro{IBM} doing these random things?  I dunno; they never invited me to
 their inner stragegy meetings.  But I'd guess that they were driven too
 much by hatred of Windows, hatred of Bill Gates, envy at MS's success, etc.
-The hatred and envy of many of IBM's folks---even senior folks---is well
+The hatred and envy of many of \acro{IBM}'s folks---even senior folks---is well
 documented in various books and articles.  It's my opinion that they
 let their emotions cut off their noses to spite their faces.  Their first
-goal wasn't for OS/2 to succeed, it was for Microsoft to fail.
+goal wasn't for \acro{OS/2} to succeed, it was for Microsoft to fail.
 
-But here's the problem with OS/2 in a market where Windows has been
+But here's the problem with \acro{OS/2} in a market where Windows has been
 very successful and has a big share.  Win~3.0 had the critical
-market share, and OS/2 didn't.  OS/2 could be a good platform to run
-Windows programs, but very few vendors would write for the OS/2~API\hbox{}.
-Why write for OS/2 and sell into a world of 5\% of machines, when
-you can write for the Windows~API and sell to {\bf all} of them, OS/2 included!
-If OS/2 had some good features---like HPFS :-)---then folks could get
+market share, and \acro{OS/2} didn't.  \acro{OS/2} could be a good platform to run
+Windows programs, but very few vendors would write for the \acro{OS/2}~\acro{API}\hbox{}.
+Why write for \acro{OS/2} and sell into a world of 5\% of machines, when
+you can write for the Windows~\acro{API} and sell to {\bfseries all} of them, \acro{OS/2} included!
+If \acro{OS/2} had some good features---like \acro{HPFS} :-)---then folks could get
 the advantages while running Windows apps, you didn't need to use
-the OS/2~API to take advantage of HPFS, or the shell, or whatever.  
+the \acro{OS/2}~\acro{API} to take advantage of \acro{HPFS}, or the shell, or whatever.  
 So there's no strong
-motivation for ISVs to hurt themselves by writing to the OS/2~API.
+motivation for \acro{ISV}s to hurt themselves by writing to the \acro{OS/2}~\acro{API}.
 
-The good news for OS/2 is that---with its Win~3.0 support---it could
+The good news for \acro{OS/2} is that---with its Win~3.0 support---it could
 run from a massive pool of applications and therefore be an interesting
 system to some customers, even in its infancy.  The bad news is that
-there'll never be a significant number of apps using the OS/2~API.  
+there'll never be a significant number of apps using the \acro{OS/2}~\acro{API}.  
 
-So OS/2 could have a successful career as a ``high end'' Windows engine.
-So that does IBM do?  They come out with their infamous ``Curtains for
+So \acro{OS/2} could have a successful career as a ``high end'' Windows engine.
+So that does \acro{IBM} do?  They come out with their infamous ``Curtains for
 Windows'' campaign!  Microsoft controled the Windows standard.  By that
 I mean that if we say that future versions of our OS's are going to
-have some new features---such as OLE---people take that seriously.
-Whereas if IBM decides to extend the Windows~API---which they could
+have some new features---such as \acro{OLE}---people take that seriously.
+Whereas if \acro{IBM} decides to extend the Windows~\acro{API}---which they could
 easily do, from a technical standpoint---people know that only a small
 percentage of machines will be able to support that extension, so they
 won't use it, and it languishes.
@@ -226,9 +212,9 @@ someone else controls the standard.  ``Control'' in this case is a matter
 of public perception.  For example, Microsoft was once very big in the 
 Unix world.  In fact, we considered it our candidate for the future
 desktop operating system, when machines got powerful enough to run something
-good.  We were the worlds biggest seller of Unix systems.  DOS was, 
+good.  We were the worlds biggest seller of Unix systems.  \acro{DOS} was, 
 when we first wrote it, a one-time throw-away product intended to
-keep IBM happy so that they'd buy our languages.
+keep \acro{IBM} happy so that they'd buy our languages.
 
 The Unix contracts were all done when Bell Labs was regulated and couldn't
 sell Unix into the commerical marketplace.  So although they wrote it
@@ -237,32 +223,32 @@ But after a few years that changed.  Bell was degregulated and now they
 were selling Unix directly, in competition to us!  They might sell it for
 cheaper than we had to pay them in royalties!  But that wasn't the real
 killer, the real killer was the Bell now controlled the standard.  If
-we wrote an API extension that did X, and Bell wrote an incompatible one
-that did Y, which one would people write for?  The ISVs know that AT\&T
+we wrote an \acro{API} extension that did X, and Bell wrote an incompatible one
+that did Y, which one would people write for?  The \acro{ISV}s know that \acro{AT\&T}
 was a very big company and that they'd written the original, so they'd
-believe that AT\&T controlled the standard, not MS, and that belief would
-then define reality.  So we'd always just be waiting for what AT\&T announced
+believe that \acro{AT\&T} controlled the standard, not MS, and that belief would
+then define reality.  So we'd always just be waiting for what \acro{AT\&T} announced
 and then frantically trying to duplicate it.
 
 Bill Gates knew, right away, that there was no
-strong future in Unix for us any more.  Fortunately at that time, DOS
+strong future in Unix for us any more.  Fortunately at that time, \acro{DOS}
 was taking off and we were learning, along with everyone else, about
 the power of standards.  So the primary OS team---the Unix guys---joined
-with the secondary OS team---the DOS guys---and the earliest versions
-of OS/2 were born.  (This was before IBM came on board, so it wasn't called 
-OS/2!)
+with the secondary OS team---the \acro{DOS} guys---and the earliest versions
+of \acro{OS/2} were born.  (This was before \acro{IBM} came on board, so it wasn't called 
+\acro{OS/2}!)
 
-So to get back to the main track, IBM has a product which could
+So to get back to the main track, \acro{IBM} has a product which could
 become a successful Windows executive.  But they don't control the
 Windows standard, Microsoft does.  So a wise company would enter into
 some kind of formal or informal relationship with MS\hbox{}.  MS would be
 helped by the presense of this high end Windows executive---it makes
-the Windows API more attractive---and a cooperative venture would be
-born.  But instead, {\bf unbelievably}---IBM challenges us publicly
+the Windows \acro{API} more attractive---and a cooperative venture would be
+born.  But instead, {\bfseries unbelievably}---\acro{IBM} challenges us publicly
 to a fight to the death!  ``Curtains for Windows,'' indeed!  Yes,
-IBM could add Win~3.0 support because they had the Win~3.0 source
+\acro{IBM} could add Win~3.0 support because they had the Win~3.0 source
 code, but their contract which gave them that source was due to expire
-soon!  The entire survival of OS/2 as a product depends upon that
+soon!  The entire survival of \acro{OS/2} as a product depends upon that
 contract, and their nasty ads, their character assasinations (Hi,
 J.~Soyring!)  and their ``curtains for Windows'' didn't leave much
 chance of our ever extending their contract!
@@ -270,7 +256,7 @@ chance of our ever extending their contract!
 Why do this crazy thing?  Again, I speculate that they let their envy
 at our success, and their anger over their own past failures, warp their
 thinking.  They wanted to hurt us more than they wanted to help themselves.
-Also, IBM grew up in the days when it had a stranglehold on the industry
+Also, \acro{IBM} grew up in the days when it had a stranglehold on the industry
 and they dreamed of returning to that stranglehold.  The Microchannel
 was intended to achieve that, but it failed.  Now if they could own the
 only OS standard they could use that to leverage their hardware and
@@ -279,32 +265,32 @@ returning to their past glories blinded them to the fact that it wouldn't
 work.
 
 So that's where Microsoft has been sitting for the past two or three
-years.  Every few months I read some |c.o.o.a| and I marvel at all of
-the folks there that just don't get it.  They argue about how OS/2 now has
+years.  Every few months I read some \newsgrp\ and I marvel at all of
+the folks there that just don't get it.  They argue about how \acro{OS/2} now has
 a 3\% market share, or is it 5\%, and they think that that means anything.
 It's like two race cars---one with hundreds of gallons of gas---and
 a 20 lap lead---and the other way behind with only a cup of gas.  And
 its proponents are crowing that it's slowly gaining!
 
 Also, I see folks argue about the sales figures
-that show that OS/2 apps don't sell worth a darn, try to deny the fact that
-there aren't very many widely interesting OS/2 apps available.  Nobody
-seems to understand why there aren't---and won't be---big draw OS/2 apps
+that show that \acro{OS/2} apps don't sell worth a darn, try to deny the fact that
+there aren't very many widely interesting \acro{OS/2} apps available.  Nobody
+seems to understand why there aren't---and won't be---big draw \acro{OS/2} apps
 available.  And people think that the ``5\%'' penetration number contradicts
-the ``no OS/2 apps sold'' number.  Every time I'd marvel at how folks
+the ``no \acro{OS/2} apps sold'' number.  Every time I'd marvel at how folks
 could just look at it in the face and not understand what that means.
 
-It means that OS/2 is selling, however well it does, as a Windows engine.
-That's why some number of copies have been sold, but very few OS/2
-API apps were sold along side.
+It means that \acro{OS/2} is selling, however well it does, as a Windows engine.
+That's why some number of copies have been sold, but very few \acro{OS/2}
+\acro{API} apps were sold along side.
 
-So OS/2 is a Windows engine, 
+So \acro{OS/2} is a Windows engine, 
 and that engine is going to jump the tracks each time an improved
-Windows ships.  It will take IBM two or three years to reverse engineer
-the new stuff, and by that time MS will have it's {\bf next} release out.
+Windows ships.  It will take \acro{IBM} two or three years to reverse engineer
+the new stuff, and by that time MS will have it's {\bfseries next} release out.
 You can't establish your own direction, and you can't play catch up.
 It's just an untennable position.  MS refused to get into that position
-with AT\&T, yet IBM burned all of its other bridges {\bf before} it crossed
+with \acro{AT\&T}, yet \acro{IBM} burned all of its other bridges {\bfseries before} it crossed
 them.  The only way to live in that kind of a situation is to cooperate
 with the company that controls the standard, not slander and belittle it.
 
@@ -313,66 +299,67 @@ on how long it would be before Lou Gestner wised up.  Mr. Gestner, whom
 I don't personally know, is clearly a very sharp guy.  But he was a
 cookie salesman and didn't understand the kind of dynamics I've discussed
 above.  He had to take the word of underlings---guys who spun crazy
-tales of somehow overthrowing Microsoft, IBM regaining its rightful
+tales of somehow overthrowing Microsoft, \acro{IBM} regaining its rightful
 position as ruler of the world, ``curtains for Windows,'' and the 
-incredible profits that would come from an IBM stranglehold.  It sounds
-good if you don't understand the real underlying dynamics, and IBM
+incredible profits that would come from an \acro{IBM} stranglehold.  It sounds
+good if you don't understand the real underlying dynamics, and \acro{IBM}
 desparately needs major new profit centers, so these guys convinced
 Gestner to support them.  
 
 But, as I've said, while Gestner was ignorant, he isn't dumb.  And he
 won't be ignorant forever.  Eventually he'll come to realize that
-the OS/2 emperor has no clothes.  So me and my friends would occasionally
+the \acro{OS/2} emperor has no clothes.  So me and my friends would occasionally
 speculate when that might be---6 months, 12 months, 24 months, etc.
-There was no doubt {\bf what} would happen, it was just a matter of
-{\bf when}.
+There was no doubt {\bfseries what} would happen, it was just a matter of
+{\bfseries when}.
 
-Clearly, Gestner has reached that point.  First, note that IBM said that
-they weren't even going to try to modify OS/2 for the new WIN95~APIs.
+Clearly, Gestner has reached that point.  First, note that \acro{IBM} said that
+they weren't even going to try to modify \acro{OS/2} for the new Win95~\acro{API}s.
 That means that they don't want to launch a 2 year product because
-they figure there'll be nothing there in 2 years to run that API\hbox{}.
-IBM has to run behind Microsoft playing ``catch up,'' and they've stopped
+they figure there'll be nothing there in 2 years to run that \acro{API}\hbox{}.
+\acro{IBM} has to run behind Microsoft playing ``catch up,'' and they've stopped
 running and are walking slowly, panting.  This is a critical sign.
 
 Secondly, Gestner is saying publicly that the OS battle is the ``previous
 battle'' and that groupware is now where he should fight.  I won't argue
 with that, but this is as clear a statement as you'll ever find that they've
-given up on OS/2 as a mainstream desktop system.  It's not curtains for
-Windows, but curtains for OS/2.   For anyone who has eyes to see, IBM
-has thrown in the towel on OS/2 as a mainstream, successful operating system.
+given up on \acro{OS/2} as a mainstream desktop system.  It's not curtains for
+Windows, but curtains for \acro{OS/2}.   For anyone who has eyes to see, \acro{IBM}
+has thrown in the towel on \acro{OS/2} as a mainstream, successful operating system.
 They'll continue to support it for the folks who are using it as a
 dedicated platform.  But that won't go far or for very long, IMHO.
 
 There are two problems.  First, it's my uneducated guess that they can't
 even turn a positive cash flow developing it for dedicated platforms.
-Even if they just write off the billions blown, IBM is not an efficient
+Even if they just write off the billions blown, \acro{IBM} is not an efficient
 developer and they'll have a hell of a lot of programmers writing and
-supporting it.  At one time in the past IBM might have lost money for
-10 years as a strategic move to increase customer confidence in IBM
-support.  But as their mainframes start melting seriously IBM won't be
+supporting it.  At one time in the past \acro{IBM} might have lost money for
+10 years as a strategic move to increase customer confidence in \acro{IBM}
+support.  But as their mainframes start melting seriously \acro{IBM} won't be
 able to afford such luxuries.  It's my guess---and again, I admit that
 this is outside of my area of expertise---that there'll be a lot of
 scouts-honor promises, but that after a few years of loosing money
-IBM will phase out of OS/2 altogether, one way or another.  Note that they
-{\bf have} to spend a lot of money developing it, even for this niche. Otherwise
-stuff like NT---which is so much cheaper because of the larger number
-of copies---is too attractive.  NT, for example, would have the latest
-technology and a stagnant OS/2 wouldn't.  NT would have the latest tools
-and compilers, and a stagnant OS/2 wouldn't.  So even as a niche system,
-OS/2 can't be just milked, it has to continue to undergo development.
-And it will be damned hard for anyone, especially IBM, to make money
+\acro{IBM} will phase out of \acro{OS/2} altogether, one way or another.  Note that they
+{\bfseries have} to spend a lot of money developing it, even for this niche. Otherwise
+stuff like \acro{NT}---which is so much cheaper because of the larger number
+of copies---is too attractive.  \acro{NT}, for example, would have the latest
+technology and a stagnant \acro{OS/2} wouldn't.  \acro{NT} would have the latest tools
+and compilers, and a stagnant \acro{OS/2} wouldn't.  So even as a niche system,
+\acro{OS/2} can't be just milked, it has to continue to undergo development.
+And it will be damned hard for anyone, especially \acro{IBM}, to make money
 doing that.
 
-So, in a few nutshells, that's it.  IBM doomed OS/2 years ago when
+So, in a few nutshells, that's it.  \acro{IBM} doomed \acro{OS/2} years ago when
 they said it was ``us or them.''  Folks at MS walked around with their
-mouths hanging open for days---we couldn't believe that IBM was that
-dumb.  And now you see the result.  OS/2 is dead as a general purpose
+mouths hanging open for days---we couldn't believe that \acro{IBM} was that
+dumb.  And now you see the result.  \acro{OS/2} is dead as a general purpose
 operating system.  And I, for one, am highly skeptical of its longevity
 as a dedicated platform.
-\medskip
-{\parindent=2in\parskip=1pt \obeylines Gordon Letwin
-not a Microsoft spokesperson\medskip
-}
+
+{\leftskip=1in
+Gordon Letwin\\
+not a Microsoft spokesperson\par}
+
 \noindent P.S.---please note that all of this is my personal opinion.  I don't
 set or participate in Microsoft strategy, I'm just a programmer.  
 None of this represents Microsoft's view of the situation, either
@@ -384,6 +371,6 @@ micro revolution back when the 8080 first came out.  That's why I
 switched from supercomputers to microcomputers.  
 
 So I have a good track record at being able to see the obvious.  Even
-when the obvious was {\bf not} obvious to the rest of the industry, like
-IBM, DEC, et. al.
-\bye
+when the obvious was {\bfseries not} obvious to the rest of the industry, like
+\acro{IBM}, \acro{DEC}, et. al.
+\end{document}

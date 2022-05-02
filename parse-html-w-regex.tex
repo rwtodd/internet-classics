@@ -1,9 +1,9 @@
-% decode the strangeness with
-% https://www.online-toolz.com/tools/text-unicode-entities-convertor.php
-% Original is at
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,total={5.0in,9in}]{geometry}
+% This is basically plain TeX, but I'm putting a LaTeX wrapper on it...
+%
+% Original is at:
 % https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454
-\parskip 10pt plus 4pt minus 4pt\parindent=0pt%
-\lineskiplimit=-1000pt% don't expand lines that are too large..
 \font\lil=cmr5%
 \font\bfit=cmbxti10%
 \def\rayz#1#2{\llap{\raise #1\hbox{#2}}}%
@@ -16,12 +16,14 @@
 \kern-.01em\copy0\kern-\wd0%
 \kern.05em\copy0\kern-\wd0%
 \kern-.01em\raise.0333em\box0}%
-%\newbox\crazybox % ... maybe don't need crazybox after all
-%\def\mkcrazy#1{\setbox\crazybox=\hbox{#1}\dp\crazybox=0pt\ht\crazybox=0pt\leavevmode\copy\crazybox}%
-\centerline{\bf You Can't Parse HTML with Regex}
-\centerline{(amusing ``answer'' on StackOverflow)}
+\title{You Can't Parse HTML with Regex}
+\author{Amusing StackOverflow Answer}
+\date{circa 2009}
 
-\bigskip
+\begin{document}
+\parskip 10pt plus 4pt minus 4pt\parindent=0pt%
+\lineskiplimit=-1000pt% don't expand lines that are too large..
+\maketitle
 
 \parskip=0pt
 You can't parse [X]HTML with regex. Because HTML can't be parsed by
@@ -68,10 +70,10 @@ $\dot{\rm c}$\rayz{1pt}{$\hat{\phantom{c}}$}\rayzl{8pt}{h}%
 o\rayz{-1pt}{$^{{}^\varsigma}$}\rayzl{8pt}{m}%
 rrupt
 entities (like SGML entities, but
+{\it more corrupt) a mere glimp}se of the world
 
-\raggedright{}{\it more corrupt) a mere glimp}se
-of the world of reg{\bf ex parsers for HTML will ins}tantly transport a
-p{\it ro-grammer's consciousness i}nto a w{\it orl}d of ceaseless screaming, he
+\raggedright{}of reg{\bf ex parsers for HTML will ins}tantly transport a
+p{\it ro\-grammer's consciousness i}nto a w{\it orl}d of ceaseless screaming, he
 comes\strike{7em}, the pestilent slithy
 regex-infection wil{\bf l devour your HT}ML
 parser, application and existence for all time like Visual Basic only
@@ -199,4 +201,4 @@ E\rayzb{-1ex}{$\smile$\thinspace}%
 \parskip 10pt plus 4pt minus 4pt\parindent=0pt%
 Have you tried using an XML parser instead?
 
-\bye
+\end{document}
