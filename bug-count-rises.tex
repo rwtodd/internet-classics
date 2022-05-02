@@ -1,20 +1,15 @@
-% palatino fonts
-\font\twelverm=pplr at 12pt
-\font\twelvebf=pplb at 12pt
-\font\twelvesl=pplro at 12pt
-\font\biggerbold=pplb at 14pt
-\def\rm{\twelverm}
+\documentclass[12pt,letterpaper]{article}
+\renewcommand{\rmdefault}{ptm}
 
-\footline={\hss\rm\folio\hss} % adjust page number font..
-\parskip=3pt\baselineskip=14pt % looser line-to-line spacing
-\rm
-\vglue 0.5in plus 3pt minus 3pt
-\centerline{\biggerbold The Bug Count Also Rises}
-\smallskip
-\centerline{1996 {\twelvesl MicroNews} Hemingway parody competition winner}
-\centerline{by John Browne}
-\vglue 0.5in plus 2pt minus 2pt
-\noindent In the fall of that year the rains fell as usual and washed
+\title{The Bug Count Also Rises\\
+\normalsize \textit{MicroNews} Hemingway Parody Competition Winner}
+\author{John Browne}
+\date{1996}
+
+\begin{document}
+\maketitle
+
+In the fall of that year the rains fell as usual and washed
 the leaves of the dust and dripped from the leaves onto the
 ground. The shuttles drove through the rainy streets and took the
 people to meetings, then later brought them back, their tires spraying
@@ -82,13 +77,11 @@ Together they walked slowly back, knowing it would be good. As they
 walked the rain dripped softly from the leaves, and the shuttles
 carried the bodies back from the meetings.
 
-\bigskip
-{\twelvebf \noindent Historical Glossary}
-\medskip
-\halign{\twelvebf#\hskip5pt&#\hfill\cr
-Chicago&The codename for Windows~95.\cr
-RAID&This was a bug database used at Microsoft during the Windows 95 era.\cr
-&https://devblogs.microsoft.com/oldnewthing/20200317-00/?p=103566\cr
-}
+\section*{Historical Glossary}
+\begin{description}
+\item[Chicago] The codename for Windows~95.
+\item[RAID] This was a bug database used at Microsoft during the Windows~95
+era.\footnote{https://devblogs.microsoft.com/oldnewthing/20200317-00/?p=103566}
+\end{description}
 
-\bye
+\end{document}

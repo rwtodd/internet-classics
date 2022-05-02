@@ -1,4 +1,4 @@
-TEX  := tex
+TEX  := latex
 DVIS := $(patsubst %.tex,%.dvi,$(wildcard *.tex))
 
 .PHONY: all clean
