@@ -1,10 +1,14 @@
-\def\section#1.{\bigskip{\noindent\bf#1}\par\noindent\ignorespaces}
-\newcount\codenum \codenum=0
-\def\code{\advance\codenum by1\item{\the\codenum.}}
+\documentclass[12pt,letterpaper]{article}
+\title{SQLite Code of Conduct}
+\author{SQLite Core Team}
+\date{}
 
-\vglue 1in
-\centerline{\bf SQLite Code of Conduct}
-\section Overview.
+\newcommand{\code}{\item}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
 The code of conduct for developers of the SQLite project is the 72
 ``instruments of good works'' from the 6th~century Rule of
 St.~Benedict, shown below. This code of conduct has proven its mettle
@@ -27,7 +31,8 @@ doing so you will live a happier, healthier, and more productive
 life. Nevertheless, this is a choice that you must make for yourself,
 and is not a precondition for using SQLite.
 
-\section The Code.
+\section*{The Code}
+\begin{enumerate}
 \code First of all, love the Lord God with your whole heart, your whole soul, and your whole strength.
 \code Then, love your neighbor as yourself.
 \code Do not murder.
@@ -100,4 +105,5 @@ and is not a precondition for using SQLite.
 \code Pray for your enemies in the love of Christ.
 \code Make peace with your adversary before the sun sets.
 \code Never despair of God's mercy.
-\bye
+\end{enumerate}
+\end{document}
