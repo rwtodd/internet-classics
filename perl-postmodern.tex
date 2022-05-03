@@ -1,21 +1,25 @@
-\font\biggerbold=cmbx12 scaled \magstep1%
-\font\biggertxt=cmr12 scaled \magstep2%
-\def\title#1{\leavevmode\vskip 0.5in\centerline{\biggertxt #1}\par}%
-\def\subtitle#1{\medskip\centerline{\sl #1}}%
-\def\sect#1.{\bigbreak\noindent{\biggerbold #1}\par\noindent\ignorespaces}%
-\def\startlist{\smallskip\begingroup\narrower\parskip=6pt}%
+\documentclass[10pt,letterpaper]{article}
 
 \title{Perl, the First Postmodern Computer Language}
-\subtitle{Larry Wall}
-\subtitle{(talk at {\rm Linux World} on March 3, 1999)}
-\vskip 0.5in
+\author{Larry Wall \\ (talk at Linux~World)}
+\date{March 3, 1999}
+
+\newcommand{\acro}[1]{{\small\MakeUppercase #1\spacefactor1000}}
+\newcommand{\logop}[1]{{\small\MakeUppercase #1\spacefactor1000}}
+\newcommand{\unix}{{\small U\kern-0.05emNIX\spacefactor1000}}
+
+\begin{document}
+\maketitle
+\vspace{1in}
 \noindent Thank you all for coming. I was hoping the title of this talk would scare
-away everyone who shouldn't be here. Obviously I should have made up a
-scarier title $\ldots$
-\medbreak
-\item{}Perl meets Godzilla?
-\item{}Bambi meets Perl?
-\medbreak
+away everyone who shouldn't be here. Obviously, I should have made up a
+scarier title \ldots
+
+\begin{itemize}
+\item[] Perl meets Godzilla?
+\item[] Bambi meets Perl?
+\end{itemize}
+
 \noindent I just did an interview for Feed Magazine. When I read their intro to it, I
 was interested to see that they made reference to my ``curious speeches.''
 I'll take that as a compliment. Why I take it as a compliment is the subject
@@ -31,7 +35,7 @@ universal harmonic convergence, I thought I should talk about both Perl and
 Linux. To do that, I had to figure out what Perl and Linux have in common.
 Besides the obvious, of course.
 
-Obviously, both Perl and Linux owe a lot to Unix culture, but this is well
+Obviously, both Perl and Linux owe a lot to \unix\ culture, but this is well
 documented. If I merely pointed out the obvious commonalities, I'd have to
 talk the whole time about things you can find out from the manuals. (Or
 should I say, things you ought to be able to find out from the manuals?
@@ -129,7 +133,7 @@ source of ideas. In fact, Perl contains lots of modern ideas from computer
 science. Along with all the rest of the ideas in there.''
 
 Heidi said, ``You wanna know something really funny. In my IMP class, our
-class slogan is, `There's more than one way to do it.'\thinspace''
+class slogan is, `There's more than one way to do it.'\,''
 
 ``You're kidding,'' I said. [I should also say that that IMP stands for
 Interactive Math Program, which is a math curriculum in which you sort of
@@ -181,14 +185,14 @@ came about because Modernism succeeded or because it failed. As a postmodern
 myself, I take both sides. To some extent.
 
 This would bother a Modernist, because a Modernist has to decide whether this
-is true OR that is true. The Modernist believes in OR more than AND.
-Postmodernists believe in AND more than OR. In the very postmodern Stephen~Sondheim
+is true \logop{OR} that is true. The Modernist believes in \logop{OR} more than \logop{AND}.
+Postmodernists believe in \logop{AND} more than \logop{OR}. In the very postmodern Stephen Sondheim
 musical, {\it Into the Woods},
 one of the heroines laments, ``Is it
 always or, and never and?'' Of course, at the time, she was trying to
 rationalize an adulterous relationship, so perhaps we'd better drop that
-example. Well, hey. At least we can use Perl as an example. In Perl, AND has
-higher precedence than OR does. There you have it. That proves Perl is a
+example. Well, hey. At least we can use Perl as an example. In Perl, \logop{AND} has
+higher precedence than \logop{OR} does. There you have it. That proves Perl is a
 postmodern language.
 
 But back to the monoculturism of Modernism, or rather the assumption of
@@ -229,7 +233,7 @@ If that's the case, I pity the person who's only skin and bones.
 Now you may be wondering what all this has to do with Perl. So am I\hbox{}. I'll
 think of something presently.
 
-Time passes $\ldots$
+Time passes \ldots
 
 While I'm thinking about the next thing to say in my talk, let me say a bit
 more about deconstructionism. I do not view deconstructionism as a form of
@@ -253,10 +257,10 @@ deconstructionism.
 
 I'm still trying to think about how this relates to Perl, by the way.
 
-More time passes $\ldots$
+More time passes \ldots
 
 I first heard about postmodernism in the late '70s at Seattle Pacific
-University from my wife's Lit Crit professor, Dr. Janet Blumberg.
+University from my wife's Lit Crit professor, Dr.~Janet Blumberg.
 Postmodernism came early to literature, so it's no surprise that we heard it
 first from a literary critic. By the way, don't think of literary critics
 like you think of theatre critics. Literary critics usually know what they're
@@ -264,7 +268,7 @@ talking about.
 
 Even if they're wrong.
 
-Anyway, we heard it first from Dr. Blumberg, who was never wrong, so
+Anyway, we heard it first from Dr.~Blumberg, who was never wrong, so
 naturally we first thought about in in terms of literature. In fact, most
 people still think of postmodernism as a kind of weird literature. But
 postmodernism was also coming along in architecture too, as we were soon to
@@ -299,7 +303,8 @@ languages, and many things I disliked. I lovingly reused features from many
 languages. (I suppose a Modernist would say I stole the features, since
 Modernists are hung up about originality.) Whatever the verb you choose, I've
 done it over the course of the years from C, sh, csh, grep, sed, awk,
-Fortran, COBOL, PL/I, BASIC-PLUS, SNOBOL, Lisp, Ada, C++, and Python. To name
+Fortran, \acro{COBOL}, \acro{PL/I}, \acro{BASIC-PLUS}, \acro{SNOBOL}, Lisp,
+Ada, C++, and Python. To name
 a few. To the extent that Perl rules rather than sucks, it's because the
 various features of these languages ruled rather than sucked.
 
@@ -328,7 +333,7 @@ Think about Python, and whitespace. Hi, Guido.
 Or think about shell programming, and reductionism. How many times have we
 heard the mantra that a program should do one thing and do it well?
 
-Well $\ldots$ Perl does one thing, and does it well. What it does well is to
+Well \ldots Perl does one thing, and does it well. What it does well is to
 integrate all its features into one language. More importantly, it does this
 without making them all look like each other. Ducts shouldn't look like
 girders, and girders shouldn't look like ducts. Neither of those should look
@@ -376,7 +381,7 @@ In contrast, postmodernism puts the focus back onto the carpenter. You'll
 note that carpenters are allowed to choose whether or not to use hammers.
 They can use saws and tape measures if they choose, too. They have some
 amount of free will in the matter. They're allowed to be creative. Especially
-if they're working on Mrs. Winchester's house. Hey, it's right down the road,
+if they're working on Mrs.~Winchester's house. Hey, it's right down the road,
 if you don't believe me.
 
 So, to drag the subject back to computers, one of the characteristics of a
@@ -518,19 +523,19 @@ solve real problems with them. A number of languages give lip service to the
 idea of minimalism, but merely sweep the complexity of the problem under the
 carpet of the programmer. C is a minimalistic language, but only if you don't
 count all the libraries that are necessary to use it usefully. C++ is
-obviously not trying to be minimalistic. Unix is considered by some to be a
+obviously not trying to be minimalistic. \unix\ is considered by some to be a
 minimalistic operating system, but the fact of the matter is that if you
-think of Unix as a programming language, it's far richer than even Perl. Perl
-is, by and large, a digested and simplified version of Unix. Perl is the
-Cliff Notes of Unix.
+think of \unix\ as a programming language, it's far richer than even Perl. Perl
+is, by and large, a digested and simplified version of \unix. Perl is the
+Cliff Notes of \unix.
 
-Unix (and by extension Linux) are really simultaneously Modern and
-postmodern. Unix philosophy is supposedly reductionistic, and minimalistic.
-But instead of being Modernistic, Unix is actually deconstructionistic. The
+\unix\ (and by extension Linux) are really simultaneously Modern and
+postmodern. \unix\ philosophy is supposedly reductionistic, and minimalistic.
+But instead of being Modernistic, \unix\ is actually deconstructionistic. The
 saving grace of deconstructionism is that it is also reconstructionism. When
 you've broken everything down into bits, you're required to put them back
-together again a different way. In order to solve real problems, Unix
-requires you not only to be reductionistic, but also holistic. It's no
+together again a different way. In order to solve real problems, \unix\ requires
+you not only to be reductionistic, but also holistic. It's no
 accident that the ductwork shows in shell scripts. Only we call them pipes.
 
 Postmodernism isn't afraid of ornamentation, because postmodernism is a
@@ -674,7 +679,7 @@ the universe itself is true or false, just as long as it makes a good story.
 And I think our universe does make a good story. I happen to like the Author.
 
 I like Lois McMaster Bujold too, so I read her stories. Same for Tolkien, and
-C.S. Lewis. Turning that around, some people use Perl because they like me.
+C.S.~Lewis. Turning that around, some people use Perl because they like me.
 Who am I to argue with them? You're all totally objective about Linus and
 Linux, right? Uh, huh. Three cheers for objectivity.
 
@@ -703,12 +708,12 @@ All in all, it's been a bad year to be named Bill. The wolves are circling,
 and waiting for further signs of weakness, and everyone's hedging their bets
 by attending LinuxWorld, and making sure the press know it.
 
-Meanwhile, back on the Unix side of the universe, The Cult of Originality
+Meanwhile, back on the \unix\ side of the universe, The Cult of Originality
 decreed that, if you were going to work on something, it had to be something
-new. Reimplementing an open source Unix would have been laughable, especially
-since any university could get the sources to Unix anyway for next to
+new. Reimplementing an open source \unix\ would have been laughable, especially
+since any university could get the sources to \unix\ anyway for next to
 nothing. When other companies besides Ma Bell figured out that they should
-have an implementation of Unix, they all had to make it different enough that
+have an implementation of \unix, they all had to make it different enough that
 they could distinguish themselves in the marketplace. That is, what they
 wrote had to be original.
 
@@ -716,7 +721,7 @@ The Cult of Seriousness decreed that everyone had to keep their source code
 hidden, because other people might laugh at how bad our code is, and make us
 fix it. Or worse, someone might steal our bad code and make it better. Then
 we would be out of business, and Life is Serious Business. A peek at the
-source code for Unix is obviously worth \$100,000, because we can get that
+source code for \unix\ is obviously worth \$100,000, because we can get that
 much for it. Programming for the fun of it? Get real!
 
 Finally, the Cult of Objectivity decreed that the way we always did business
@@ -744,7 +749,7 @@ tribes, if only to be cheerleaders.
 
 But the open source movement is energized by the other sort of joiner. This
 sort of person joins many tribes. These are the people who inhabit the
-intersections of the Venn diagrams. They believe in ANDs rather than ORs.
+intersections of the Venn diagrams. They believe in \logop{AND}s rather than \logop{OR}s.
 They're a member of more than one subset, more than one tribe. The reason
 these people are important is, just like merchants who go between real
 tribes, they carry ideas from one intellectual tribe to another. I call these
@@ -753,7 +758,7 @@ they join tribes together. Twenty years ago, you couldn't easily be a glue
 person, because our culture was not yet sufficiently accepting of diversity.
 It was also not accepting of information sharing. If you got sucked in by
 Bell Labs, you might get out to the occasional Usenix, but that was about it.
-If you got sucked in by the NSA, nobody ever heard from you again. Come to
+If you got sucked in by the \acro{NSA}, nobody ever heard from you again. Come to
 think of it, that's still true.
 
 Still and all, things have improved greatly, and the bridges across the gaps
@@ -775,31 +780,33 @@ The other day, I was talking to a glue person whose name is Sharon Hopkins.
 Among other things, she's known as the Perl Poet, because she's written more
 poetry in Perl than anyone else. She also writes a kind of non-Perl poetry
 that was dubbed by another poet as ``sharonesque.'' Here's a cute example:
-\medbreak
-{\narrower\obeylines
-I'd travel to the ends of time
-For you, my one, my only love.
-I'd force the sun to leave its track
-(If you were lost) to fetch you back.
-I'd suck the juices from a lime,
-I'd re-write Moby Dick in rhyme,
-I'd happily commit a crime!
-For you, my dearest darling dove.
-I'd do it all, and more beside --- 
+
+\begin{verse}
+I'd travel to the ends of time\\
+For you, my one, my only love.\\
+I'd force the sun to leave its track\\
+(If you were lost) to fetch you back.\\
+I'd suck the juices from a lime,\\
+I'd re-write Moby Dick in rhyme,\\
+I'd happily commit a crime!\\
+For you, my dearest darling dove.\\
+I'd do it all, and more beside ---\\
  
-Now *would* you take the trash outside?
-\medskip}
-\hskip 1in--- Sharon Hopkins, Winter, 1989-90
-\medbreak
+Now {\bfseries would} you take the trash outside?
+
+\hspace{1in}--- Sharon Hopkins, Winter, 1989-90
+\end{verse}
+
 \noindent I had to write a response to that poem. Actually, two responses. I won't
 inflict the longer one on you, but here's the shorter one:
-\medbreak
-{\narrower\obeylines
-I've taken the trash out innumerable times,
-I've taken the trash out in inclement climes,
-I've taken the trash out 'cuz that's what I do,
-But I won't take the trash out when you tell me to.
-\medbreak}
+
+\begin{verse}
+I've taken the trash out innumerable times,\\
+I've taken the trash out in inclement climes,\\
+I've taken the trash out 'cuz that's what I do,\\
+But I won't take the trash out when you tell me to.\\
+\end{verse}
+
 \noindent Well, anyway, most of Sharon's poetry is relational, as befits a postmodern
 glue person. As I was saying, we were talking recently. Oddly, the subject
 was postmodernism. Fancy that. We were discussing how postmodern stuff can
@@ -811,9 +818,9 @@ where we have the Absolute Destiny Apocalypse mixed in with octopi falling
 out of closets. Both shows are full of arbitrary but endearing conventions.
 Anyway, I said something about what I was going to talk about here, and she
 said an interesting thing:
-\medbreak
-{\narrower\noindent
-\llap{``}Yes, Modernism created a lot of
+
+\begin{quotation}
+\noindent\llap{``}Yes, Modernism created a lot of
 dysfunction---nobody disputes that. We were encouraged to revolt, deconstruct,
 cut apart our papers, run away from home and take drugs, not get married, and
 so on. Modernism tore a lot of things apart, but especially the family. The
@@ -828,7 +835,9 @@ But it's more than that. Think of Perl culture as a dysfunctional family. Or
 think of the various communities that arise on the net. Think of our Gen X
 group at church and their obviously postmodern tastes: night club decor mixed
 with candles. But it's really about being together. Nowadays, family is where
-you find it. Family is where you create it.''\medbreak}
+you find it. Family is where you create it.''
+\end{quotation}
+
 \noindent I think Sharon knows what she's talking about here. She actually met her
 current boyfriend online, but don't tell her I said that. Anyway, I thought
 she has an interesting perspective on the way the net works nowadays.
@@ -848,10 +857,10 @@ Windows, but that's because they're all still stuck back in the Modern age.
 Anyway, there's a funny thing about using ``.pl'' for the Perl extension.
 People used to argue a lot about what the next language after C would be.
 Everone knew that the previous language had been called ``B'', after the
-first letter in BCPL, which came even earlier than B. The two proposed
+first letter in \acro{BCPL}, which came even earlier than B. The two proposed
 candidates for the next language were ``D'', because that's what comes
 after ``C'' in the alphabet, and ``P'', because that was the next letter
-in BCPL.
+in \acro{BCPL}.
 
 Well, as you can see, it didn't work out either way. One of the successors to
 C was C++, which is a cute pun on the autoincrement operator, but makes it an
@@ -861,7 +870,7 @@ the diversity, but somehow I do. I suppose a little inconsistency is good for
 the soul.
 
 Anyway, the other successor to C gobbled up two letters instead of one. Which
-is why many Perl scripts have the extension, ``.pl'', finishing off BCPL.
+is why many Perl scripts have the extension, ``.pl'', finishing off \acro{BCPL}.
 It's a pity, in a way. Now there can never be a language named ``L''.
 Perhaps it's just as well. Quite apart from the annual yuletide puns we'd get
 on ``noel, noel'', there's also the problem that people would have confused
@@ -875,4 +884,4 @@ Or as Tiny Tim says, God bless us, every one.
 
 If you guys want me to stop talking, you'd better ask some questions.
 
-\bye
+\end{document}
