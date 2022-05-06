@@ -1,4 +1,5 @@
-\documentclass[12pt,letterpaper]{article}
+\documentclass[12pt,letterpaper,titlepage]{article}
+\usepackage[letterpaper, total={5.6in, 8in}]{geometry}
 \renewcommand{\rmdefault}{ppl}
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -7,30 +8,38 @@
 \setlength{\parskip}{8pt plus 1pt minus 1pt}
 \setlength{\baselineskip}{14pt}
 
+% make \fmtXXX macros that \@seccntformat branch out to..
 \def\fmtsection#1{Book \thesection\ --- }
 \def\fmtsubsection#1{\makebox[\intomargin][l]{\thesubsection}}
 \makeatletter
 \renewcommand{\@seccntformat}[1]{\csname fmt#1\endcsname} 
+
+% redefine \section so that it goes left into the margins...
 \renewcommand{\section}{%
 \@startsection{section}%
 {1}%
 {-\intomargin}%
 {-3.5ex plus -1ex minus -0.2ex}%
 {2.3ex plus 0.2ex}%
-{\normalfont\Large\bfseries}%
+{\clearpage\normalfont\Large\bfseries}%
 }
+% redefine \subsection so it goes into the margins and doesn't space down after 
 \renewcommand{\subsection}{%
 \@startsection{subsection}%
 {1}%
 {-\intomargin}%
 {-3.5ex plus -1ex minus -0.2ex}%
 {-0pt}%
-{\normalfont\large\bfseries}%
+{\normalfont\normalsize\bfseries}%
 }
 \makeatother
+
+% some special markup for our specific layout...
 \newcommand{\book}[2]{\section{#1}\par\hspace{-\intomargin}Thus spake the Master Programmer:%
 \begin{quotation}\noindent\llap{``}\textsl{#2}''\end{quotation}\medskip}
 \newcommand{\sect}{\subsection{}}
+\newenvironment{versesect}{\begin{minipage}[t]{5.5in}\begin{verse}}%
+{\end{verse}\end{minipage}\vspace{\partopsep}\vspace{\topsep}}
 
 \title{The Tao of Programming}
 \author{Translated by Geoffrey James}
@@ -48,6 +57,7 @@ Something mysterious is formed, born in the silent void. waiting alone
 and unmoving, it is at once still and yet in constant motion. It is
 the source of all programs. I do not know its name, so I will call it
 the Tao of Programming.
+
 \begin{verse}
 If the Tao is great, then the operating system is great.\\
 If the operating system is great, then the compiler is great.\\
@@ -68,7 +78,7 @@ Each language has its purpose, however humble. Each language expresses
 the Yin and Yang of software. Each language has its place within the
 Tao.
 
-But do not program in COBOL if you can avoid it.
+But do not program in {\small COBOL} if you can avoid it.
 
 \sect
 In the beginning was the Tao. The Tao gave birth to Space and Time.
@@ -93,11 +103,12 @@ retreat. Great talent shows itself late in life. Even a perfect
 program still has bugs.
 
 \book{The Ancient Masters}
-{After three days without programming, life becomes meaningless.}
+{After three days without programming, life becomes\\ meaningless.}
 
 \sect
 The programmers of old were mysterious and profound. We cannot fathom
 their thoughts, so all we do is describe their appearance.
+
 \begin{verse}%
 Aware, like a fox crossing the water.\\
 Alert, like a general on the battlefield.\\
@@ -228,7 +239,7 @@ The Master Programmer shrugged. ``Then the design will never be
 completed,'' he said.
 
 \book{Coding}%
-{A well-written program is its own Heaven; a poorly-written
+{A well-written program is its own Heaven;\\ a poorly-written
 program is its own Hell.}
 
 \sect
@@ -283,7 +294,7 @@ insignificant,'' said the Master.
 
 ``It is even in a video game,'' said the Master.
 
-``Is the Tao in the DOS for a personal computer?'' asked the novice.
+``Is the Tao in the {\small DOS} for a personal computer?'' asked the novice.
 
 The Master coughed and shifted his position slightly. ``The lesson is
 over for today,'' he said.
@@ -314,12 +325,12 @@ Prince Wang said, ``Would that all of my programmers were as wise!''
 {Though a program be but three lines long, someday it will
 have to be maintained.}
 
-\sect \begin{verse}
+\sect \begin{versesect}
 A well-used door needs no oil on its hinges.\\
 A swift-flowing stream does not grow stagnant.\\
 A deer blends perfectly into the forest colors.\\
 Software rots if not used.\\
-\end{verse}
+\end{versesect}
 
 These are great mysteries.
 
@@ -355,27 +366,28 @@ When the Master asked about this, the novice became indignant. ``Don't
 be so impatient,'' he said, ``I'll put in the financial stuff
 eventually.''
 
-\sect \begin{verse}
+\sect \begin{versesect}
 Does a good farmer neglect a crop he has planted?\\
 Does a good teacher overlook even the most humble student?\\
 Does a good father allow a single child to starve?\\
 Does a good programmer refuse to maintain his code?\\
-\end{verse}
+\end{versesect}
 
 \book{Management}%
 {Let the programmers be many and the managers few---then
 all will be productive.}
 
-\sect \begin{verse}
+\sect \begin{versesect}
 When managers hold endless meetings,\\
 \quad the programmers write games.\\
 When accountants speak of quarterly profits,\\
 \quad the development budget is about to be cut.\\
 When senior scientists talk blue sky,\\
 \quad the clouds are about to roll in.\\
-\end{verse}
+\end{versesect}
 
 Truly, this is not the Tao of Programming.
+
 \begin{verse}%
 When managers make commitments,\\
 \quad game programs are ignored.\\
@@ -387,7 +399,7 @@ When senior scientists address the problems at hand,\\
 
 Truly, this is the Tao of Programming.
 
-\sect \begin{verse}
+\sect \begin{versesect}
 Why are programmers non-productive?\\
 \quad Because their time is wasted in meetings.\\
 Why are programmers rebellious?\\
@@ -396,7 +408,7 @@ Why are the programmers resigning one by one?\\
 \quad Because they are burnt out.\\
 Having worked for poor management,\\
 \quad they no longer value their jobs.\\
-\end{verse}
+\end{versesect}
 
 \sect
 A manager was about to be fired, but a programmer who worked for him
@@ -465,9 +477,8 @@ Master Programmer to examine. The Magician wheeled a large black box
 into the Master's office while the Master waited in silence.
 
 ``This is an integrated, distributed, general-purpose workstation,''
-began the Magician, ``ergonomically designed with a proprietary
-operating system, sixth generation languages, and multiple state of
-the art user interfaces. It took my assistants several hundred man
+began the Magician, ``ergonomically designed with sixth~generation languages, a proprietary operating
+system, and multiple state of the art user interfaces. It took my assistants several hundred man
 years to construct. Is it not amazing?''
 
 The Master Programmer raised his eyebrows slightly. ``It is indeed
@@ -494,7 +505,7 @@ change in management can harm him. He will not be fired, even if the
 project is cancelled. Why is this? He is filled with Tao.
 
 \book{Hardware and Software}%
-{Without the wind, the grass does not move. Without software,
+{Without the wind, the grass does not move.\\ Without software,
 hardware is useless.}
 
 \sect
