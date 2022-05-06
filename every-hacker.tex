@@ -1,5 +1,13 @@
-\documentclass[10pt]{article}
-\usepackage[letterpaper,total={5.7in,8.5in}]{geometry}
+\documentclass[12pt,letterpaper]{article}
+\usepackage[letterpaper,total={5.6in,8.5in}]{geometry}
+
+\newenvironment{keydatelist}%
+{\begin{list}{}{%
+\renewcommand{\makelabel}[1]{\hspace\labelsep\textbf{##1}\hfil}%
+\settowidth{\labelwidth}{\hspace\labelsep\textbf{9999\,}}%
+\setlength{\leftmargin}{\labelwidth}}}%
+{\end{list}}
+
 \newcommand{\hexnum}[1]{\texttt{#1}}
 \newcommand{\prog}[1]{\texttt{#1}}
 \newcommand{\strong}[1]{\textbf{#1}}
@@ -16,9 +24,10 @@
 
 \begin{document}
 \maketitle
+\vspace{1in}
 \tableofcontents
 
-\pagebreak
+\clearpage
 
 \noindent One fine day in January 2017 I was reminded of something I had half-noticed a
 few times over the previous decade. That is, younger hackers don't know the bit
@@ -122,7 +131,7 @@ something unusual, because either fundamentals or major subharmonics of the
 clock frequencies were in the 20Hz to 20KHz range of human audibility. Nothing
 has run \textbf{that} slowly since the turn of the 21st century.
 
-\section{The Strange Afterlife of the Hayes Smartmodem}
+\section[The Strange Afterlife of the Hayes Smartmodem]{The Strange Afterlife of the\\ Hayes Smartmodem}
 About those modems: the word is a portmanteau for ``modulator/demodulator.''
 Modems allowed digital signals to pass over copper phone wires --- ridiculously
 slowly by today's standards, but that's how we did our primitive wide-area
@@ -392,7 +401,7 @@ commercial-grade routers, and debugging consoles on embedded systems. The \acro{
 serial variant is often used in the latter context, especially on maker
 devices.
 
-\section{WAN Time Gone: The Forgotten Pre-Internets}
+\section[WAN Time Gone: The Forgotten Pre-Internets]{WAN Time Gone: The Forgotten\\ Pre-Internets}
 Today, the \acro{TCP/IP} Internet is very nearly the only \acro{WAN} (Wide-Area-Network) left
 standing. It was not always so. From the late '70s to the mid-1990s --- but
 especially between 1981 and 1991 --- there were a profusion of \acro{WAN}s of widely
@@ -451,8 +460,8 @@ Internet routing.
 often put that skill on their CVs in the justified expectation that it could
 land them a job.
 
-Meanwhile, in the microcomputer world, a different kind of store-and-forward
-evolved --- the \acro{BBS} (Bulletin-Board System). This was software running on a
+Meanwhile, a different kind of store-and-forward
+evolved in the microcomputer world --- the \acro{BBS} (Bulletin-Board System). This was software running on a
 computer (after 1991 usually an \acro{MS-DOS} machine) with one (or, rarely, more)
 attached modems that could accept incoming phone calls. Users (typically, just
 one user at a time!) would access the \acro{BBS} using a their own modem and a
@@ -599,7 +608,7 @@ originally written to prevent burn-in. Flatscreens don't have this problem; the
 secondary purpose of doing something visually interesting with that blank space
 took over.
 
-\section{The Early, Awful Days of Bitmapped Displays}
+\section[The Early, Awful Days of Bitmapped Displays]{The Early, Awful Days of\\ Bitmapped Displays}
 Terminals --- which could usually only display a fixed alphabet of formed
 characters --- were eventually replaced by the ``bitmapped'' style of display we're
 used to today, with individual screen pixels manipulable. Every hacker once
@@ -754,10 +763,11 @@ well.
 The following table describes \ASCII/-1967, the version in use today. This is the
 16$\times$8 format given in most references.
 
+\vspace{6ex}
 \begin{center}
-\leavevmode\vbox{\footnotesize\ttfamily\offinterlineskip
+\leavevmode\vbox{\scriptsize\ttfamily\offinterlineskip
 \halign{%
-\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.38em\vrule height1.5ex depth1ex \hskip0.38em%
+\hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.38em\vrule height2.1ex depth1.1ex \hskip0.38em%
 \hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.38em\vrule\hskip0.38em%
 \hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.38em\vrule\hskip0.38em%
 \hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.38em\vrule\hskip0.38em%
@@ -766,7 +776,7 @@ The following table describes \ASCII/-1967, the version in use today. This is th
 \hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil&\hskip0.38em\vrule\hskip0.38em%
 \hfil#&\hskip0.5em\hfil#&\hskip0.5em#\hfil\cr
 \omit\hfil Dec&\omit\ Hex&&%
-\omit\hskip 0.38em\vrule height1.5ex depth1ex\hskip 0.38em\hfil Dec&\omit\ Hex&&%
+\omit\hskip 0.38em\vrule height2.1ex depth1.1ex\hskip 0.38em\hfil Dec&\omit\ Hex&&%
 \omit\hskip 0.38em\vrule\hskip 0.38em\hfil Dec&\omit\ Hex&&%
 \omit\hskip 0.38em\vrule\hskip 0.38em\hfil Dec&\omit\ Hex&&%
 \omit\hskip 0.38em\vrule\hskip 0.38em\hfil Dec&\omit\ Hex&&%
@@ -792,13 +802,13 @@ The following table describes \ASCII/-1967, the version in use today. This is th
 }}
 \end{center}
 
-\noindent However, this format --- less used because the shape is inconvenient --- probably
+\clearpage\noindent However, this format --- less used because the shape is inconvenient --- probably
 does more to explain the encoding:
 
 \begin{center}
-\leavevmode\vbox{\footnotesize\ttfamily\offinterlineskip
+\leavevmode\vbox{\scriptsize\ttfamily\offinterlineskip
 \halign{%
-#\hfil&\quad#\hfil&\hskip1.5em\vrule height 1.5ex depth1ex\hskip1.5em#\hfil&\quad#\hfil%
+#\hfil&\quad#\hfil&\hskip1.5em\vrule height 2.1ex depth1.1ex\hskip1.5em#\hfil&\quad#\hfil%
 &\hskip1.5em\vrule\hskip1.5em#\hfil&\quad#\hfil%
 &\hskip1.5em\vrule\hskip1.5em#\hfil&\quad#\hfil\cr
 0000000&NUL&0100000&&1000000&@&1100000&`\cr
@@ -871,20 +881,20 @@ you feel an urge to send me more, remember that the emphasis here is on what
 was common knowledge back in the day. If I don't know it now, we probably
 didn't generally know it then.
 \begin{description}
-\item[\acro{NUL} (Null) = Ctrl-@] Survives as the string terminator in \CEE/.
+\item[\acro{NUL} (Null) = Ctrl-@]\hfill\\ Survives as the string terminator in \CEE/.
 \item[\acro{SOH} (Start of Heading) = Ctrl-A] Rarely used (as Ctrl-A) as a section
 divider in otherwise textual formats. Some versions of \UNIX/ mailbox format used
 it as a message divider. One very old version-control system (\acro{SCCS}) did
 something similar.
-\item[\acro{STX} (Start of Text), \acro{ETX} (End of Text) = Ctrl-B, Ctrl-C] Very rarely
+\item[\acro{STX} (Start of Text), \acro{ETX} (End of Text) = Ctrl-B, Ctrl-C]\hfill\\ Very rarely
 used as packet or control-sequence delimiters. You will probably never see
 this, and the only place I've ever seen it was on a non-\UNIX/ OS in the early
 1980s. \acro{ETX} is Ctrl-C, which is a \acro{SIGINT} interrupt character on \UNIX/ systems,
 but that has nothing to do with its \ASCII/ meaning per se and probably derives
 from abbreviating the word ``Cancel.''
-\item[\acro{EOT} (End of Transmission) = Ctrl-D] As Ctrl-D, the way you type ``End of
+\item[\acro{EOT} (End of Transmission) = Ctrl-D]\hfill\\ As Ctrl-D, the way you type ``End of
 file'' to a \UNIX/ terminal.
-\item[\acro{ENQ} (Enquiry) = Ctrl-E] In the days of hardware serial terminals, there
+\item[\acro{ENQ} (Enquiry) = Ctrl-E]\hfill\\ In the days of hardware serial terminals, there
 was a convention that if a computer sent \acro{ENQ} to a terminal, it should answer
 back with terminal type identification. While this was not universal, it at
 least gave computers a fighting chance of autoconfiguring what capabilities it
@@ -892,41 +902,41 @@ could assume the terminal to have. Further back, on teletypes, the answerback
 had been a station ID rather than a device type; as late as the 1970s it was
 still generally remembered that \acro{ENQ}'s earliest name in \ASCII/ had been \acro{WRU} (``Who
 are you?'').
-\item[\acro{ACK} (Acknowledge) = Ctrl-F]
+\item[\acro{ACK} (Acknowledge) = Ctrl-F]\hfill\\
 It used to be common for wire protocols written in \ASCII/ to use \acro{ENQ/ACK} as a
 handshake, sometimes with \acro{NAK} as a failure indication (the \acro{XMODEM}/\acro{YMODEM}/\acro{ZMODEM}
 protocol did this). Hackers used to use \acro{ACK} in speech as ``I hear you'' and
 were a bit put out when this convention was disrupted in the 1980s by Bill The
 Cat's ``Ack! Thppt!''
-\item[\acro{BEL} (Bell) = Ctrl-G]
+\item[\acro{BEL} (Bell) = Ctrl-G]\hfill\\
 Make the bell ring on the teletype --- an attention signal. This often worked on
 \acro{VDT}s as well, but is no longer reliably the default on software terminal
 emulators. Some map it to a visual indication like flashing the title bar.
-\item[\acro{BS} (Backspace) = Ctrl-H]
+\item[\acro{BS} (Backspace) = Ctrl-H]\hfill\\
 Still does what it says on the tin, though there has been some historical
 confusion over whether the backspace key on a keyboard should behave like \acro{BS}
 (nondestructive cursor move) or \acro{DEL} (backspace and delete). Never used in
 textual data protocols.
-\item[\acro{HT} (Horizontal tab) = Ctrl-I]
+\item[\acro{HT} (Horizontal tab) = Ctrl-I]\hfill\\
 Still does what it says on the tin. Sometimes used as a field separator in \UNIX/
 textual file formats, but this is now old-fashioned and declining in usage.
-\item[\acro{LF} (Line Feed) = Ctrl-J]
+\item[\acro{LF} (Line Feed) = Ctrl-J]\hfill\\
 The \UNIX/ textual end-of-line. Printing terminals interpreted it as ``scroll down
 one line''; the \UNIX/ tty driver would normally wedge in a \acro{CR} right before it on
 output (or in early versions, right after).
-\item[\acro{VT} (Vertical Tab) = Ctrl-K]
+\item[\acro{VT} (Vertical Tab) = Ctrl-K]\hfill\\
 In the days of printing terminals this often caused them to scroll down a
 configurable number of lines. \acro{VDT}s had any number of possible behaviors; at
 least some pre-\acro{ANSI} ones interpreted \acro{VT} as ``scroll \strong{up} one line.'' The only
 reason anybody remembers this one at all is that it persisted in \UNIX/
 definitions of what a whitespace character is, even though it's now extinct in
 the wild.
-\item[\acro{FF} (Form Feed) = Ctrl-L] Eject the current page from your printing
+\item[\acro{FF} (Form Feed) = Ctrl-L]\hfill\\ Eject the current page from your printing
 terminal. Many \acro{VDT}s interpreted this as a ``clear screen'' instruction. Software
 terminal emulators sometimes still do. Often interpreted as a ``screen refresh''
 request in textual-input \UNIX/ programs that bind other control characters
 (shells, editors, more/less, etc)
-\item[\acro{CR} (Carriage Return) = Ctrl-M]
+\item[\acro{CR} (Carriage Return) = Ctrl-M]\hfill\\
 It is now possible that the reader has never seen a typewriter, so this needs
 explanation: ``carriage return'' is the operation of moving your print head or
 cursor to the left margin. Windows, other non-\UNIX/ operating systems, and some
@@ -938,17 +948,18 @@ paper. So if you ended a line with line-feed, then carriage-return, you would
 usually see the first character of the next line smeared across the middle of
 the paper, having been struck while the carriage was still zipping to the left.
 Pre-\UNIX/ MacOS used a bare \acro{CR}.
-\item[\acro{SO} (Shift Out), \acro{SI} (Shift In) = Ctrl-N, Ctrl-O]
+\item[\acro{SO} (Shift Out), \acro{SI} (Shift In) = Ctrl-N, Ctrl-O]\hfill\\
 Escapes to and from an alternate character set. \UNIX/ software used to emit them
 to drive pre-\acro{ANSI} \acro{VDT}s that interpreted them that way, but native \UNIX/ usage is
 rare to nonexistent. On teletypes with a two-color ink ribbon (the second color
 usually being red) \acro{SO} was a command to shift to the alternate color, \acro{SI} to
 shift back.
-\item[\acro{DLE} (Data Link Escape) = Ctrl-P]
+\item[\acro{DLE} (Data Link Escape) = Ctrl-P]\hfill\\
 Sometimes used as a packet-framing character in binary protocols. That is, a
 packet starts with a \acro{DLE}, ends with a \acro{DLE}, and if one of the interior data
 bytes matches \acro{DLE} it is doubled.
-\item[\acro{DC[1234]} (Device Control [1234]) = Ctrl-\acro{[QRST]}]
+\item[\acro{DC\char`\[1234\char`\]} (Device Control \char`\[1234\char`\]) = Ctrl-\acro{\char`\[QRST\char`\]}]%
+\hfill\\ 
 Never to my knowledge used specially after teletypes. However: there was a
 common software flow-control protocol, used over \ASCII/ but separate from it, in
 which \acro{XOFF} (\acro{DC3}) was used as a request to pause transmission and \acro{XON} (\acro{DC1}) was
@@ -956,37 +967,37 @@ used as a request to resume transmission. As Ctrl-S and Ctrl-Q these were
 implemented in the \UNIX/ terminal driver and long outlived their origin in the
 Model 33 Teletype. And not just \UNIX/; this was implemented in \acro{CP/M} and \acro{DOS},
 too.
-\item[\acro{NAK} (Negative Acknowledge) = Ctrl-U] See the discussion of \acro{ACK} above.
-\item[\acro{SYN} (Synchronous Idle) = Ctrl-V]
+\item[\acro{NAK} (Negative Acknowledge) = Ctrl-U]\hfill\\ See the discussion of \acro{ACK} above.
+\item[\acro{SYN} (Synchronous Idle) = Ctrl-V]\hfill\\
 Never to my knowledge used specially after teletypes, except in synchronous
 serial protocols never used on micros or minis. Be careful not to confuse this
 with the \acro{SYN} (synchronization) packet used in \acro{TCP/IP}'s \acro{SYN} \acro{SYN-ACK}
 initialization sequence. In an unrelated usage, many \UNIX/ tty drivers use this
 (as Ctrl-V) for the literal-next character that lets you quote following
 control characters such as Ctrl-C.
-\item[\acro{ETB} (End of Transmission Block) = Ctrl-W]
+\item[\acro{ETB} (End of Transmission Block) = Ctrl-W]\hfill\\
 Nowadays this is usually ``kill window'' on a web browser, but it used to mean
 ``delete previous word'' in some contexts and sometimes still does.
-\item[\acro{CAN} (Cancel), \acro{EM} (End of Medium) = Ctrl-X, Ctrl-Y]
+\item[\acro{CAN} (Cancel), \acro{EM} (End of Medium) = Ctrl-X, Ctrl-Y]\hfill\\
 Never to my knowledge used specially after teletypes.
-\item[\acro{SUB} (Substitute) = Ctrl-Z]
+\item[\acro{SUB} (Substitute) = Ctrl-Z]\hfill\\
 \acro{DOS} and Windows use Ctrl-Z (\acro{SUB)} as an end-of-file character; this is unrelated
 to its \ASCII/ meaning. It was common knowledge then that this use of $^\wedge$Z
 had been inherited from a now largely forgotten earlier OS called \acro{CP/M} (1974),
 and into \acro{CP/M} from earlier \acro{DEC} minicomputer OSes such as \acro{RSX-11} (1972). \UNIX/
 uses Ctrl-Z as the ``suspend process'' command keystroke.
-\item[\acro{ESC} (Escape)]
+\item[\acro{ESC} (Escape)]\hfill\\
 Still commonly used as a control-sequence introducer. This usage is especially
 associated with the control sequences recognized by \acro{VT100} and \acro{ANSI}-standard
 \acro{VDT}s, and today by essentially all software terminal emulators
-\item[\acro{[FGRU]S} ($\lbrace$Field$\vert$Group$\vert$Record$\vert$Unit$\rbrace$ Separator)]
+\item[\acro{\char`\[FGRU\char`\]S} ($\lbrace$Field$\vert$Group$\vert$Record$\vert$Unit$\rbrace$ Separator)]\hfill\\
 There are some uses of these in \acro{ATM} and bank protocols (these have never been
 common knowledge, but I'm adding this note to forestall yet more repetitions
 from area specialists who will apparently otherwise keep telling me about it
 until the end of time). \acro{FS}, as Ctrl-$\backslash$, sends \acro{SIGQUIT} under some
 \UNIX/es, but this has nothing to do with \ASCII/. Ctrl-] (\acro{GS}) is the exit
 character from telnet, but this also has nothing to do with its \ASCII/ meaning.
-\item[\acro{DEL} (Delete)]
+\item[\acro{DEL} (Delete)]\hfill\\
 Usually an input character meaning ``backspace and delete.'' Under older \UNIX/
 variants, sometimes a \acro{SIGINT} interrupt character.
 \end{description}
@@ -1009,7 +1020,7 @@ any character in \ASCII/, and tape readers skipped \acro{DEL} (and \acro{NUL} --
 This is why \acro{DEL} was anciently called the ``Rubout'' character and is an island at
 the other end of the \ASCII/ table from the other control characters.
 
-\item \acro{VDT} keyboards often had a ``Break'' key inherited from the \acro{ASR-33} (there's a
+\item \acro{VDT} keyboards often had a ``Break'' key inherited from the \acro{ASR-33} (there is a
 vestigial remnant of this even on the \acro{IBM PC} keyboard). This didn't send a
 well-formed \ASCII/ character; rather, it caused an out-of-band condition that
 would be seen as a \acro{NUL} with a framing error at the other end. This was used as
@@ -1018,7 +1029,7 @@ an attention or interrupt signal.
 \noindent You can study the bit structure of \ASCII/ using \prog{ascii(1)}. Both of the tables
 above were generated using it.
 
-\section{The Slow Birth of Distributed Collaboration}
+\section[The Slow Birth of Distributed Collaboration]{The Slow Birth of Distributed\\ Collaboration}
 Nowadays we take for granted a public infrastructure of distributed version
 control and a lot of practices for distributed teamwork that go with it -
 including development teams that never physically have to meet. But these
@@ -1097,7 +1108,8 @@ previous version-control systems and is a thing every hacker \strong{now} knows.
 These are dates that every hacker knew were important at the time, or shortly
 afterwards. I've tried to concentrate on milestones for which the date --- or the
 milestone itself --- seems to have later passed out of folk memory.
-\begin{description}
+
+\begin{keydatelist}
 \item[1961] \acro{MIT} takes delivery of a \acro{PDP-1}. The first recognizable ancestor of the hacker
 culture of today rapidly coalesces around it.
 
@@ -1174,7 +1186,7 @@ languages, is invented.
 \item[1991] Linux and the World Wide Web are (separately) launched. Python scripting
 language invented.
 
-\item[1992] Bit-mapped color displays with a dot pitch matching that of a monochrome \acro{VDT}
+\item[1992] Bitmapped color displays with a dot pitch matching that of monochrome \acro{VDT}s
 (and a matching ability to display crisp text at 80$\times$25) ship on consumer-grade
 \acro{PC}s. Bottom falls out of the \acro{VDT} market.
 
@@ -1184,8 +1196,8 @@ Mosaic adds graphics and image capability to the World Wide Web.
 
 \item[1994] Mass-market Internet takes off in the U.S\hbox{}. \acro{USB} promulgated.
 
-\item[1995--1996] Peak years of \acro{UUCP/USENET} and the \acro{BBS} culture, then collapse under pressure
-from mass-market Internet.
+\item[1995--1996]\mbox{}\\ Peak years of \acro{UUCP/USENET} and the \acro{BBS}
+culture, then collapse under pressure from mass-market Internet.
 
 \item[1997] I first give the ``Cathedral and Bazaar'' talk.
 
@@ -1206,8 +1218,8 @@ no longer in production still exceed the resolution of flat-panel displays and
 are still sought after. Also in 2005, \acro{AOL} drops \acro{USENET} support and Endless
 September ends. Git first ships.
 
-\item[2007--2008] 64-bit transition in mass market \acro{PC}s; the 32-bit era ends. Single-processor
-speeds plateau at $4\pm0.25$GHz. iPhone and Android (both with \UNIX/-based OSes)
-first ship.
-\end{description}
+\item[2007--2008]\mbox{}\\ 64-bit transition in mass market \acro{PC}s; the
+32-bit era ends. Processor speeds plateau at $4\pm0.25$GHz. iPhone and
+Android (both with \UNIX/-based OSes) first ship.
+\end{keydatelist}
 \end{document}
