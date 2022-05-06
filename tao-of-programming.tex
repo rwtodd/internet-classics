@@ -1,70 +1,59 @@
+\documentclass[12pt,letterpaper]{article}
+\renewcommand{\rmdefault}{ppl}
+
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-% indent everything a little, except headings... margskip = "margin skip"
-\newskip\margskip \margskip=25pt
-\advance\leftskip by \margskip 
-\newcount\bookcnt \bookcnt=0
-\newcount\seccnt \seccnt=0
+\newlength{\intomargin}\setlength{\intomargin}{25pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt plus 1pt minus 1pt}
+\setlength{\baselineskip}{14pt}
 
-% make skips a little more stretchable to help find page breaks
-\bigskipamount=12pt plus6pt minus4pt
-\medskipamount=6pt plus3pt minus2pt
-
-\def\unindent{{\parindent=-\leftskip\leavevmode}}
-
-% palatino set
-\font\twelverm=pplr at 12pt
-\font\twelvesl=pplro at 12pt
-\font\twelvebf=pplb at 12pt
-\font\biggertxt=pplr at 16pt
-\font\biggerbold=pplb at 14pt
-
-% adjust the page numbers and typical font commands
-\footline={\hss\rm\folio\hss}
-\def\rm{\twelverm}
-\def\sl{\twelvesl}
-\def\bf{\twelvebf}
-
-\def\title#1{\leavevmode\vskip 0.5in\centerline{\biggertxt #1}\par}
-\def\subtitle#1{\medskip\centerline{\sl #1}}
-\def\book#1.{\null\bigbreak\goodbreak\seccnt=0\advance\bookcnt by 1{\unindent\biggerbold Book \the\bookcnt\ --- #1}\par\unindent\ignorespaces}
-\def\sectnum{\global\advance\seccnt by 1\leavevmode\llap{\hbox to \leftskip{\bf \the\bookcnt.\the\seccnt\hfil}}}
-\def\sect{\null\medbreak\sectnum\ignorespaces}
-
-% startverse and vsect help format verses (poetry)
-\def\versebase{\begingroup\advance\leftskip by \margskip \rightskip=\leftskip \obeylines \parskip=2pt}
-\def\startverse{\smallskip\leavevmode\versebase}
-\def\vsect{\null\medbreak\versebase\sectnum\ignorespaces}
-\def\endverse{\endgroup\smallskip}
-
-\def\quotation#1{{
-    \medskip \advance\leftskip by \margskip \rightskip=\leftskip
-    \leavevmode\llap{``}{\sl #1}''\medskip}}
-\parindent=0pt
-\parskip=8pt plus 1pt minus 1pt
-\baselineskip=14pt
-\rm
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\def\fmtsection#1{Book \thesection\ --- }
+\def\fmtsubsection#1{\makebox[\intomargin][l]{\thesubsection}}
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\csname fmt#1\endcsname} 
+\renewcommand{\section}{%
+\@startsection{section}%
+{1}%
+{-\intomargin}%
+{-3.5ex plus -1ex minus -0.2ex}%
+{2.3ex plus 0.2ex}%
+{\normalfont\Large\bfseries}%
+}
+\renewcommand{\subsection}{%
+\@startsection{subsection}%
+{1}%
+{-\intomargin}%
+{-3.5ex plus -1ex minus -0.2ex}%
+{-0pt}%
+{\normalfont\large\bfseries}%
+}
+\makeatother
+\newcommand{\book}[2]{\section{#1}\par\hspace{-\intomargin}Thus spake the Master Programmer:%
+\begin{quotation}\noindent\llap{``}\textsl{#2}''\end{quotation}\medskip}
+\newcommand{\sect}{\subsection{}}
 
 \title{The Tao of Programming}
-\subtitle{Translated by Geoffrey James}
-\vskip 1in
+\author{Translated by Geoffrey James}
+\date{November, 1987}
 
-\book The Silent Void.
-Thus spake the Master Programmer:
-\quotation{When you have learned to snatch the error code from the trap
-frame, it will be time for you to leave.}
+\begin{document}
+\maketitle
+
+\book{The Silent Void}%
+{When you have learned to snatch the error code from the trap frame,
+it will be time for you to leave.}
 
 \sect
 Something mysterious is formed, born in the silent void. waiting alone
 and unmoving, it is at once still and yet in constant motion. It is
 the source of all programs. I do not know its name, so I will call it
 the Tao of Programming.
-\startverse%
-If the Tao is great, then the operating system is great.
-If the operating system is great, then the compiler is great.
-If the compiler is great, then the application is great.
-The user is pleased, and there is harmony in the world.
-\endverse
+\begin{verse}
+If the Tao is great, then the operating system is great.\\
+If the operating system is great, then the compiler is great.\\
+If the compiler is great, then the application is great.\\
+The user is pleased, and there is harmony in the world.\\
+\end{verse}
 
 The Tao of Programming flows far away and returns on the wind of morning.
 
@@ -103,20 +92,19 @@ The highest sounds are hardest to hear. Going forward is a way to
 retreat. Great talent shows itself late in life. Even a perfect
 program still has bugs.
 
-\book The Ancient Masters.
-Thus spake the Master Programmer:
-\quotation{After three days without programming, life becomes meaningless.}
+\book{The Ancient Masters}
+{After three days without programming, life becomes meaningless.}
 
 \sect
 The programmers of old were mysterious and profound. We cannot fathom
 their thoughts, so all we do is describe their appearance.
-\startverse%
-Aware, like a fox crossing the water.
-Alert, like a general on the battlefield.
-Kind, like a hostess greeting her guests.
-Simple, like uncarved blocks of wood.
-Opaque, like black pools in darkened caves.
-\endverse
+\begin{verse}%
+Aware, like a fox crossing the water.\\
+Alert, like a general on the battlefield.\\
+Kind, like a hostess greeting her guests.\\
+Simple, like uncarved blocks of wood.\\
+Opaque, like black pools in darkened caves.\\
+\end{verse}
 
 Who can tell the secrets of their hearts and minds?
 
@@ -158,9 +146,8 @@ sees his code. He has gone beyond the need for testing; each of his
 programs are perfect within themselves, serene and elegant, their
 purpose self-evident. Truly, he has entered the mystery of Tao.''
 
-\book Design.
-Thus spake the Master Programmer:
-\quotation{When a program is being tested, it is too late to make design changes.}
+\book{Design}%
+{When a program is being tested, it is too late to make design changes.}
 
 \sect
 There once was a man who went to a computer trade show. Each day as he
@@ -240,9 +227,8 @@ The Master Programmer frowned. ``In that case, it will take two years.''
 The Master Programmer shrugged. ``Then the design will never be
 completed,'' he said.
 
-\book Coding.
-Thus spake the Master Programmer:
-\quotation{A well-written program is its own Heaven; a poorly-written
+\book{Coding}%
+{A well-written program is its own Heaven; a poorly-written
 program is its own Hell.}
 
 \sect
@@ -324,16 +310,16 @@ being. I close my eyes for a moment and then log off.''
 
 Prince Wang said, ``Would that all of my programmers were as wise!''
 
-\book Maintenance.
-Thus spake the Master Programmer:
-\quotation{Though a program be but three lines long, someday it will
+\book{Maintenance}%
+{Though a program be but three lines long, someday it will
 have to be maintained.}
 
-\vsect A well-used door needs no oil on its hinges.
-A swift-flowing stream does not grow stagnant.
-A deer blends perfectly into the forest colors.
-Software rots if not used.
-\endverse
+\sect \begin{verse}
+A well-used door needs no oil on its hinges.\\
+A swift-flowing stream does not grow stagnant.\\
+A deer blends perfectly into the forest colors.\\
+Software rots if not used.\\
+\end{verse}
 
 These are great mysteries.
 
@@ -369,49 +355,48 @@ When the Master asked about this, the novice became indignant. ``Don't
 be so impatient,'' he said, ``I'll put in the financial stuff
 eventually.''
 
-\vsect%
-Does a good farmer neglect a crop he has planted?
-Does a good teacher overlook even the most humble student?
-Does a good father allow a single child to starve?
-Does a good programmer refuse to maintain his code?
-\endverse
+\sect \begin{verse}
+Does a good farmer neglect a crop he has planted?\\
+Does a good teacher overlook even the most humble student?\\
+Does a good father allow a single child to starve?\\
+Does a good programmer refuse to maintain his code?\\
+\end{verse}
 
-\book Management.
-Thus spake the Master Programmer:
-\quotation{Let the programmers be many and the managers few---then
+\book{Management}%
+{Let the programmers be many and the managers few---then
 all will be productive.}
 
-\vsect%
-When managers hold endless meetings,
-\quad the programmers write games.
-When accountants speak of quarterly profits,
-\quad the development budget is about to be cut.
-When senior scientists talk blue sky,
-\quad the clouds are about to roll in.
-\endverse
+\sect \begin{verse}
+When managers hold endless meetings,\\
+\quad the programmers write games.\\
+When accountants speak of quarterly profits,\\
+\quad the development budget is about to be cut.\\
+When senior scientists talk blue sky,\\
+\quad the clouds are about to roll in.\\
+\end{verse}
 
 Truly, this is not the Tao of Programming.
-\startverse%
-When managers make commitments,
-\quad game programs are ignored.
-When accountants make long-range plans,
-\quad harmony and order are about to be restored.
-When senior scientists address the problems at hand,
-\quad the problems will soon be solved.
-\endverse
+\begin{verse}%
+When managers make commitments,\\
+\quad game programs are ignored.\\
+When accountants make long-range plans,\\
+\quad harmony and order are about to be restored.\\
+When senior scientists address the problems at hand,\\
+\quad the problems will soon be solved.\\
+\end{verse}
 
 Truly, this is the Tao of Programming.
 
-\vsect%
-Why are programmers non-productive?
-\quad Because their time is wasted in meetings.
-Why are programmers rebellious?
-\quad Because the management interferes too much.
-Why are the programmers resigning one by one?
-\quad Because they are burnt out.
-Having worked for poor management,
-\quad they no longer value their jobs.
-\endverse
+\sect \begin{verse}
+Why are programmers non-productive?\\
+\quad Because their time is wasted in meetings.\\
+Why are programmers rebellious?\\
+\quad Because the management interferes too much.\\
+Why are the programmers resigning one by one?\\
+\quad Because they are burnt out.\\
+Having worked for poor management,\\
+\quad they no longer value their jobs.\\
+\end{verse}
 
 \sect
 A manager was about to be fired, but a programmer who worked for him
@@ -443,9 +428,8 @@ working hours, as long as you finish your projects on schedule.'' The
 programmers, now satisfied, began to come in at noon and work to the
 wee hours of the morning.
 
-\book Corporate Wisdom.
-Thus spake the Master Programmer:
-\quotation{You can demonstrate a program for a corporate executive,
+\book{Corporate Wisdom}%
+{You can demonstrate a program for a corporate executive,
 but you can't make him computer literate.}
 
 \sect
@@ -509,9 +493,8 @@ The Master Programmer moves from program to program without fear. No
 change in management can harm him. He will not be fired, even if the
 project is cancelled. Why is this? He is filled with Tao.
 
-\book Hardware and Software.
-Thus spake the Master Programmer:
-\quotation{Without the wind, the grass does not move. Without software,
+\book{Hardware and Software}%
+{Without the wind, the grass does not move. Without software,
 hardware is useless.}
 
 \sect
@@ -581,8 +564,7 @@ beyond space and time.''
 
 Software and Hardware, ashamed, returned to their homes.
 
-\book Epilogue.
-Thus spake the Master Programmer:
-\quotation{Time for you to leave.}
+\book{Epilogue}%
+{Time for you to leave.}
 
-\bye
+\end{document}
