@@ -118,7 +118,7 @@ the \acro{IBM PC}, but many hackers old enough to remember the minicomputer era
 (mid-1960s to mid-1980s) tend still to get a bit misty-eyed about the \acro{DEC}
 hardware they cut their teeth on.
 
-Often, however, nostalgia obscures how very underpowered those machines were.
+Often, however, nostalgia obscures how very under-powered those machines were.
 For example: a \acro{DEC VAX 11-780} minicomputer in the mid-1980s, used for
 timesharing and often supporting a dozen simultaneous users, had less than
 1/1000 the processing power and less than 1/5000 times as much storage
@@ -127,7 +127,7 @@ available as a low-end smartphone does in 2017.
 In fact, until well into the 1980s microcomputers ran slowly enough (and had
 poor enough \acro{RF} shielding) that \textbf{this} was common knowledge: you
 could put an \acro{AM} radio next to one and get a clue when it was doing
-something unusual, because either fundamentals or major subharmonics of the
+something unusual, because either fundamentals or major sub-harmonics of the
 clock frequencies were in the 20Hz to 20KHz range of human audibility. Nothing
 has run \textbf{that} slowly since the turn of the 21st century.
 
@@ -371,7 +371,7 @@ high-precision top-of-second pulse) over one of the handshake lines.
 Even when your hardware generated and received handshake signals, you couldn't
 necessarily trust cables to pass them. Cheap cables often failed to actually
 connect all 25 (or 9) leads end-to-end. Then there were ``crossover'' or ``null
-modem'' cables, which for reasons too painful to go into here crosswired the
+modem'' cables, which for reasons too painful to go into here cross-wired the
 transmit and receive lines. Of course none of these variants were reliably
 labeled, so debugging an \RSTTT/ link with a random cable pulled out of a box
 often involved a lot of profanity.
@@ -388,7 +388,7 @@ peripheral connectors labeled \RSTTT/ could have one of two different sets of
 voltage levels. If they're pins or sockets in a \acro{DB9} or \acro{DB25} shell, the voltage
 swing between 1 and 0 bits can be as much as 50 volts, and is usually about 26.
 Bare connectors on a circuit board, or chip pins, increasingly came to use
-what's called ``\acro{TTL} serial'' --- same signalling with a swing of 3.3 or (less
+what's called ``\acro{TTL} serial'' --- same signaling with a swing of 3.3 or (less
 often) 5 volts. You can't wire standard \RSTTT/ to \acro{TTL} serial directly; the link
 needs a device called a ``level shifter.'' If you connect without one, components
 on the \acro{TTL} side will get fried.
@@ -515,7 +515,7 @@ occasionally used today, derives from an email reflector used on \acro{BITNET}.
 
 \section{FTP, Gopher, and the Forgotten Pre-Web}
 The World Wide Web went from nowhere to ubiquity during a few short years in
-the early 1990s. Before that, from 1971 onwards, file transfer between Internet
+the early 1990s. Before that, from 1971 onward, file transfer between Internet
 sites was normally done with a tool named ftp, for the File Transfer Protocol
 it used. Every hacker once knew how to use this tool.
 
@@ -627,7 +627,7 @@ were wiped out by descendants of the \acro{IBM PC} in the late 1990s. Before tha
 most hackers dreamed of owning a Sun-class workstation, and the bitmapped
 display was a significant part of that allure.
 
-Alas, these machines were too expensive for individuals. But from 1975 onwards
+Alas, these machines were too expensive for individuals. But from 1975 onward
 primitive bitmapped-display began to appear on personal color computers such as
 the Apple II, often through consumer-grade television sets. These had one
 feature the workstation displays of the time lacked --- color --- but their pixel
@@ -897,7 +897,7 @@ file'' to a \UNIX/ terminal.
 \item[\acro{ENQ} (Enquiry) = Ctrl-E]\hfill\\ In the days of hardware serial terminals, there
 was a convention that if a computer sent \acro{ENQ} to a terminal, it should answer
 back with terminal type identification. While this was not universal, it at
-least gave computers a fighting chance of autoconfiguring what capabilities it
+least gave computers a fighting chance of auto-configuring what capabilities it
 could assume the terminal to have. Further back, on teletypes, the answerback
 had been a station ID rather than a device type; as late as the 1970s it was
 still generally remembered that \acro{ENQ}'s earliest name in \ASCII/ had been \acro{WRU} (``Who
@@ -929,7 +929,7 @@ In the days of printing terminals this often caused them to scroll down a
 configurable number of lines. \acro{VDT}s had any number of possible behaviors; at
 least some pre-\acro{ANSI} ones interpreted \acro{VT} as ``scroll \strong{up} one line.'' The only
 reason anybody remembers this one at all is that it persisted in \UNIX/
-definitions of what a whitespace character is, even though it's now extinct in
+definitions of what a white-space character is, even though it's now extinct in
 the wild.
 \item[\acro{FF} (Form Feed) = Ctrl-L]\hfill\\ Eject the current page from your printing
 terminal. Many \acro{VDT}s interpreted this as a ``clear screen'' instruction. Software
