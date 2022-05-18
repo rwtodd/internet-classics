@@ -19,4 +19,6 @@ Where possible, I will try to link to the original sources in the list below:
  - __real-programmers__: I used the copies at [http://fortranwiki.org/fortran/show/Real+Programmers+Don%27t+Use+Pascal](http://fortranwiki.org/fortran/show/Real+Programmers+Don%27t+Use+Pascal).
 - __sqlite-conduct__: The original SQLite Code of Conduct, based on rules given to Benedictine monks in the 6th century. This is an aspirational code, of completely different character than the typical codes of conduct one sees. After getting unwanted attention for it online, they replaced the code with something generic, but I preserved the text as seen in the [wayback machine](https://web.archive.org/web/20180315125217/https://sqlite.org/codeofconduct.html).
 - __tao-of-programming__: There are many copies online, but I used this one: [http://www.mit.edu/~xela/tao.html](http://www.mit.edu/~xela/tao.html).
+- __why-adventure-games-suck__: Ron Gilbert's ideas on Adventure Games in 1989, from [https://grumpygamer.com/why\_adventure\_games\_suck](https://grumpygamer.com/why_adventure_games_suck).
+
 
