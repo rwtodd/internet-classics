@@ -1,8 +1,11 @@
 # Internet Classics
 
-Sometimes I find an old story or text on the internet that's
-too good not to keep. I am typesetting them here for my
-personal collection.
+Sometimes I find an story or text on the internet that's
+too good not to keep.  They might be special because they
+are funny, or quirky, or meaningful, or historical.  Bascially
+my one criterion is "do I like it enough to make a nice typeset
+version for fun?"  When the answer is "yes," and when time allows,
+I will do so.
 
 Where possible, I will try to link to the original sources in the list below:
 
@@ -11,6 +14,7 @@ Where possible, I will try to link to the original sources in the list below:
  - __bug-count-rises__: An internal 1996 Microsoft Hemingway parody contest yielded this gem of a short story. It is several places on the net, but my source was [this one](http://workpump.com/bugcount/bugcount.html).
 - __degredation-flame__: An email from Bill Gates describing problems he had trying to get MovieMaker installed in 2003.  As seen in [a news blog](https://blog.seattlepi.com/microsoft/files/library/2003Jangatesmoviemaker.pdf).
 - __every-hacker__: An essay by ESR entitled "[Things Every Hacker Once Knew](http://www.catb.org/~esr/faqs/things-every-hacker-once-knew/)."  
+- __ewd-correctness-resented__: Dijkstra's EWD-450 notes... the version I typeset comes from the ACM's Proceedings of the international conference on Reliable Software in April of 1975, but a very similar version is in the [EWD Archives](https://www.cs.utexas.edu/users/EWD/ewd04xx/EWD450.PDF).
  - __letwin-on-os2__: Early MS employee Gordon Letwin comments on the status of OS/2 in a frank and insightful way. As seen on [comp.os.ms-windows.misc](https://groups.google.com/forum/?hl=en#!msg/comp.os.ms-windows.misc/-iNeep60eVE/Xl5ddAtJENcJ) in August of 1995.
  - __modern-fortran-style__: As seen on [comp.lang.fortran](https://groups.google.com/forum/#!topic/comp.lang.fortran/TIYj2uhhXbU).
  - __parse-html-w-regex__: An amusing [StackOverflow answer](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454) regarding why you should never parse HTML with
