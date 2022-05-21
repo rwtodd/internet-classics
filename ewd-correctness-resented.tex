@@ -1,4 +1,4 @@
-\documentclass[10pt,letterpaper,twocolumn]{article}
+\documentclass[12pt,letterpaper]{article}
 \title{Correctness Concerns and,\\
 among other things,\\
 Why They Are Resented}
@@ -6,7 +6,7 @@ Why They Are Resented}
 Burroughs Corporation}
 \date{April, 1975}
 \newcommand{\acro}[1]{{\small\MakeUppercase{#1}\spacefactor1000}}
-\newcommand{\stardiv}{\medskip\centerline{*\quad*\quad*}\medskip\noindent\ignorespaces}
+\newcommand{\stardiv}{\medskip\centerline{*\qquad\raisebox{-1ex}{*}\qquad*}\medskip\noindent\ignorespaces}
 \begin{document}
 \maketitle
 
@@ -29,7 +29,7 @@ our freedom of interpretation, and it is that freedom that I intend to enjoy
 
 For a short while we have to go back to the 
 scientific climate at the beginning of this century, for there we seem to find the roots of the 
-philosophical opinions that prevailed a few decades Iater. And these philosophical opinions, in 
+philosophical opinions that prevailed a few decades later. And these philosophical opinions, in 
 turn, seem to be the source of today's tacit assumptions. By being tacit, these assumptions tend to 
 escape being challenged and that is bad, because 
 they are third-generation offspring of scientific 
@@ -47,12 +47,12 @@ nonsense! Think about the wealth of information
 that the modern communication media give us about 
 the world and its inhabitants: never before has Mankind been so confused about itself as today! 
 The overpowering flood of conflicting impressions 
-leaves many af us so bewildered that, in utter despair, they seek salvation in cheap mysticism or 
-e narrowminded ideology: the greater knowledge 
-has not created greater understanding, it has created extremism instead.\footnote{For in much wisdom is much vexation, and those who increase knowledge increase sorrow. -- Ecclesiates 1:18}
+leaves many of us so bewildered that, in utter despair, they seek salvation in cheap mysticism or 
+a narrow-minded ideology: the greater knowledge 
+has not created greater understanding, it has created extremism instead.\footnote{For in much wisdom is much vexation, and those who increase knowledge increase sorrow. -- Ecclesiastes 1:18}
 
 What, you may ask, has all this to do with Computing Science? Well, everything.
-In perfect anaiogy to the belief that our understanding was imperfect, because
+In perfect analogy to the belief that our understanding was imperfect, because
 we did not know enough, it was also felt that many goals were not reached,
 because what had to be done for that purpose, could not be done fast enough.
 The usual explanation of the successful advent of the automatic computer refers
@@ -62,7 +62,7 @@ would like to offer another explanation: at last there was a cultural climate
 in which the attitude of ``the more, the better'' was such a predominant one
 that we were willing to accept the gimmick as the obvious tool for our
 salvation. And if you do not believe this explanation, try to imagine, how
-Confucius, Buddha, Jesus, Mohammed or Homer would have reacted when they had
+Confucius, Buddha, Jesus, Mohammad or Homer would have reacted when they had
 been offered a \acro{UNIVAC I} \ldots\ Who of us doesn't remember the
 advertisements for the first electronic business machines, proudly announcing
 that ``our machines will take for you more than a hundred thousand decisions a
@@ -88,8 +88,8 @@ wonder \ldots
 Another path via which the last century's unwarranted scientific optimism has
 influenced our trade is psychology. In an effort to understand Man, the early
 psychologists decided to study Rat first. They designed a crude model of the
-Rat's behaviour, that showed some, be it superficial, resemblance to the
-behaviour of the true, average Rat. But in the scientific optimism of those
+Rat's behavior, that showed some, be it superficial, resemblance to the
+behavior of the true, average Rat. But in the scientific optimism of those
 days, that superficiality did not disturb anybody: the beginning, full of
 promise, was there, in principle the modeling worked and from now onwards it
 was only a question of refining the model. Once we should have a fully
@@ -103,20 +103,20 @@ At the beginning of the computer revolution a book
 appeared with the ominous title \textsl{Giant Brains, or 
 Machines that Think}. Once at a time I was tempted 
 to write a compensating companion to it under the 
-titie \textsl{Giant Hearts, or Machines that Fall in Love}, 
+title \textsl{Giant Hearts, or Machines that Fall in Love}, 
 but I did not do so, when I realized that the title 
 about the giant brains was more symptom than cause. 
 To the somewhat excited hopes as to what machines 
 can do had been added a somewhat simplified image 
 of Man. 
 
-Extreme consequences of that attitbde can be found in all efforts aimed at
+Extreme consequences of that attitude can be found in all efforts aimed at
 developing ``natural language programming systems'', a theme that recurs with
 the same regularity as influenza epidemics. It is observed that without
 considerable dedication people have a hard time expressing themselves precisely
-in a formal system as provided by a programming Ianguage. Man at large being
+in a formal system as provided by a programming language. Man at large being
 rather education-resistant in that view, the problem is solved by letting him
-express himself in a way that preciudes precision. By posing smart questions
+express himself in a way that precludes precision. By posing smart questions
 about the Man's intentions---the Man in this connection always being denoted as
 ``the user''---the system will eventually guess his intentions. Interactive
 facilities have added a new dimension to this game and ultimately the "user"
@@ -127,7 +127,7 @@ posteriori the correctness or---because for the latter there seems to be a
 bigger market---the incorrectness of programs, efforts to guess mechanically
 invariant relations for repetitive constructs---because most programmers are
 supposed to be too lazy or too stupid to write them down themselves---, they
-all have something of that condescending flavour. Just because a machine is
+all have something of that condescending flavor. Just because a machine is
 very good st a few things we are poor at, it does not follow that ultimately
 the machine will be very good at something, just because we, ourselves, find it
 difficult. Yet, the euphoric pressure to believe so is still very strong. 
@@ -178,7 +178,7 @@ verification.
 
 Were these quotations two fairly isolated examples taken from the 1965
 Conference Proceedings, in 1968 the climate has changed drastically. In October
-1968 the \acro{NATO} Conference on Software Engineering created e sensation by
+1968 the \acro{NATO} Conference on Software Engineering created a sensation by
 its open admission of the software crisis. Anyone doubting, that much has
 changed since then, should read those conference proceedings! One now very
 well-known professor of Computing Science confesses that ``the word `proof'
@@ -191,12 +191,12 @@ significant work could happen since!
 
 \stardiv
 
-After the above sketches of the intellectual climate, we turn in e little bit more detail 
+After the above sketches of the intellectual climate, we turn in a little bit more detail 
 to some of the more technical aspects: obviously 
 we do so without any claim to completeness. 
 
 One of the, in retrospect, most striking things is that for many years the
-correctness problem was solely viewed as a poeteriori verification of given
+correctness problem was solely viewed as a posteriori verification of given
 programs. Given a program and given a set of requirements, does the given
 program meet the given requirements? Phrased as a question that could be
 answered by ``Yes'' or ``No'', it was apparently not without appeal for the
@@ -248,7 +248,7 @@ correctness was one of the cornerstones of the field of activity which, about
 five years ago, became known as ``programming methodology''. Correctness proofs
 began to play in that field two significant roles: firstly, in the constructive
 approach to the problem of program correctness, proof-patterns provided an
-important heuristic guidance during the progremming process, secondly, the
+important heuristic guidance during the programming process, secondly, the
 length of the correctness proof required was generally accepted as an objective
 measure for the ``elegance'' of programs and for the ``adequacy'' of proposed
 language features. This objectivity has probably been more effective in
@@ -277,7 +277,7 @@ a result, the same macroscopic proof is applicable
 to two different programs which only differ in the 
 form of the repeatable statements \texttt{S1} and \texttt{S2},
 provided that both \texttt{S1} and \texttt{S2} leave the relation
-invarlant (and ensure progress in the same 
+invariant (and ensure progress in the same 
 direction). But then the same proof applies to 
 a non-deterministic machine in which a daemon 
 decides quite arbitrarily at each repetition, 
@@ -323,7 +323,7 @@ discovery will have profound consequences, which
 will become fully apparent when new generations of 
 programmers have been educated, who separate these 
 concerns more naturally than we do, unhampered as 
-they are by our obsolete experience and our wornout habits. 
+they are by our obsolete experience and our worn-out habits. 
 
 The second side-effect concerns the bells and 
 whistles of yesterday's programming languages. When 
@@ -371,8 +371,8 @@ discovery I can only offer one explanation. My program manipulates explicitly---
 entered the design quite naturally, one after the other---four
 independent stacks, most of them growing and shrinking asynchronously with
 respect to each other. The published version, however, was a recursive program,
-by its very nature favouring a solution with \emph{one} (anonymous) stack, and having
-to squeeze a four-stack algorithm into \emph{that} straightjacket may indeed make its
+by its very nature favoring a solution with \emph{one} (anonymous) stack, and having
+to squeeze a four-stack algorithm into \emph{that} straitjacket may indeed make its
 discovery a ``great intellectual achievement''. 
 
 Some time before I had met another occasion for reappraisal of recursive
@@ -384,10 +384,10 @@ algorithm satisfied me completely: besides building up the set of elements
 belonging to the closure, it kept track of a subset of them, the so-called
 ``candidates'', i.e. those elements which still could have successors leading
 outside the current closure. It was only after completion of this algorithm,
-when I reaiized that the time-honored recursive solution for the traversal of
+when I realized that the time-honored recursive solution for the traversal of
 a (rooted) binary tree was a special case, in which the absence of cycles
 permitted the omission of a membership test. But thanks to that, the set of
-condidates could remain anonymous, and in the recursive solution for the tree
+candidates could remain anonymous, and in the recursive solution for the tree
 traversal its role is taken over by the anonymous stack. Moreover, the fact
 that the recursive solution grows its anonymous candidate set on a
 last-in-first-out basis turns out to be totally irrelevant! The discovery that
