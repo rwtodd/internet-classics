@@ -26,7 +26,8 @@ Here is Peter Naur's way of saying it.
 \sect{Programming as Theory Building}
 
 \ssect{Introduction}
-The present discussion is a contribution to the understanding of what programming is. It suggests that programming properly should be regarded as an activity by which the programmers form or achieve a certain kind of insight, a theory, of the matters at hand. This suggestion is in contrast to what appears to be a more common notion, that programming should be regarded as a production of a program and certain other texts.
+The present % discussion 
+article is a contribution to the understanding of what programming is. It suggests that programming properly should be regarded as an activity by which the programmers form or achieve a certain kind of insight, a theory, of the matters at hand. This suggestion is in contrast to what appears to be a more common notion, that programming should be regarded as a production of a program and certain other texts.
 
 Some of the background of the views presented here is to be found in certain observations of what actually happens to programs and the teams of programmers dealing with them, particularly in situations arising from unexpected and perhaps erroneous program executions or reactions, and on the occasion of modifications of programs. The difficulty of accommodating such observations in a production view of programming suggests that this view is misleading. The theory building view is presented as an alternative.
 
@@ -54,11 +55,11 @@ If it is granted that programming must involve, as the essential part, a buildin
 
 Ryle [1949] develops his notion of theory as part of his analysis of the nature of intellectual activity, particularly the manner in which inlelleclual activity differs from, and goes beyond, activity that is merely intelligent. In intelligent behavior the person displays, not any particular knowledge of facts, but the ability to do certain things, such as to make and appreciate jokes, to talk grammatically, or to fish. More particularly, the intelligent performance is characterized in part by the person's doing them well, according to certain criteria, but further displays the person's ability to apply the criteria so as to detect and correct lapses, to learn from the examples of others, and so forth. It may be noted that this notion of intelligence does not rely on any notion that the intelligent behavior depends on the person's following or adhering to rules, prescriptions, or methods. On the contrary, the very act of adhering to rules can be done more or less intelligently; if the exercise of intelligence depended on following rules there would have to be rules about how to follow rules, and about how to follow the rules about following rules, etc., in an infinite regress, which is absurd.
 
-What characterizes intellectual activity, over and beyond activity that is merely intelligent, is the person's building and having a theory, where theory is understood as the knowledge a person must have in order not only to do certain things intelligently but also to explain them, to answer queries about them, to argue about them, and so forth. A person who has a theory is prepared to enter into such activities; while building the theory the person is trying to get it.
+What characterizes an intellectual activity, over and beyond activity that is merely intelligent, is the person's building and having a theory, where theory is understood as the knowledge a person must have in order not only to do certain things intelligently but also to explain them, to answer queries about them, to argue about them, and so forth. A person who has a theory is prepared to enter into such activities; while building the theory the person is trying to get it.
 
 The notion of theory in the sense used here applies not only to the elaborate constructions of specialized fields of inquiry, but equally to activities that any person who has received education will participate in on certain occasions. Even quite unambitious activities of everyday life may give rise to people's theorizing, for example in planning how to place furniture or how to get to some place by means of certain means of transportation.
 
-The notion of theory employed here is explicitly not confined to what may be called the most general or abstract part of the insight. For example, to have Newton's theory of mechanics as understood here it is not enough to understand the central laws, such as that force equals mass times acceleration. In addition, as described in more detail by Kuhn [1970, p. 187ff], the person having the theory must have an understanding of the manner in which the central laws apply to certain aspects of reality, so as to be able to recognize and apply the theory to other similar aspects. A person having Newton's theory of mechanics must thus understand how it applies to the motions of pendulums and the planets, and must be able to recognize similar phenomena in the world, so as to be able to employ the mathematically expressed rules of the theory properly.
+The notion of theory employed here is explicitly \emph{not} confined to what may be called the most general or abstract part of the insight. For example, to have Newton's theory of mechanics as understood here it is not enough to understand the central laws, such as that force equals mass times acceleration. In addition, as described in more detail by Kuhn [1970, p. 187ff], the person having the theory must have an understanding of the manner in which the central laws apply to certain aspects of reality, so as to be able to recognize and apply the theory to other similar aspects. A person having Newton's theory of mechanics must thus understand how it applies to the motions of pendulums and the planets, and must be able to recognize similar phenomena in the world, so as to be able to employ the mathematically expressed rules of the theory properly.
 
 The dependence of a theory on a grasp of certain kinds of similarity between situations and events of the real world gives the reason why the knowledge held by someone who has the theory could not, in principle, be expressed in terms of rules. In fact, the similarities in question are not, and cannot be, expressed in terms of criteria, no more than the similarities of many other kinds of objects, such as human faces, times, or tastes of wine, can be thus expressed.
 
@@ -67,9 +68,9 @@ In terms of Ryle's notion of theory, what has to be built by the programmer is a
 
 In arguing for the Theory Building View, the basic issue is to show how the knowledge possessed by the programmer by virtue of his or her having the theory necessarily, and in an essential manner, transcends that which is recorded in the documented products. The answers to this issue is that the programmer's knowledge transcends that given in documentation in at least three essential areas:
 \begin{enumerate}
-\item The programmer having the theory of the program can explain how the solution relates to the affairs of the world that it helps to handle. Such an explanation will have to be concerned with the manner in which the affairs of the world, both in their overall characteristics and their details, are, in some sense, mapped into the program text and into any additional documentation. Thus the programmer must be able to explain, for each part of the program text and for each of its overall structural characteristics, what aspect or activity of the world is matched by it. Conversely, for any aspect or activity of the world the programmer is able to state its manner of mapping into the program text. By far the largest part of the world aspects and activities will of course lie outside the scope of the program text, being irrelevant in the context. However, the decision that a part of the world is relevant can only be made by someone who understands the whole world. This understanding must be contributed by the programmer.
+\item The programmer having the theory of the program can explain how the solution relates to the affairs of the world that it helps to handle. Such an explanation will have to be concerned with the manner in which the affairs of the world, both in their overall characteristics and their details, are, in some sense, mapped into the program text and into any additional documentation. Thus the programmer must be able to explain, for each part of the program text and for each of its overall structural characteristics, what aspect or activity of the world is matched by it. Conversely, for any aspect or activity of the world the programmer is able to state its manner of mapping into the program text. By far the largest part of the world aspects and activities will of course lie outside the scope of the program text, being irrelevant in the context. However, the decision that a part of the world \emph{is} relevant can only be made by someone who understands the whole world. This understanding must be contributed by the programmer.
 
-\item The programmer having the theory of the program can explain why each part of the program is what it is, in other words is able to support the actual program text with a justification of some sort. The final basis of the justification is and must always remain the programmer's direct, intuitive knowledge or estimate. This holds even where the justification makes use of reasoning, perhaps with application of design rules, quantitative estimates, comparisons with alternatives, and such like, the point being that the choice of the principles and rules, and the decision that they are relevant to the situation at hand, again must in the final analysis remain a matter of the programmer's direct knowledge.
+\item The programmer having the theory of the program can explain \emph{why} each part of the program is what it is, in other words is able to support the actual program text with a justification of some sort. The final basis of the justification is and must always remain the programmer's direct, intuitive knowledge or estimate. This holds even where the justification makes use of reasoning, perhaps with application of design rules, quantitative estimates, comparisons with alternatives, and such like, the point being that the choice of the principles and rules, and the decision that they are relevant to the situation at hand, again must in the final analysis remain a matter of the programmer's direct knowledge.
 
 \item The programmer having the theory of the program is able to respond constructively to any demand for a modification of the program so as to support the affairs of the world in a new manner. Designing how a modification is best incorporated into an established program depends on the perception of the similarity of the new demand with the operational facilities already built into the program. The kind of similarity that has to be perceived is one between aspects of the world. It only makes sense to the agent who has knowledge of the world, that is to the programmer, and cannot be reduced to any limited set of criteria or rules, for reasons similar to the ones given above why the justification of the program cannot be thus reduced.
 \end{enumerate}
@@ -141,33 +142,31 @@ Accepting program modifications demanded by changing external circumstances to b
 
 \ssect{References}
 {\raggedright
-\bibent{Brooks, R. E. Studying programmer behaviour experimentally. Comm. \acro{ACM} 23(4): 207-213,1980.}
+\bibent{Brooks, R. E. Studying programmer behaviour experimentally. {\sl Comm. \acro{ACM}} 23(4): 207--213,1980.}
 
-\bibent{Feyerabend, P. Against Method. London, Verso Editions, 1978; \acro{ISBN}: 86091-700-2.}
+\bibent{Feyerabend, P. {\sl Against Method}. London, Verso Editions, 1978; \acro{ISBN}: 86091-700-2.}
 
-\bibent{Floyd, C. Eine Untersuchung von Software-Entwicklungs-Methoden. Pp. 248-274 in Programmierumgebungen und Compiler, ed H. Morgenbrod and W.}
+\bibent{Floyd, C. Eine Untersuchung von Software-Entwicklungs-Methoden. Pp. 248--274 in {\sl Programmierumgebungen und Compiler}, ed H. Morgenbrod and W. Sammer, Tagung 1/1984 des German Chapter of the \acro{ACM}, Stuttgart, Teubner Verlag, 1984; \acro{ISBN}: 3-519-02437-3.}
 
-\bibent{Sammer, Tagung 1/1984 des German Chapter of the \acro{ACM}, Stuttgart, Teubner Verlag, 1984; \acro{ISBN}: 3-519-02437-3.}
+\bibent{Kuhn, T. S. {\sl The Structure of Scientific Revolutions}, Second Edition. Chicago, University of Chicago Press, 1970; \acro{ISBN}: 0-226-45803-2.}
 
-\bibent{Kuhn, T. S. The Structure of Scientific Revolutions, Second Edition. Chicago, University of Chicago Press, 1970; \acro{ISBN}: 0-226-45803-2.}
+\bibent{Medawar, P. {\sl Pluto's Republic}. Oxford, University Press, 1982: \acro{ISBN}: 0-19-217726-5.}
 
-\bibent{Medawar, P. Pluto's Republic. Oxford, University Press, 1982: \acro{ISBN}: 0-19-217726-5.}
+\bibent{Moher, T., and Schneider, G. M. Methodology and experimental research in software engineering, {\sl Int. J. ManMach. Stud. 16}: 65--87,1. Jan. 1982.}
 
-\bibent{Moher, T., and Schneider, G. M. Methodology and experimental research in software engineering, Int. J. ManMach. Stud. 16: 65-87,1. Jan. 1982.}
+\bibent{Oskarsson, O Mechanisms of modifiability in large software systems. {\sl Linkoping Studies in Science and Technology, Dissertations, no. 77}, Linkoping, 1982; \acro{ISBN}: 91-7372-527-7.}
 
-\bibent{Oskarsson, O Mechanisms of modifiability in large software systems Linkoping Studies in Science and Technology, Dissertations, no. 77, Linkoping, 1982; \acro{ISBN}: 91-7372-527-7.}
+\bibent{Polya, G. {\sl How To Solve It}. New York, Doubleday Anchor Book, 1957.}
 
-\bibent{Polya, G. How To Solve It. New York, Doubleday Anchor Book, 1957.}
+\bibent{Polya, G. {\sl Mathematics and Plausible Reasoning}. New Jersey, Princeton University Press, 1954.}
 
-\bibent{Polya, G. Mathematics and Plausible Reasoning. New Jersey, Princeton University Press, 1954.}
+\bibent{Popper, K. R., and Eccles, J. C. {\sl The Self and Its Brain.} London, Routledge and Kegan Paul, 1977.}
 
-\bibent{Popper, K. R., and Eccles, J. C. The Self and Its Brain. London, Routledge and Kegan Paul, 1977.}
-
-\bibent{Ryle, G. The Concept of Mind. Harmondsworth, England, Penguin, 1963, first published 1949.}
+\bibent{Ryle, G. {\sl The Concept of Mind}. Harmondsworth, England, Penguin, 1963, first published 1949.}
 \par
 }
 \sect{Afterword: Applying ``Theory Building''}
-Viewing programming as theory building helps us understand ``metaphor building'' activity in Extreme Programming (\acro{XP}), and the respective roles of tacit knowledge and documentation in passing along design knowledge.
+Viewing programming as a theory building process helps us understand ``metaphor building'' activity in Extreme Programming (\acro{XP}), and the respective roles of tacit knowledge and documentation in passing along design knowledge.
 
 \ssect{The Metaphor as a Theory}
 Kent Beck suggested that it is useful to a design team to simplify the general design of a program to match a single metaphor. Examples might be, ``This program really looks like an assembly line, with things getting added to a chassis along the line,'' or ``This program really looks like a restaurant, with waiters and menus, cooks and cashiers.''
@@ -187,7 +186,7 @@ An appropriate, shared metaphor lets a person guess accurately where someone els
 \ssect{Tacit Knowledge and Documentation}
 The documentation is almost certainly behind the current state of the program, but people are good at looking around. What should you put into the documentation?
 
-\emph{That which helps the next programmer build an adequate theory of the program.}
+\emph{That which helps the next programmer to build an adequate theory of the program.}
 
 This is enormously important. The purpose of the documentation is to jog memories in the reader, set up relevant pathways of thought about experiences and metaphors.
 
@@ -195,7 +194,7 @@ This sort of documentation is more stable over the life of the program than just
 
 The designers are allowed to use whatever forms of expression are necessary to set up those relevant pathways. They can even use multiple metaphors, if they don't find one that is adequate for the entire program. They might say that one section implements a fractal compression algorithm, a second is like an accounting ledger, the user interface follows the model-observer design pattern, and so on.
 
-Experienced designers often start their documentation with just
+Experienced designers often begin documenting with just
 \begin{itemize}
 \item The metaphors
 \item Text describing the purpose of each major component
