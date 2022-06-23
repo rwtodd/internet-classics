@@ -1,6 +1,10 @@
 \documentclass[12pt,letterpaper,titlepage]{article}
 \usepackage[letterpaper, total={5.6in, 8in}]{geometry}
+\usepackage{color}
 \renewcommand{\rmdefault}{ppl}
+
+\definecolor{my-red}{rgb}{0.7,0,0.2}
+\definecolor{my-gray}{rgb}{0.2,0.2,0.4}
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \newlength{\intomargin}\setlength{\intomargin}{25pt}
@@ -9,7 +13,7 @@
 \setlength{\baselineskip}{14pt}
 
 % make \fmtXXX macros that \@seccntformat branch out to..
-\def\fmtsection#1{Book \thesection\ --- }
+\def\fmtsection#1{\makebox[0pt][l]{\rule[-1ex]{\dimexpr\textwidth+\intomargin}{2pt}}Book \thesection\ --- }
 \def\fmtsubsection#1{\makebox[\intomargin][l]{\thesubsection}}
 \makeatletter
 \renewcommand{\@seccntformat}[1]{\csname fmt#1\endcsname} 
@@ -21,7 +25,7 @@
 {-\intomargin}%
 {-3.5ex plus -1ex minus -0.2ex}%
 {2.3ex plus 0.2ex}%
-{\clearpage\normalfont\Large\bfseries}%
+{\clearpage\normalfont\Large\bfseries\color{my-red}}%
 }
 % redefine \subsection so it goes into the margins and doesn't space down after 
 \renewcommand{\subsection}{%
@@ -30,18 +34,19 @@
 {-\intomargin}%
 {-3.5ex plus -1ex minus -0.2ex}%
 {-0pt}%
-{\normalfont\normalsize\bfseries}%
+{\normalfont\normalsize\bfseries\color{my-red}}%
 }
 \makeatother
 
 % some special markup for our specific layout...
-\newcommand{\book}[2]{\section{#1}\par\hspace{-\intomargin}Thus spake the Master Programmer:%
-\begin{quotation}\noindent\llap{``}\textsl{#2}''\end{quotation}\medskip}
+\newcommand{\book}[2]{\section{#1}%
+\par\hspace{-\intomargin}Thus spake the Master Programmer:%
+\begin{quotation}\color{my-gray}\noindent\llap{``}\textsl{#2}''\end{quotation}\medskip}
 \newcommand{\sect}{\subsection{}}
 \newenvironment{versesect}{\begin{minipage}[t]{5.5in}\begin{verse}}%
 {\end{verse}\end{minipage}\vspace{\partopsep}\vspace{\topsep}}
 
-\title{The Tao of Programming}
+\title{\color{my-red}The Tao of Programming}
 \author{Translated by Geoffrey James}
 \date{November, 1987}
 
@@ -67,12 +72,12 @@ The user is pleased, and there is harmony in the world.\\
 
 The Tao of Programming flows far away and returns on the wind of morning.
 
-\sect
-The Tao gave birth to machine language. Machine language gave birth to
-the assembler.
-
-The assembler gave birth to the compiler. Now there are ten thousand
-languages.
+\sect \begin{versesect}
+The Tao gave birth to machine language.\\
+Machine language gave birth to the assembler.\\
+The assembler gave birth to the compiler.\\
+Now there are ten thousand languages.
+\end{versesect}
 
 Each language has its purpose, however humble. Each language expresses
 the Yin and Yang of software. Each language has its place within the
